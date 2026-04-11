@@ -41,8 +41,8 @@ const IMAGES = [
 
 export function PrimaryHeroGallery() {
   return (
-    <HeroGalleryContainerScroll className="h-[320vh]">
-      <BentoGrid className="sticky top-0 left-0 h-screen w-full p-4 md:p-6">
+    <HeroGalleryContainerScroll className="h-[250vh] sm:h-[320vh]">
+      <BentoGrid className="sticky top-0 left-0 h-svh w-full p-2 sm:p-4 md:p-6">
         {IMAGES.map((image, index) => (
           <BentoCell
             key={image.src}
@@ -61,24 +61,24 @@ export function PrimaryHeroGallery() {
         ))}
       </BentoGrid>
 
-      <ContainerScale className="z-10 w-[min(92vw,900px)] text-center">
-        <div className="border border-white/10 bg-slate-950/72 p-6 text-slate-50 shadow-[0_28px_120px_rgba(2,6,23,0.45)] backdrop-blur-xl sm:p-10">
-          <h1 className="mx-auto mt-6 max-w-4xl text-5xl leading-[0.9] font-medium tracking-[-0.06em] sm:text-6xl lg:text-8xl">
+      <ContainerScale className="z-10 w-[min(91vw,900px)] text-center">
+        <div className="border border-white/10 bg-slate-950/78 p-4 text-slate-50 shadow-[0_28px_120px_rgba(2,6,23,0.45)] backdrop-blur-xl sm:p-10">
+          <h1 className="mx-auto max-w-4xl text-[clamp(2.35rem,12vw,4rem)] leading-[0.9] font-medium tracking-[-0.065em] sm:mt-6 sm:text-6xl lg:text-8xl">
             Continuous connected care should feel as clear as the intervention
             window is small.
           </h1>
-          <p className="mx-auto mt-6 max-w-3xl text-sm leading-7 text-slate-300 sm:text-base">
+          <p className="mx-auto mt-5 max-w-3xl text-sm leading-6 text-slate-300 sm:mt-6 sm:text-base sm:leading-7">
             PlasmIT positions PiMed as the shift from periodic physical rounds
             to continuous connected rounds, giving hospitals, clinicians, and
             investors a cleaner way to evaluate the system, the workflow, and
             the opportunity.
           </p>
 
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <div className="mx-auto mt-6 flex w-full max-w-xs flex-col items-stretch justify-center gap-3 sm:mt-8 sm:max-w-none sm:flex-row sm:flex-wrap sm:items-center">
             <Button
               asChild
               size="lg"
-              className="h-11 border border-emerald-300/60 bg-emerald-300 px-5 text-slate-950 hover:bg-emerald-200"
+              className="h-11 w-full border border-emerald-300/60 bg-emerald-300 px-5 text-slate-950 hover:bg-emerald-200 sm:w-auto"
             >
               <Link href="/hospital-corner">
                 Explore hospital value
@@ -89,7 +89,7 @@ export function PrimaryHeroGallery() {
               asChild
               size="lg"
               variant="outline"
-              className="h-11 border-white/15 bg-white/5 px-5 text-slate-50 hover:bg-white/10"
+              className="h-11 w-full border-white/15 bg-white/5 px-5 text-slate-50 hover:bg-white/10 sm:w-auto"
             >
               <Link href="/investor-corner">
                 Investor corner
@@ -100,7 +100,7 @@ export function PrimaryHeroGallery() {
               asChild
               size="lg"
               variant="ghost"
-              className="h-11 px-5 text-slate-200 hover:bg-white/8 hover:text-white"
+              className="h-11 w-full px-5 text-slate-200 hover:bg-white/8 hover:text-white sm:w-auto"
             >
               <Link href="/pimed">
                 <Play className="size-4" />
@@ -109,7 +109,7 @@ export function PrimaryHeroGallery() {
             </Button>
           </div>
 
-          <div className="mt-10 grid gap-3 text-left sm:grid-cols-3">
+          <div className="mt-10 hidden gap-3 text-left sm:grid sm:grid-cols-3">
             {[
               [
                 "24×7 visibility",

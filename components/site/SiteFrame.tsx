@@ -13,7 +13,7 @@ export function SiteFrame({
   revealNavAfterHero?: boolean
 }) {
   return (
-    <div className="dark min-h-dvh bg-background text-foreground">
+    <div className="dark min-h-dvh overflow-x-clip bg-background text-foreground">
       <Navbar revealAfterHero={revealNavAfterHero} />
       <main>{children}</main>
       <SiteFooter />

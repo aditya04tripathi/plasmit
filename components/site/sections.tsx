@@ -72,7 +72,7 @@ export function Section({
 }) {
   return (
     <section className={sectionClassName(tone)}>
-      <div className="mx-auto max-w-7xl px-4 py-18 sm:px-6 lg:px-8 lg:py-24">
+      <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-18 lg:px-8 lg:py-24">
         {children}
       </div>
     </section>
@@ -107,7 +107,7 @@ export function SectionHeading({
           {badge}
         </Badge>
       ) : null}
-      <h2 className="text-4xl leading-[0.95] font-medium tracking-[-0.05em] text-slate-50 sm:text-5xl lg:text-6xl">
+      <h2 className="text-[clamp(2.1rem,9.5vw,3.75rem)] leading-[0.95] font-medium tracking-[-0.055em] text-slate-50 sm:text-5xl lg:text-6xl">
         {title}
       </h2>
       {description ? (
@@ -115,7 +115,7 @@ export function SectionHeading({
           {description}
         </p>
       ) : null}
-      {actions ? <div className="mt-8 flex flex-wrap gap-3">{actions}</div> : null}
+      {actions ? <div className="mt-8 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap">{actions}</div> : null}
     </div>
   )
 }
@@ -144,18 +144,18 @@ export function PageHero({
       <div className="grid gap-10 lg:grid-cols-[1.3fr_0.7fr] lg:items-end">
         <div>
           <Badge variant="outline" className="border-white/12 bg-white/4 text-slate-300">{badge}</Badge>
-          <h1 className="mt-6 max-w-5xl text-5xl leading-[0.92] font-medium tracking-[-0.06em] text-slate-50 sm:text-6xl lg:text-8xl">
+          <h1 className="mt-6 max-w-5xl text-[clamp(2.25rem,10.5vw,5rem)] leading-[0.95] font-medium tracking-[-0.055em] text-slate-50 sm:text-6xl sm:leading-[0.92] sm:tracking-[-0.06em] lg:text-8xl">
             {title}
           </h1>
           <p className="mt-6 max-w-3xl text-base leading-8 text-slate-400 sm:text-lg">
             {intro}
           </p>
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             {primary ? (
               <Button
                 asChild
                 size="lg"
-                className="border border-emerald-300/60 bg-emerald-300 px-4 text-slate-950 hover:bg-emerald-200"
+                className="min-h-11 w-full border border-emerald-300/60 bg-emerald-300 px-4 text-slate-950 hover:bg-emerald-200 sm:w-auto"
               >
                 <Link href={primary.href}>
                   {primary.label}
@@ -168,7 +168,7 @@ export function PageHero({
                 asChild
                 size="lg"
                 variant="outline"
-                className="border-white/12 bg-white/4 px-4 text-slate-100 hover:bg-white/8 hover:text-white"
+                className="min-h-11 w-full border-white/12 bg-white/4 px-4 text-slate-100 hover:bg-white/8 hover:text-white sm:w-auto"
               >
                 <Link href={secondary.href}>{secondary.label}</Link>
               </Button>

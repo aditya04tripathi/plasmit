@@ -32,7 +32,7 @@ export function SiteFooter() {
             <Separator />
             <div className="flex flex-wrap gap-3 text-sm text-slate-400">
               <span>{contactDetails.phone}</span>
-              <span>{contactDetails.email}</span>
+              <span className="break-all">{contactDetails.email}</span>
             </div>
           </CardContent>
         </Card>
