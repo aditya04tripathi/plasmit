@@ -26,19 +26,17 @@ export default function ContactUsPage() {
     <SiteFrame>
       <PageHero
         badge="Contact Us"
-        title="A cleaner enquiry path for hospitals, investors, and strategic conversations."
-        intro="The live site already routes enquiries by type. This rebuild gives the contact experience a clearer structure, stronger trust cues, and cleaner office information."
+        title="Start a conversation with PlasmIT."
+        intro="Whether you are representing a hospital, an investment group, or a strategic partner, we are ready to connect."
         primary={{ label: "Email PlasmIT", href: `mailto:${contactDetails.email}` }}
         secondary={{ label: "WhatsApp", href: contactDetails.whatsapp }}
-        asideTitle="Contact posture"
-        asideBody="This route should do one job well: make outreach easy while preserving confidence in the organisation behind the platform."
       />
 
       <Section tone="muted">
         <SectionHeading
           badge="Enquiry form"
-          title="Start with the fastest relevant conversation."
-          description="The same three enquiry types from the live site are preserved: investor, hospital, and general."
+          title="The fastest way to connect."
+          description="Please provide your details and the nature of your enquiry so we can route you to the right expert."
         />
         <div className="mt-10 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
           <ContactForm />
@@ -49,7 +47,7 @@ export default function ContactUsPage() {
                   Direct contact
                 </Badge>
                 <CardTitle className="text-2xl leading-tight font-medium tracking-[-0.03em] text-slate-50">
-                  Reach the team without searching through the footer.
+                  Reach our team directly.
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4 text-sm leading-7 text-slate-400">
@@ -64,9 +62,9 @@ export default function ContactUsPage() {
       </Section>
 
       <FAQSection
-        badge="Notes"
-        title="Important details from the current live site."
-        description="The crawl surfaced a few contact and address inconsistencies that should be resolved before launch."
+        badge="Support"
+        title="Common enquiries."
+        description="Quick answers to help you get started with PlasmIT."
         items={contactFaqs}
       />
     </SiteFrame>

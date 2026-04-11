@@ -62,7 +62,7 @@ export function PrimaryHeroGallery() {
       </BentoGrid>
 
       <ContainerScale className="z-10 w-[min(91vw,900px)] text-center">
-        <div className="border border-white/10 bg-slate-950/78 p-4 text-slate-50 shadow-[0_28px_120px_rgba(2,6,23,0.45)] backdrop-blur-xl sm:p-10">
+        <div className="border border-white/10 bg-slate-950 p-4 text-slate-50 shadow-[0_28px_120px_rgba(2,6,23,0.45)] backdrop-blur-none sm:p-10">
           <h1 className="mx-auto max-w-4xl text-[clamp(2.35rem,12vw,4rem)] leading-[0.9] font-medium tracking-[-0.065em] sm:mt-6 sm:text-6xl lg:text-8xl">
             Continuous connected care should feel as clear as the intervention
             window is small.

@@ -30,48 +30,48 @@ export default function Page() {
       <PrimaryHeroGallery />
 
       <StoryGrid
-        badge="Narrative shift"
+        badge="Our Vision"
         title="From physical round to continuous connected round."
-        description="The strongest thread across the live site is not a feature checklist. It is the operating model change that PiMed is meant to enable."
+        description="PiMed enables a fundamental shift in critical care, moving from time-bound bedside rounds to a persistent, connected care experience."
         items={homePage.story}
       />
 
       <FeatureGrid
         badge="Platform capability"
         title="A connected clinical layer built around visibility, response, and trust."
-        description="These are the product capabilities repeated across the live site and consolidated into a cleaner modern structure."
+        description="Intelligent, Integrated, and Immersive. PiMed provides a secured and compliant digital care platform for the modern hospital."
         items={platformFeatures}
       />
 
       <TimelineSection
         badge="How it works"
-        title="A clearer system story for hospitals evaluating deployment readiness."
-        description="Instead of repeating product marketing language, this sequence explains the operational flow from device connection to intervention."
+        title="Continuous Monitoring and Real-time Intervention."
+        description="Our operational flow ensures that medical data streaming from the edge provides stakeholders with continuous context and early warnings."
         steps={productTimeline}
       />
 
       <SplitShowcase
         badge="Commercial framing"
-        title="One platform, two buying conversations."
-        description="The same core system is presented through two distinct decision lenses: hospital transformation and investor readiness."
+        title="One platform, two distinct value propositions."
+        description="PiMed solves the critical care visibility gap, creating value for both hospital operations and strategic investors."
         leftTitle="For hospitals"
-        leftBody="PiMed is framed as a way to improve intervention speed, care continuity, workforce utilisation, and new service-line potential without treating digital transformation as a side project."
+        leftBody="Improve intervention speed, care continuity, and workforce utilisation while opening new revenue channels through post-discharge care."
         rightTitle="For investors"
-        rightBody="PlasmIT positions the product as a commercialisation-stage platform solving a visible global care gap with standards-aware infrastructure and multi-market relevance."
+        rightBody="A commercialisation-stage platform solving a global care gap with standards-aware infrastructure and significant market reach in India and beyond."
       />
 
       <StoryGrid
-        badge="Company posture"
+        badge="Our Mission"
         title="Clinical credibility matched with systems thinking."
-        description="The live site repeatedly combines care delivery expertise, digital transformation experience, and interoperability positioning."
+        description="Founded by healthcare and technology experts, PlasmIT is dedicated to making world-class critical care more accessible and continuous."
         items={aboutHighlights}
       />
 
       <CTASection
         badge="Next step"
-        title="Choose the path that matches the decision you need to make."
-        description="Product discovery, hospital business case, and investor enquiry are now separated clearly instead of being buried in repeated content blocks."
-        primary={{ label: "View Hospital Corner", href: "/hospital-corner" }}
+        title="Start a conversation with the PlasmIT team."
+        description="Whether you are seeking a hospital business case or an investment opportunity, we are ready to discuss the future of connected care."
+        primary={{ label: "Explore Hospital Corner", href: "/hospital-corner" }}
         secondary={{ label: "Contact PlasmIT", href: "/contact-us" }}
       />
     </SiteFrame>

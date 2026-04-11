@@ -4,6 +4,8 @@ import { Manrope, Newsreader } from "next/font/google"
 import { siteMeta } from "@/lib/site-content"
 import { cn } from "@/lib/utils"
 
+import { ThemeProvider } from "@/components/theme-provider"
+
 import "./globals.css"
 
 const sans = Manrope({
@@ -39,7 +41,9 @@ export default function RootLayout({
           "min-h-dvh bg-background font-sans text-foreground antialiased"
         )}
       >
-        {children}
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   )

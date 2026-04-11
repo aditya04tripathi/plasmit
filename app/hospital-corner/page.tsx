@@ -23,42 +23,40 @@ export default function HospitalCornerPage() {
     <SiteFrame>
       <PageHero
         badge="Hospital Corner"
-        title="A stronger hospital business case for continuous connected care."
-        intro="The hospital page is the live site's most compelling commercial argument: better intervention timing, stronger utilisation, new revenue opportunities, and a more sustainable clinician workflow."
+        title="Improving outcomes through continuous connected care."
+        intro="PiMed provides a compelling business case for hospitals: lower mortality, reduced OPEX, and a more sustainable clinician workflow."
         primary={{ label: "Speak with PlasmIT", href: "/contact-us" }}
         secondary={{ label: "Explore PiMed", href: "/pimed" }}
         metrics={hospitalMetrics}
-        asideTitle="How this page is reframed"
-        asideBody="Instead of stacking claim after claim, the page now separates outcome posture, operational benefits, and staff experience into a modern decision flow."
       />
 
       <FeatureGrid
         badge="Value drivers"
         title="Hospital value extends beyond bedside monitoring."
-        description="The current site mixes economics, clinician experience, and patient continuity together. This version gives each one a cleaner lane."
+        description="From resource optimization to revenue expansion, PiMed transforms the operational economics of critical care."
         items={hospitalFeatures}
       />
 
       <SplitShowcase
         badge="Decision logic"
-        title="Why the hospital narrative is more persuasive when sequenced properly."
-        leftTitle="Operational gain"
-        leftBody="PiMed is framed as a way to automate parts of ICU oversight, reduce wasted motion, improve interdepartmental coordination, and use specialist time more effectively."
-        rightTitle="Strategic upside"
-        rightBody="The live-site narrative points to post-discharge care, loyalty, and hospital-to-hospital services as new revenue and brand-building pathways."
+        title="Operational gain meets strategic upside."
+        leftTitle="Operational Gain"
+        leftBody="Automate ICU oversight and reduce wasted motion, allowing specialist time to be used more effectively through digitised rounds."
+        rightTitle="Strategic Upside"
+        rightBody="Create new revenue channels via post-discharge care and hospital-to-hospital services while improving brand value."
       />
 
       <TimelineSection
         badge="Deployment story"
-        title="The product promise needs a clear adoption sequence."
-        description="Hospital buyers need to understand how the system connects to devices, teams, and care settings before they trust the commercial promise."
+        title="A clear path to connected care."
+        description="Understand how PiMed integrates with your existing devices and teams to create a seamless, fault-tolerant care surface."
         steps={productTimeline}
       />
 
       <CTASection
         badge="Hospital enquiry"
-        title="Use this page as the hospital-facing conversion path."
-        description="This route now carries the strongest operations and ROI narrative on the site, which is where the live content was already most convincing."
+        title="Ready to optimize your ICU operations?"
+        description="Connect with our team to discuss how PiMed can reduce mortality and OPEX in your facility."
         primary={{ label: "Contact Hospital Team", href: "/contact-us" }}
         secondary={{ label: "View Investor Narrative", href: "/investor-corner" }}
       />

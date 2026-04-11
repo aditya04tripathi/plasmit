@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { useEffect, useState } from "react"
 import { Menu, ArrowUpRight } from "lucide-react"
+import { ThemeToggle } from "./ThemeToggle"
 
 import { navLinks } from "@/lib/site-content"
 import { cn } from "@/lib/utils"
@@ -103,21 +104,26 @@ export function Navbar({ revealAfterHero = false }: { revealAfterHero?: boolean 
           ))}
         </nav>
 
-        <div className="hidden lg:block">
-          <Button
-            asChild
-            className={cn(
-              "h-9 px-4",
-              revealAfterHero
-                ? "border border-emerald-300/60 bg-emerald-300 text-slate-950 hover:bg-emerald-200"
-                : "border border-emerald-300/60 bg-emerald-300 text-slate-950 hover:bg-emerald-200"
-            )}
-          >
-            <Link href="/contact-us">
-              Start a conversation
-              <ArrowUpRight className="size-4" />
-            </Link>
-          </Button>
+        <div className="flex items-center gap-2">
+          <div className="hidden lg:block">
+            <Button
+              asChild
+              className={cn(
+                "h-9 px-4",
+                revealAfterHero
+                  ? "border border-emerald-300/60 bg-emerald-300 text-slate-950 hover:bg-emerald-200"
+                  : "border border-emerald-300/60 bg-emerald-300 text-slate-950 hover:bg-emerald-200"
+              )}
+            >
+              <Link href="/contact-us">
+                Start a conversation
+                <ArrowUpRight className="size-4" />
+              </Link>
+            </Button>
+          </div>
+          <div className="flex items-center gap-2">
+            <ThemeToggle />
+          </div>
         </div>
 
         <div className="lg:hidden">
@@ -156,9 +162,12 @@ export function Navbar({ revealAfterHero = false }: { revealAfterHero?: boolean 
                   </Button>
                 ))}
                 <Separator className="my-2" />
-                <Button asChild className="border border-emerald-300/60 bg-emerald-300 text-slate-950 hover:bg-emerald-200">
-                  <Link href="/contact-us">Start a conversation</Link>
-                </Button>
+                <div className="flex flex-col gap-2">
+                  <Button asChild className="border border-emerald-300/60 bg-emerald-300 text-slate-950 hover:bg-emerald-200">
+                    <Link href="/contact-us">Start a conversation</Link>
+                  </Button>
+                  <ThemeToggle />
+                </div>
               </div>
             </SheetContent>
           </Sheet>

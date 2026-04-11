@@ -22,26 +22,24 @@ export default function PiMedPage() {
   return (
     <SiteFrame>
       <PageHero
-        badge="PiMed product overview"
+        badge="PiMed Product"
         title="A mobile-first critical care surface for continuous connected monitoring and action."
-        intro="PiMed is presented on the live site as a next-generation connected, intelligent, integrated, immersive, secured, and compliant digital care platform for hospitals."
+        intro="PiMed is a next-generation connected, intelligent, integrated, immersive, secured, and compliant digital care platform for hospitals."
         primary={{ label: "See Hospital Value", href: "/hospital-corner" }}
         secondary={{ label: "Contact Product Team", href: "/contact-us" }}
-        asideTitle="What this page does better"
-        asideBody="The legacy product page repeated homepage blocks. This rebuild turns PiMed into a sharper product narrative with clearer system sequencing and cleaner capability framing."
       />
 
       <FeatureGrid
         badge="Capability set"
-        title="The product is strongest when described as a clinical operating layer, not a loose bundle of features."
-        description="Each capability below comes from the current live-site messaging and has been rewritten into a tighter product narrative."
+        title="An intelligent clinical operating layer."
+        description="PiMed connects devices, workflows, and clinicians into one persistent care experience to support point-in-time intervention."
         items={platformFeatures}
       />
 
       <TimelineSection
         badge="Operational flow"
-        title="PiMed connects devices, context, and decisions into one continuous care loop."
-        description="This is the product story a modern buyer needs to understand in one pass."
+        title="Connecting devices, context, and decisions into one continuous care loop."
+        description="From AI/ML edge streaming to real-time intervention, PiMed ensures all stakeholders remain continuously informed across any device."
         steps={productTimeline}
       />
 
@@ -51,13 +49,13 @@ export default function PiMedPage() {
         leftTitle="Clinical layer"
         leftBody="Real-time vitals, abnormality detection, collaboration, and guided pathways keep decision-making close to live patient context."
         rightTitle="Infrastructure layer"
-        rightBody="The platform is framed around fault tolerance, security, interoperability, device integration, and availability across settings from ICU to home care."
+        rightBody="A compliant and fault-tolerant platform ensuring secure data transfer and high availability from the ICU to home care."
       />
 
       <CTASection
         badge="Commercial next step"
-        title="PiMed should read as a platform, not as a brochure."
-        description="Use the hospital page for buyer economics, the investor page for growth narrative, or contact the team directly for a product conversation."
+        title="Ready to transform your care delivery?"
+        description="Explore the hospital business case or connect with our product team to discuss deployment."
         primary={{ label: "Go to Hospital Corner", href: "/hospital-corner" }}
         secondary={{ label: "Investor Corner", href: "/investor-corner" }}
       />

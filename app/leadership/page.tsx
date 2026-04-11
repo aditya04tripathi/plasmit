@@ -22,34 +22,32 @@ export default function LeadershipPage() {
     <SiteFrame>
       <PageHero
         badge="Leadership"
-        title="A credential-rich team presented with more clarity and less brochure clutter."
-        intro="The live leadership page is one of the site's strongest trust assets. This redesign keeps the depth of expertise but presents it in a tighter, more premium grid."
+        title="Experts in clinical care and digital transformation."
+        intro="Our leadership team combines decades of global critical care experience with deep expertise in interoperability and data architecture."
         primary={{ label: "Contact the Team", href: "/contact-us" }}
         secondary={{ label: "Read About PlasmIT", href: "/about-us" }}
-        asideTitle="Leadership posture"
-        asideBody="Clinical, interoperability, product, data, and research leadership all need to be visible because the company sells trust as much as software."
       />
 
       <LeadershipGrid
         badge="Executive and advisory team"
-        title="Clinical depth, digital systems experience, and standards credibility in one view."
-        description="Each profile below is reconstructed from the current live leadership page and crawl notes."
+        title="Clinical depth and standards credibility."
+        description="A multidisciplinary team dedicated to bridging the gap in critical care delivery through the PiMed platform."
         profiles={leadershipProfiles}
       />
 
       <SplitShowcase
-        badge="Why leadership matters here"
-        title="The team page is part of the commercial argument."
+        badge="Our Posture"
+        title="The team is the foundation of our trust."
         leftTitle="For hospitals"
-        leftBody="Leadership depth reassures buyers that PiMed is not just software marketing. It is rooted in real ICU, interoperability, and operational experience."
+        leftBody="Our team's depth in ICU and interoperability reassures buyers that PiMed is rooted in real-world clinical experience."
         rightTitle="For investors"
-        rightBody="The same team composition signals founder-market fit, standards awareness, and the ability to navigate healthcare complexity in regulated environments."
+        rightBody="Our composition signals strong founder-market fit and the ability to navigate complex, regulated healthcare environments."
       />
 
       <CTASection
         badge="Next step"
-        title="Trust pages should resolve into direct contact."
-        description="Once a visitor believes the leadership story, the next interaction should be an enquiry rather than more navigation."
+        title="Let's discuss the future of care."
+        description="Connect with our leadership team to explore strategic partnerships or product deployment."
         primary={{ label: "Go to Contact", href: "/contact-us" }}
         secondary={{ label: "Investor Corner", href: "/investor-corner" }}
       />
