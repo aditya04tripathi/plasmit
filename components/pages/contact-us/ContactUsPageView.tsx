@@ -1,4 +1,9 @@
-import { contactDetails, contactFaqs, officeMapLocations, offices } from "@/lib/site-content"
+import {
+  contactDetails,
+  contactFaqs,
+  officeMapLocations,
+  offices,
+} from "@/lib/site-content"
 import { ContactForm } from "@/components/forms/contact/ContactForm"
 import { ContactOfficeMapSlot } from "@/components/forms/contact/ContactOfficeMapSlot"
 import { SiteFrame } from "@/components/marketing/SiteFrame"
@@ -18,7 +23,10 @@ export function ContactUsPageView() {
         badge="Contact Us"
         title="Start a conversation with PlasmIT."
         intro="Whether you are representing a hospital, an investment group, or a strategic partner, we are ready to connect."
-        primary={{ label: "Email PlasmIT", href: `mailto:${contactDetails.email}` }}
+        primary={{
+          label: "Email PlasmIT",
+          href: `mailto:${contactDetails.email}`,
+        }}
         secondary={{ label: "WhatsApp", href: contactDetails.whatsapp }}
       />
 
