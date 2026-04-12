@@ -9,7 +9,7 @@ import {
   useTransform,
   type HTMLMotionProps,
   type MotionValue,
-} from "motion/react"
+} from "framer-motion"
 
 import { cn } from "@/lib/utils"
 
