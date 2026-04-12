@@ -4,8 +4,6 @@ import { featureGridIcons } from "@/components/marketing/sections/feature-grid-i
 import { Section } from "@/components/marketing/sections/Section"
 import { SectionHeading } from "@/components/marketing/sections/SectionHeading"
 
-import { cn } from "@/lib/utils"
-
 export function FeatureGrid({
   badge,
   title,
@@ -20,24 +18,13 @@ export function FeatureGrid({
   return (
     <Section>
       <SectionHeading badge={badge} title={title} description={description} />
-      <div className="mt-6 grid gap-6 md:grid-cols-2 md:gap-5 xl:grid-cols-4">
-        {items.map((item, index) => {
+      <div className="mt-6 grid gap-6 md:grid-cols-2 md:gap-5 xl:grid-cols-3">
+        {items.map((item) => {
           const Icon = featureGridIcons[item.icon]
-
-          const cardLayout =
-            index === 0
-              ? "md:col-span-2 xl:col-span-2"
-              : index === 4
-                ? "xl:col-span-2"
-                : "xl:col-span-1"
-
           return (
             <Card
               key={item.title}
-              className={cn(
-                "border border-border bg-card/80 text-card-foreground shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/25 hover:bg-card active:translate-y-0",
-                cardLayout,
-              )}
+              className="border border-border bg-card/80 text-card-foreground shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/25 hover:bg-card active:translate-y-0"
             >
               <CardHeader className="flex items-center gap-4">
                 <div className="inline-flex h-10 w-10 items-center justify-center border border-foreground/10 bg-foreground/5 text-primary">

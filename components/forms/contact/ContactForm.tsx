@@ -368,7 +368,9 @@ export function ContactForm({
                   }
                   aria-invalid={Boolean(errors.country)}
                   aria-required="true"
-                  aria-describedby={errors.country ? errorIds.country : undefined}
+                  aria-describedby={
+                    errors.country ? errorIds.country : undefined
+                  }
                 >
                   <SelectValue placeholder="Please choose an option" />
                 </SelectTrigger>
