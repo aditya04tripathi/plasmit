@@ -49,7 +49,7 @@ export const rootMetadata: Metadata = {
     locale: "en_AU",
     images: [
       {
-        url: "/images/og-image.png",
+        url: "/media/og-image.png",
         width: 1200,
         height: 630,
         alt: `${siteMeta.name} — Smart ICU on Mobile™`,
@@ -63,7 +63,7 @@ export const rootMetadata: Metadata = {
     title: `${siteMeta.name} | Smart ICU on Mobile™`,
     description:
       "AI-powered, device-agnostic Smart ICU on Mobile™ platform for hospitals. Real-time ICU monitoring, 24×7 remote care intervention, and AI-driven clinical pathways.",
-    images: ["/images/og-image.png"],
+    images: ["/media/og-image.png"],
   },
   robots: {
     index: true,

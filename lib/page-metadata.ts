@@ -163,7 +163,7 @@ export function buildPageMetadata({
       type: "website",
       images: [
         {
-          url: "/images/og-image.png",
+          url: "/media/og-image.png",
           width: 1200,
           height: 630,
           alt: fullTitle,
@@ -174,7 +174,7 @@ export function buildPageMetadata({
       card: "summary_large_image",
       title: fullTitle,
       description,
-      images: ["/images/og-image.png"],
+      images: ["/media/og-image.png"],
     },
   }
 }
