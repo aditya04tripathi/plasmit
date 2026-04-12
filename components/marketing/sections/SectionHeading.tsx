@@ -28,7 +28,7 @@ export function SectionHeading({
       {badge ? (
         <Badge
           variant="outline"
-          className="mb-5 w-fit border-foreground/12 bg-foreground/4 text-muted-foreground"
+          className="mb-3 w-fit border-foreground/12 bg-foreground/4 text-muted-foreground"
         >
           {badge}
         </Badge>
@@ -37,12 +37,12 @@ export function SectionHeading({
         {title}
       </h2>
       {description ? (
-        <p className="mt-5 max-w-2xl text-sm leading-7 text-muted-foreground sm:text-base">
+        <p className="mt-3 max-w-2xl text-sm leading-7 text-muted-foreground sm:text-base">
           {description}
         </p>
       ) : null}
       {actions ? (
-        <div className="mt-8 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap">
+        <div className="mt-5 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap">
           {actions}
         </div>
       ) : null}

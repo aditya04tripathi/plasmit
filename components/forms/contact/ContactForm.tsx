@@ -174,7 +174,7 @@ export function ContactForm({
           </p>
           {!SUBMIT_ENDPOINT ? (
             <p>
-              Submissions are not emailed automatically yet — please also
+              Submissions are not emailed automatically yet; please also
               contact{" "}
               <a
                 href={`mailto:${contactDetails.email}`}
@@ -303,6 +303,7 @@ export function ContactForm({
                 aria-invalid={Boolean(errors.email)}
                 autoComplete="email"
                 inputMode="email"
+                maxLength={254}
                 disabled={isSubmitting}
                 className={
                   isLight

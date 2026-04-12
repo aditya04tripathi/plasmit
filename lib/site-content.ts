@@ -1,10 +1,29 @@
 export const siteMeta = {
-  name: "PlasmIT Healthcare IT Vector",
-  product: "PiMed",
-  title: "Continuous connected critical care, built for clinical trust.",
+  name: "PlasmIT",
+  legalName: "PlasmIT Pty Ltd",
+  companyTagline: "Health technology for critical care",
+  product: "PiMed (QLMed)",
+  productTagline: "Smart ICU on Mobile™",
+  title: "PlasmIT: health technology for critical care.",
   description:
-    "PlasmIT rethinks critical care delivery with PiMed, a mobile-first connected care platform for hospitals, care teams, and investors evaluating next-generation digital health infrastructure.",
+    "PlasmIT Pty Ltd is an Australia-headquartered company reimagining critical care through connected infrastructure. Flagship product PiMed (QLMed), Smart ICU on Mobile™, delivers point-in-time ICU care on mobile, 24×7, vendor-agnostic, standards-aware, built with hospitals and clinicians.",
 } as const
+
+export const companyHero = {
+  headline: "PlasmIT builds connected critical care infrastructure.",
+  lead: "PlasmIT Pty Ltd is an Australia-headquartered health-tech company focused on critical care. The team blends national healthcare strategy experience with interoperability depth, including FHIR and large-scale digital health programmes.",
+  productLine:
+    "Flagship platform: PiMed (QLMed), Smart ICU on Mobile™: point-in-time ICU care on mobile, 24×7, with vendor-agnostic edge-to-cloud delivery.",
+} as const
+
+export const companyVision =
+  "Reimagine healthcare by revolutionising the critical care experience through technology and innovation."
+
+export const companyMission =
+  "Making care more accessible, affordable, and life-saving through connected healthcare ecosystems."
+
+export const foundingTeamBackground =
+  "Healthcare visionaries and technology leaders who contributed to national healthcare strategies for Australian and Indian governments. Active contributors to global healthcare interoperability standards including FHIR (Fast Healthcare Interoperability Resources), enabling seamless data exchange across healthcare value chains."
 
 export const contactDetails = {
   australia:
@@ -13,8 +32,10 @@ export const contactDetails = {
     "PlasmIT Pty Ltd, Level 17, Tower 4 , 727 Collins street, Docklands, Victoria, 3008 Australia",
   india: "A-335, Second Floor, Defence Colony, New Delhi 110024, India",
   email: "info@plasmitvector.com",
+  founderEmail: "awadhesh.kumar@plasmitvector.com",
   phone: "+61 431 770 499",
   whatsapp: "https://wa.me/61431770499",
+  website: "https://www.plasmitvector.com",
 } as const
 
 export const navLinks = [
@@ -29,7 +50,7 @@ export const navLinks = [
 
 export const footerGroups = [
   {
-    title: "Platform",
+    title: "Product",
     links: [
       { label: "PiMed", href: "/pimed" },
       { label: "Hospital Corner", href: "/hospital-corner" },
@@ -55,9 +76,9 @@ export const footerGroups = [
 ] as const
 
 export const proofPoints = [
-  "Shift from periodic physical rounds to continuous connected rounds.",
-  "Platform built around mobile visibility, device integration, and interdisciplinary collaboration.",
-  "Commercial narrative spans hospital ROI, clinician workflow, and investor readiness.",
+  "PlasmIT Pty Ltd: Australia-headquartered critical care health-tech with India-first commercial traction and investor-ready governance.",
+  "Flagship product PiMed (QLMed), Smart ICU on Mobile™: continuous monitoring, connected intervention, and a compliant fault-tolerant platform.",
+  "Vendor-agnostic edge-to-cloud architecture, FHIR-aware interoperability, and utilisation-based SaaS economics for hospitals.",
 ] as const
 
 export type StoryCard = {
@@ -107,198 +128,374 @@ export type LeadershipProfileSection = {
   profiles: LeadershipProfile[]
 }
 
+export type SimpleTableColumn = string
+
+export type SimpleTableRow = string[]
+
 export const homePage = {
-  eyebrow: "Clinical infrastructure for continuous connected care",
-  title:
-    "A premium narrative for hospitals, investors, and care teams evaluating PiMed.",
+  eyebrow: "PlasmIT: company overview",
+  title: "A health-tech company for critical care, anchored by PiMed.",
   intro:
-    "PlasmIT positions PiMed as the shift from physical rounds to continuous connected rounds: a mobile-first care surface that keeps patient context, alerts, and collaboration available from anywhere.",
-  ctaPrimary: { label: "Explore PiMed", href: "/pimed" },
-  ctaSecondary: { label: "Investor Corner", href: "/investor-corner" },
+    "PlasmIT Pty Ltd invests in connected critical care infrastructure. PiMed (QLMed) is how we deliver that vision today: intelligent integrated care on mobile, 24×7.",
+  ctaPrimary: { label: "About PlasmIT", href: "/about-us" },
+  ctaSecondary: { label: "PiMed product", href: "/pimed" },
   callout:
-    "Australia-founded, India-linked, and shaped around the problem of critical care visibility when intervention windows are small and coordination costs are high.",
+    "Australia-headquartered PlasmIT Pty Ltd, with India-first GTM signals: paid pilot, hospital MOUs, and a lowest-barrier path to scaled adoption.",
   story: [
     {
-      title: "Before",
-      body: "Clinical decisions depend on time-bound bedside rounds, fragmented device visibility, and delayed escalation.",
+      title: "ICU scenario",
+      body: "Patient deterioration can unfold while a senior specialist is off-site; the golden hour is lost without continuous, mobile-ready context.",
     },
     {
-      title: "After",
-      body: "PiMed reframes the ward as a connected operating surface with live vitals, guided pathways, and team-level coordination.",
+      title: "Remote specialist scenario",
+      body: "Without real-time vitals, notes, medications, symptoms, and investigations, remote experts cannot intervene decisively at the point of need.",
     },
   ] satisfies StoryCard[],
   metrics: [
     {
       value: "24×7",
       label:
-        "Connected visibility across ICU, emergency, ward, and home care settings.",
+        "Continuous monitoring, intelligent alerts, and connected care on mobile.",
     },
     {
       value: "AI/ML",
       label:
-        "Edge-led data streaming, anomaly detection, and alerting as described on the live site.",
+        "Edge-led streaming, anomaly highlights, clinical pathways, and Gen AI–enabled triage.",
     },
     {
       value: "FHIR",
       label:
-        "Interoperability posture positioned around standards-aware, compliant health infrastructure.",
+        "Interoperability posture aligned with global healthcare data exchange standards.",
     },
   ] satisfies MetricCard[],
   sections: [
     {
-      title: "What PiMed changes",
-      body: "PiMed is described as a next-generation connected digital care platform that links devices, workflows, and clinicians into one persistent care experience.",
+      title: "Three core pillars",
+      body: "24×7 continuous monitoring, 24×7 connected care for point-in-time intervention, and a compliant fault-tolerant platform for capture, transfer, storage, and display.",
     },
     {
       title: "Why it matters",
-      body: "The strongest message across the live site is speed to intervention: informed clinicians can act sooner, collaborate better, and reduce operational waste.",
+      body: "Hospitals gain a decentralised, mobile-first alternative to expensive vendor-locked tele-ICU command centres: lightweight deployment, pilot-first, scale as utilisation grows.",
     },
   ],
 } as const
 
 export const platformFeatures = [
   {
-    title: "Integrated health dashboard",
-    body: "Unified patient visibility with case prioritisation for faster triage and action.",
+    title: "Smart ICU on Mobile™",
+    body: "Full ICU dashboard and clinical context on a mobile device, built for continuous oversight beyond the bedside.",
     icon: "activity",
   },
   {
-    title: "Device data on mobile",
-    body: "Continuous device-linked vitals and patient data visible wherever care teams are working.",
+    title: "Continuous monitoring and alerts",
+    body: "Real-time medical device streaming with anomaly highlights, high-risk alerts, and early deterioration signals.",
     icon: "heart-pulse",
   },
   {
-    title: "Abnormality alerts",
-    body: "AI/ML-enabled insights surface abnormalities earlier to support point-in-time intervention.",
+    title: "Actionable pathways",
+    body: "AI-driven clinical pathways, Gen AI–enabled triage, and guided response during critical events.",
     icon: "sparkles",
   },
   {
-    title: "Real-time collaboration",
-    body: "Cross-specialty coordination happens around a shared clinical picture instead of fragmented handoffs.",
+    title: "Instant collaboration",
+    body: "Seamless coordination between care teams and rapid connection with remote doctors for timely intervention.",
     icon: "workflow",
   },
   {
-    title: "Guided clinical pathways",
-    body: "Pathways are embedded into the platform to make response steps more consistent and scalable.",
+    title: "Predictive intelligence loop",
+    body: "Continuous data-learning foundation to strengthen predictive ICU intelligence over time.",
     icon: "waypoints",
   },
   {
-    title: "Secure and compliant core",
-    body: "The platform is positioned as secure, highly available, interoperable, and compliance-conscious.",
+    title: "Compliant fault-tolerant core",
+    body: "Secured, highly available, interoperable capture and storage aligned with hospital compliance expectations.",
     icon: "shield-check",
   },
 ] satisfies FeatureCard[]
 
 export const productTimeline = [
   {
-    title: "Connect the care environment",
-    body: "PiMed integrates multiple medical devices through proprietary AI/ML-enabled edge devices.",
+    title: "Hospital edge ingestion",
+    body: "Medical devices connect through AI-enabled edge devices, with in-transit security into cloud processing.",
   },
   {
-    title: "Stream and contextualise data",
-    body: "Vitals, trends, and abnormalities are surfaced continuously instead of only during periodic review windows.",
+    title: "Stream and contextualise",
+    body: "Vitals and trends are surfaced continuously with intelligent alerts instead of only during periodic review windows.",
   },
   {
-    title: "Coordinate response",
-    body: "Clinicians, specialists, and operations stakeholders collaborate around shared real-time patient context.",
+    title: "Care delivery platform",
+    body: "Clinicians access the digital channel (including mobile), secure data stores, and AI/ML extensions as one intervention surface.",
   },
   {
-    title: "Extend care beyond the bedside",
-    body: "The model expands across ICU, emergency, ward, tele-ICU, and home-based follow-on care.",
+    title: "Extend beyond the bedside",
+    body: "The model scales across ICU, emergency, ward, tele-ICU, semi-ICU (HDU/CCU), and post-discharge follow-on care.",
+  },
+] satisfies TimelineStep[]
+
+export const productRoadmapPhases = [
+  {
+    title: "PiMed: Life (Year 1, Q1–Q3)",
+    body: "Digitise ICU workflow, real-time device streaming, secured collaboration, AI/ML actionable insights, Gen AI clinical pathways, and India regulatory compliance.",
+  },
+  {
+    title: "PiMed: Elixir (Year 2–3)",
+    body: "Advanced critical care features, integrated care management, diagnostics case assessment, extended AI/ML insights, and automated post-discharge support.",
+  },
+  {
+    title: "PiMed: Nirvana (Year 4–5)",
+    body: "Trusted connected care ecosystem progressing toward AI contextual diagnosis, proactive diagnosis, and prognosis and treatment support.",
   },
 ] satisfies TimelineStep[]
 
 export const hospitalMetrics = [
   {
-    value: "50%",
-    label: "Reduction in ICU mortality",
-    note: "Claim shown on current live site.",
+    value: "~5×",
+    label: "Target savings multiple with base product features within the first year.",
+    note: "As stated in investor materials; realised outcomes depend on deployment and local factors.",
   },
   {
-    value: "25%",
-    label: "Reduction in ICU OPEX",
-    note: "Claim shown on current live site.",
+    value: "~1 yr",
+    label: "ROI horizon framed around base product value realisation.",
+    note: "Investor pack narrative; not a guarantee.",
   },
   {
     value: "24×7",
-    label: "Connected specialist-led intervention potential",
-    note: "Core promise repeated across site.",
+    label: "Point-in-time ICU care delivery via mobile, per product definition.",
   },
 ] satisfies MetricCard[]
 
 export const hospitalFeatures = [
   {
-    title: "Resource optimisation",
-    body: "Digitised rounds and integrated pathways help hospitals scale care with existing staff and infrastructure.",
-    icon: "building",
-  },
-  {
-    title: "Staff experience",
-    body: "Care teams get flexible, lower-friction workflows with fewer visibility gaps and less repetitive coordination.",
+    title: "Save lives",
+    body: "Earlier detection, continuous context, and faster coordination to reduce avoidable adverse events and mortality risk.",
     icon: "stethoscope",
   },
   {
-    title: "Revenue expansion",
-    body: "The hospital narrative includes post-discharge care, loyalty, and hospital-to-hospital care as new revenue opportunities.",
-    icon: "briefcase",
+    title: "Improve efficiency",
+    body: "Digitised rounds, streamlined workflows, and lower cognitive load so specialist time scales across more patients.",
+    icon: "building",
   },
   {
-    title: "Patient continuity",
-    body: "Data and oversight follow the patient across care settings instead of resetting at every transition.",
-    icon: "globe",
+    title: "Increase brand reputation",
+    body: "Differentiated critical care experience and transparency for patients and referrers.",
+    icon: "badge-check",
+  },
+  {
+    title: "Revenue and utilisation",
+    body: "Stronger bed utilisation, shorter length of stay where clinically appropriate, and pathways for post-discharge continuity.",
+    icon: "briefcase",
   },
 ] satisfies FeatureCard[]
 
 export const investorMetrics = [
   {
-    value: "Multi-Billion USD",
-    label: "India opportunity cited on the current investor page.",
+    value: "Multibillion USD",
+    label: "India opportunity (investor materials).",
   },
   {
-    value: "75%",
-    label: "MVP readiness stated on the live site.",
+    value: ">60%",
+    label: "Product base readiness at funding.",
   },
   {
-    value: "3 years",
-    label: "Breakeven horizon claimed in the current investor narrative.",
+    value: "Year 3",
+    label: "Break-even / exit in model (Impact phase).",
+    note: "Forward-looking.",
   },
 ] satisfies MetricCard[]
 
 export const investorHighlights = [
   {
-    title: "Commercialisation phase",
-    body: "The live investor narrative positions PlasmIT as a product nearing market readiness and seeking growth-oriented partners.",
-    icon: "badge-check",
-  },
-  {
-    title: "Clear buyer pain",
-    body: "Hospital economics, care-team capacity, and intervention speed are all treated as parts of the same platform thesis.",
-    icon: "arrow-right",
-  },
-  {
-    title: "Geo leverage",
-    body: "The business footprint links Australia-based positioning with India market traction and healthcare scale.",
+    title: "India-first GTM",
+    body: "Paid pilot, hospital MOUs, public-sector pathway, and a faster path to scale than higher-barrier regions.",
     icon: "globe",
   },
   {
-    title: "Standards-aware infrastructure",
-    body: "Founding credibility is framed around government strategy work and FHIR interoperability participation.",
+    title: "Product and IP",
+    body: "TRL 4, validated ICU device integrations, provisional IP, and a live Product Advisory Council.",
     icon: "cpu",
+  },
+  {
+    title: "Decentralised mobile ICU",
+    body: "Vendor-agnostic Smart ICU on Mobile™ versus costly vendor-locked tele-ICU command centres.",
+    icon: "activity",
+  },
+  {
+    title: "Utilisation-based SaaS",
+    body: "Roughly $6–$15 per bed/day (tiered) plus ~$325 one-time edge hardware per bed (investor model).",
+    icon: "badge-check",
   },
 ] satisfies FeatureCard[]
 
+export const investorEssentials = [
+  {
+    title: "Market",
+    body: "India ~9.3K hospitals, ~111K ICU beds; Tier 1–2 addressable ~2.8K hospitals / ~31K ICU beds, ~8% CAGR. Multibillion USD opportunity; US expansion after India proof.",
+  },
+  {
+    title: "Traction and product",
+    body: "Paid pilot (leading group), multiple MOUs, public-sector traction. TRL 4, real-time device capture, co-designed AI workflows, provisional IP. Reference visibility: Narayana Health, Ruban Hospitals, Reddy Labs.",
+  },
+] satisfies StoryCard[]
+
+export const investorProblemSolution = {
+  problemTitle: "Fragmented ICU visibility",
+  problemBody:
+    "Off-rounds deterioration and missing live data for remote specialists shrink intervention windows and raise coordination cost: a structural ICU utilisation and delay-risk problem.",
+  solutionTitle: "PiMed (QLMed) on mobile",
+  solutionBody:
+    "Edge-to-cloud streaming, early abnormality signals, and mobile point-in-time ICU care with team collaboration, 24×7.",
+} as const
+
+export const investorCompetitiveRows: SimpleTableRow[] = [
+  [
+    "Offering",
+    "Centralised command centre, no mobility",
+    "Centralised command centre, no mobility",
+    "Integrated ICU monitoring on a mobile device",
+  ],
+  [
+    "Vendor lock-in",
+    "Specific hardware vendors only",
+    "Audio-visual augmentation focus",
+    "Device agnostic with existing ICU equipment",
+  ],
+  [
+    "Adoption pathway",
+    "Hesitant adoption; narrow problem set",
+    "Scepticism toward external intensivist models",
+    "Lightweight deployment; pilot-first; start small and scale",
+  ],
+  [
+    "Affordability",
+    "High CAPEX and OPEX",
+    "High CAPEX and OPEX with delivery challenges",
+    "Utilisation-based pricing; low upfront; scale with usage",
+  ],
+]
+
+export const investorCompetitiveColumns: SimpleTableColumn[] = [
+  "Dimension",
+  "Tele-ICU (e.g. Philips, GE, Siemens)",
+  "Tele-intensivist (e.g. Cloudphysician, CLEW)",
+  "QLMed / PiMed",
+]
+
+export const investorFinancialColumns: SimpleTableColumn[] = [
+  "Year",
+  "Theme",
+  "ICU beds",
+  "Non-ICU beds",
+  "Revenue",
+  "Profitability",
+]
+
+export const investorFinancialRows: SimpleTableRow[] = [
+  [
+    "Year 1",
+    "Adopt",
+    "50",
+    "0",
+    "$27K",
+    "Pre-revenue / 50 ICU bed acquisition",
+  ],
+  [
+    "Year 2",
+    "Buzz",
+    "400",
+    "100",
+    "$1.6M",
+    "Scale ICU and adoption to non-ICU",
+  ],
+  [
+    "Year 3",
+    "Impact",
+    "2,500",
+    "2,000",
+    "$13.2M",
+    ">30% · Break-even · Exit opportunity",
+  ],
+  ["Year 4", "Scale", "5,000", "10,000", "$51.2M", ">50%"],
+  ["Year 5", "Threat", "10,000", "25,000", "$130.7M", ">60%"],
+]
+
+export const investorFundAllocationColumns: SimpleTableColumn[] = [
+  "Category",
+  "Allocation",
+  "Purpose",
+]
+
+export const investorFundAllocationRows: SimpleTableRow[] = [
+  [
+    "Pilot value realisation",
+    "40%",
+    "Execute and demonstrate ROI from hospital pilots",
+  ],
+  [
+    "Product build (MMF)",
+    "35%",
+    "Complete minimum marketable features for commercial deployment",
+  ],
+  [
+    "Marketing and operations",
+    "15%",
+    "Webinars, podcasts, sales, and team operations",
+  ],
+  [
+    "Compliance and IP",
+    "10%",
+    "Regulatory certifications and patent filings",
+  ],
+]
+
+export const investorGtmColumns: SimpleTableColumn[] = ["Milestone", "Timing"]
+
+export const investorGtmRows: SimpleTableRow[] = [
+  [
+    "Current product base feature readiness",
+    ">60% complete at funding",
+  ],
+  ["Product development completion (post-funding)", "Q1–Q4 Year 1"],
+  ["Regulatory compliance and IP/copyright", "Q1–Q3 Year 1"],
+  ["Marketing campaign (webinar/podcast)", "Q2–Q4 Year 1"],
+  ["Pilot launch: select customers (alpha/beta)", "~4 months post-funding"],
+  ["Pilot outcome delivered", "~8 months post-funding"],
+  [
+    "Board presentation · order and PO · revenue realisation",
+    "~10–11 months post-funding",
+  ],
+  ["Commercial launch", "~12 months post-funding"],
+]
+
+export const investorFundAsk = {
+  round: "Seed",
+  amountUsd: "$1.0M USD",
+  valuationUsd: "$25M USD",
+  instrument: "Convertible notes",
+  y1Milestones: [
+    "Product ready for commercial deployment",
+    "Secure revenue from 1–2 hospitals",
+    "Clinical and financial ROI quantified and documented",
+    "Regulatory compliance and certifications achieved",
+    "Patents secured",
+    "Testimonials in hand and a strong hospital pipeline ready to scale",
+  ],
+} as const
+
+export const investorDisclaimer =
+  "Figures and timelines are taken from internal investor materials and are forward-looking. They are not an offer to sell or a solicitation to buy securities. Past or projected performance is not indicative of future results."
+
 export const aboutHighlights = [
   {
-    title: "Founded to close a care gap",
-    body: "PlasmIT frames its origin around personal and professional insight into the limitations of critical care delivery.",
+    title: "Entity and focus",
+    body: "PlasmIT Pty Ltd is an Australia-headquartered health-tech company in critical care, building PiMed (QLMed), Smart ICU on Mobile™.",
   },
   {
-    title: "Built by health and technology operators",
-    body: "The current site repeatedly pairs clinical credibility with digital transformation, interoperability, and infrastructure expertise.",
+    title: "Founding credibility",
+    body: foundingTeamBackground,
   },
   {
-    title: "Focused on world-class care access",
-    body: "The core mission is to make high-quality care more accessible, more continuous, and less dependent on location.",
+    title: "Mission alignment",
+    body: `${companyMission} ${companyVision}`,
   },
 ] satisfies StoryCard[]
 
@@ -329,67 +526,62 @@ export const values = [
   },
 ] satisfies StoryCard[]
 
+export const visionMissionCards = [
+  { title: "Vision", body: companyVision },
+  { title: "Mission", body: companyMission },
+] satisfies StoryCard[]
+
 export const leadershipProfileSections = [
   {
-    title: "Leadership",
+    title: "Core team",
     profiles: [
       {
         name: "Awadhesh Kumar",
+        role: "Founder and Chief Executive Officer",
+        summary:
+          "Leads company strategy, fundraising, and hospital and partner relationships.",
+      },
+      {
+        name: "Ramesh Subramaniam",
         role: "Chief Technology Officer",
         summary:
-          "20+ years in digital products and transformation, with a track record of translating emerging technology into business outcomes.",
+          "Owns technology architecture, engineering execution, and platform scalability.",
       },
       {
         name: "Dr. Kamaljit Parmar",
-        role: "Chief Product Officer",
+        role: "Intensivist · Product owner",
         summary:
-          "Critical care specialist with more than two decades of experience across Australia, the UK, and India.",
+          "Defines clinical product requirements, ICU workflows, and safety-critical use cases.",
       },
       {
-        name: "Dr. Subrata Panda",
-        role: "Chief Medical Officer",
+        name: "Dr. Kamal Sharma",
+        role: "Cardiologist · AI lead",
         summary:
-          "Senior clinical leader with 40+ years at AIIMS New Delhi and deep academic recognition.",
+          "Aligns clinical AI, translational research, and cardiology domain depth with the product roadmap.",
+      },
+      {
+        name: "Sushil Kumar",
+        role: "Engineering lead",
+        summary:
+          "Drives delivery of integrations, edge-to-cloud pipelines, and release quality.",
       },
       {
         name: "Dr. Supten Sarbadhikari",
-        role: "Chief Interoperability Officer",
+        role: "Interoperability lead",
         summary:
-          "Healthcare digitisation leader connected to HL7/FHIR, WHO advisory work, and national digital health programmes.",
+          "Leads HL7/FHIR interoperability strategy and national digital health alignment.",
       },
       {
-        name: "Dr. Steven Schilders",
-        role: "Chief Data Officer",
+        name: "Dr. Chetan Mehndiratta",
+        role: "Compliance and growth lead",
         summary:
-          "Data-first healthcare systems leader with experience in security, digital twins, and large-scale platform delivery.",
-      },
-    ],
-  },
-  {
-    title: "Product & delivery",
-    profiles: [
-      {
-        name: "Kartik Thakkar",
-        role: "Product Development Lead",
-        summary:
-          "Senior business and technology operator focused on delivery assurance, portfolio execution, and capability uplift.",
+          "Owns regulatory compliance pathways, quality systems, and growth execution.",
       },
       {
-        name: "Dr. Chandrakant Pandav",
-        role: "Product SME",
+        name: "Sanjit Anand",
+        role: "Implementation lead",
         summary:
-          "Public health leader and advisor with decades of policy, clinical, and institutional expertise.",
-      },
-    ],
-  },
-  {
-    title: "Scientific & research",
-    profiles: [
-      {
-        name: "Dr. Kamal Sharma",
-        role: "Scientific & Research Lead",
-        summary:
-          "Interventional cardiologist with extensive academic output, awards, and translational research experience.",
+          "Runs hospital deployments, onboarding, and value realisation with customers.",
       },
     ],
   },
@@ -403,29 +595,31 @@ export const offices = [
   {
     label: "Australia",
     address: contactDetails.australia,
-    note: "Primary office shown in the current page-level contact blocks.",
+    note: "Primary headquarters for PlasmIT Pty Ltd.",
   },
-  // {
-  //   label: "India",
-  //   address: contactDetails.india,
-  //   note: "Subsidiary and market footprint referenced throughout the company narrative.",
-  // },
+] as const
+
+export const officeMapLocations = [
+  {
+    label: "PlasmIT, Docklands",
+    position: { lat: -37.82125, lng: 144.95565 } as const,
+    address: contactDetails.australia,
+  },
 ] as const
 
 export const contactFaqs = [
   {
-    question: "What enquiries are supported?",
+    question: "Which product names should I use?",
     answer:
-      "The current site routes investor, hospital, and general enquiries. This rebuild keeps the same intake structure.",
+      "PiMed is the commercial product name; QLMed appears in investor materials as an aligned identifier. Smart ICU on Mobile™ is the trademarked positioning line.",
   },
   {
-    question: "Which office should be treated as canonical?",
-    answer:
-      "The live site shows two Australian addresses in different sections. This redesign surfaces Docklands as the primary office and preserves the alternate footer address for reference.",
+    question: "How should I contact leadership?",
+    answer: `General enquiries: ${contactDetails.email}. Founder contact on file in investor materials: ${contactDetails.founderEmail}.`,
   },
   {
-    question: "What is the main conversion path?",
+    question: "Are financial figures on the investor page binding?",
     answer:
-      "For this redesign the primary conversion is enquiry-driven: hospital conversations, investor outreach, and product discovery requests.",
+      "No. They summarise forward-looking plans from investor materials and are provided for context only, not as investment advice or an offer to sell securities.",
   },
 ] as const

@@ -1,4 +1,4 @@
-import { contactFaqs, values } from "@/lib/site-content"
+import { contactFaqs, values, visionMissionCards } from "@/lib/site-content"
 import { SiteFrame } from "@/components/marketing/SiteFrame"
 import {
   CTASection,
@@ -12,25 +12,30 @@ export function VisionAndValuesPageView() {
     <SiteFrame>
       <PageHero
         badge="Vision & Values"
-        title="A calmer articulation of the mission, principles, and care philosophy behind PiMed."
-        intro="The public vision statement focuses on reimagining healthcare services through technology and innovation, while the broader site language points to a 6C maturity framework built around connected, contextual, and compliant care."
+        title="The statements carried in investor materials, plus how we operate day to day."
+        intro="Official vision and mission are quoted from the structured investor pack; the six values express how PlasmIT executes against that charter."
         primary={{ label: "Contact the Team", href: "/contact-us" }}
         secondary={{ label: "Back to About Us", href: "/about-us" }}
-        asideTitle="Why this page matters"
-        asideBody="Trust pages should feel measured and specific. This version removes filler and translates the public messaging into six plain-language principles."
+      />
+
+      <StoryGrid
+        badge="Charter"
+        title="Vision and mission."
+        description="Verbatim framing from the PlasmIT investor pack extraction."
+        items={[...visionMissionCards]}
       />
 
       <StoryGrid
         badge="Six principles"
-        title="A working interpretation of the public-facing 6C framework."
-        description="The current site references the framework but does not fully enumerate it in text. These principles are derived from the repeated language across the live pages."
+        title="Operating values for product and delivery."
+        description="Practical principles that align teams around connected, contextual, compliant care."
         items={values}
       />
 
       <FAQSection
         badge="Clarity"
-        title="Important context behind the current public narrative."
-        description="These notes explain where the source material is explicit and where the redesign consolidates or interprets repeated content."
+        title="Naming, contacts, and investor content."
+        description="Quick answers tied to the current public site and data room narrative."
         items={contactFaqs}
       />
 

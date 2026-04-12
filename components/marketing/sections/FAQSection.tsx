@@ -22,7 +22,7 @@ export function FAQSection({
   return (
     <Section tone="muted">
       <SectionHeading badge={badge} title={title} description={description} />
-      <Card className="mt-10 border border-foreground/8 bg-card/72 text-card-foreground">
+      <Card className="mt-6 border border-foreground/8 bg-card/72 text-card-foreground">
         <CardContent className="pt-4">
           <Accordion type="single" collapsible>
             {items.map((item) => (

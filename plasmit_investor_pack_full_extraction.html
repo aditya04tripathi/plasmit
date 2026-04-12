@@ -1,0 +1,1421 @@
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: var(--font-sans);
+  }
+  .wrap {
+    padding: 20px 0;
+    max-width: 680px;
+  }
+  h1 {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--color-text-primary);
+    margin-bottom: 4px;
+  }
+  .subtitle {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+    margin-bottom: 20px;
+  }
+  .toc {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 24px;
+  }
+  .toc-btn {
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    border: 1px solid var(--color-border-secondary);
+    background: var(--color-background-secondary);
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .toc-btn:hover {
+    background: var(--color-background-tertiary);
+  }
+  section {
+    margin-bottom: 28px;
+    border: 1px solid var(--color-border-tertiary);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .sec-head {
+    padding: 12px 16px;
+    background: var(--color-background-secondary);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .sec-head h2 {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--color-text-primary);
+  }
+  .tag {
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    background: var(--color-background-tertiary);
+    color: var(--color-text-secondary);
+  }
+  .sec-body {
+    padding: 14px 16px;
+  }
+  .row {
+    display: grid;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+  .row-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+  .row-3 {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .card {
+    background: var(--color-background-secondary);
+    border-radius: 8px;
+    padding: 10px 12px;
+  }
+  .card-label {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--color-text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    margin-bottom: 4px;
+  }
+  .card-val {
+    font-size: 13px;
+    color: var(--color-text-primary);
+    line-height: 1.5;
+  }
+  .card-val.big {
+    font-size: 18px;
+    font-weight: 500;
+  }
+  ul.plain {
+    list-style: none;
+    padding: 0;
+  }
+  ul.plain li {
+    font-size: 13px;
+    color: var(--color-text-primary);
+    padding: 4px 0;
+    border-bottom: 1px solid var(--color-border-tertiary);
+    line-height: 1.5;
+  }
+  ul.plain li:last-child {
+    border-bottom: none;
+  }
+  ul.plain li::before {
+    content: "›";
+    margin-right: 8px;
+    color: var(--color-text-tertiary);
+  }
+  .kv {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 5px 0;
+    border-bottom: 1px solid var(--color-border-tertiary);
+    font-size: 13px;
+  }
+  .kv:last-child {
+    border-bottom: none;
+  }
+  .kv-k {
+    color: var(--color-text-secondary);
+  }
+  .kv-v {
+    color: var(--color-text-primary);
+    font-weight: 500;
+    text-align: right;
+    max-width: 60%;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+  th {
+    background: var(--color-background-tertiary);
+    color: var(--color-text-secondary);
+    font-weight: 500;
+    padding: 6px 10px;
+    text-align: left;
+    border-bottom: 1px solid var(--color-border-secondary);
+  }
+  td {
+    padding: 6px 10px;
+    border-bottom: 1px solid var(--color-border-tertiary);
+    color: var(--color-text-primary);
+  }
+  tr:last-child td {
+    border-bottom: none;
+  }
+  .pill {
+    display: inline-block;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin: 2px;
+  }
+  .pill-blue {
+    background: #e6f1fb;
+    color: #0c447c;
+  }
+  .pill-green {
+    background: #eaf3de;
+    color: #27500a;
+  }
+  .pill-amber {
+    background: #faeeda;
+    color: #633806;
+  }
+  .pill-teal {
+    background: #e1f5ee;
+    color: #085041;
+  }
+  .pill-coral {
+    background: #faece7;
+    color: #712b13;
+  }
+  @media (prefers-color-scheme: dark) {
+    .pill-blue {
+      background: #0c447c;
+      color: #b5d4f4;
+    }
+    .pill-green {
+      background: #27500a;
+      color: #c0dd97;
+    }
+    .pill-amber {
+      background: #633806;
+      color: #fac775;
+    }
+    .pill-teal {
+      background: #085041;
+      color: #9fe1cb;
+    }
+    .pill-coral {
+      background: #712b13;
+      color: #f5c4b3;
+    }
+  }
+  .comp-row {
+    display: grid;
+    grid-template-columns: 120px 1fr 1fr 1fr;
+    gap: 0;
+    border: 1px solid var(--color-border-tertiary);
+    border-radius: 8px;
+    overflow: hidden;
+    font-size: 12px;
+  }
+  .comp-cell {
+    padding: 7px 10px;
+    border-right: 1px solid var(--color-border-tertiary);
+    border-bottom: 1px solid var(--color-border-tertiary);
+    color: var(--color-text-primary);
+  }
+  .comp-cell:last-child {
+    border-right: none;
+  }
+  .comp-hdr {
+    background: var(--color-background-tertiary);
+    font-weight: 500;
+    color: var(--color-text-secondary);
+  }
+  .comp-row-last .comp-cell {
+    border-bottom: none;
+  }
+  .bad {
+    color: #993c1d;
+  }
+  .good {
+    color: #0f6e56;
+  }
+  .team-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .tm {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 8px 10px;
+    background: var(--color-background-secondary);
+    border-radius: 8px;
+  }
+  .tm-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-text-primary);
+  }
+  .tm-role {
+    font-size: 11px;
+    color: var(--color-text-secondary);
+  }
+  .divider {
+    height: 1px;
+    background: var(--color-border-tertiary);
+    margin: 10px 0;
+  }
+</style>
+
+<div class="wrap">
+  <h1>PlasmIT - Investor Pack</h1>
+  <div class="subtitle">
+    Full structured extraction · PlasmIT Pty Ltd © 2026 · Product: PiMed (QLMed) - Smart ICU on Mobile™
+  </div>
+
+  <div class="toc">
+    <span
+      class="toc-btn"
+      onclick="
+        document.getElementById('s1').scrollIntoView({ behavior: 'smooth' })
+      "
+      >Company</span
+    >
+    <span
+      class="toc-btn"
+      onclick="
+        document.getElementById('s2').scrollIntoView({ behavior: 'smooth' })
+      "
+      >Problem</span
+    >
+    <span
+      class="toc-btn"
+      onclick="
+        document.getElementById('s3').scrollIntoView({ behavior: 'smooth' })
+      "
+      >Market</span
+    >
+    <span
+      class="toc-btn"
+      onclick="
+        document.getElementById('s4').scrollIntoView({ behavior: 'smooth' })
+      "
+      >Solution</span
+    >
+    <span
+      class="toc-btn"
+      onclick="
+        document.getElementById('s5').scrollIntoView({ behavior: 'smooth' })
+      "
+      >Competitive Edge</span
+    >
+    <span
+      class="toc-btn"
+      onclick="
+        document.getElementById('s6').scrollIntoView({ behavior: 'smooth' })
+      "
+      >Traction</span
+    >
+    <span
+      class="toc-btn"
+      onclick="
+        document.getElementById('s7').scrollIntoView({ behavior: 'smooth' })
+      "
+      >Business Model</span
+    >
+    <span
+      class="toc-btn"
+      onclick="
+        document.getElementById('s8').scrollIntoView({ behavior: 'smooth' })
+      "
+      >Financials</span
+    >
+    <span
+      class="toc-btn"
+      onclick="
+        document.getElementById('s9').scrollIntoView({ behavior: 'smooth' })
+      "
+      >Roadmap & GTM</span
+    >
+    <span
+      class="toc-btn"
+      onclick="
+        document.getElementById('s10').scrollIntoView({ behavior: 'smooth' })
+      "
+      >Team</span
+    >
+    <span
+      class="toc-btn"
+      onclick="
+        document.getElementById('s11').scrollIntoView({ behavior: 'smooth' })
+      "
+      >Fund Ask</span
+    >
+  </div>
+
+  <!-- COMPANY -->
+  <section id="s1">
+    <div class="sec-head">
+      <h2>1 · Company Overview</h2>
+      <span class="tag">About PlasmIT</span>
+    </div>
+    <div class="sec-body">
+      <div class="row row-3">
+        <div class="card">
+          <div class="card-label">Entity</div>
+          <div class="card-val">PlasmIT Pty Ltd</div>
+        </div>
+        <div class="card">
+          <div class="card-label">HQ</div>
+          <div class="card-val">Australia</div>
+        </div>
+        <div class="card">
+          <div class="card-label">Sector</div>
+          <div class="card-val">Health-tech / Critical Care</div>
+        </div>
+      </div>
+      <div class="row row-2">
+        <div class="card">
+          <div class="card-label">Vision</div>
+          <div class="card-val">
+            Reimagine Healthcare by revolutionising the critical care experience
+            through technology and innovation
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-label">Mission</div>
+          <div class="card-val">
+            Making care more accessible, affordable, and life-saving through
+            connected healthcare ecosystems
+          </div>
+        </div>
+      </div>
+      <div class="card" style="margin-top: 10px">
+        <div class="card-label">Founding Team Background</div>
+        <div class="card-val">
+          Healthcare visionaries and technology leaders who contributed to
+          national healthcare strategies for Australian and Indian governments.
+          Active contributors to global healthcare interoperability standards
+          including FHIR (Fast Healthcare Interoperability Resources), enabling
+          seamless data exchange across healthcare value chains.
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div
+        style="
+          font-size: 12px;
+          color: var(--color-text-secondary);
+          margin-top: 4px;
+        "
+      >
+        Hospital Benefits Claimed:
+      </div>
+      <div style="margin-top: 6px">
+        <span class="pill pill-blue">Save Lives</span>
+        <span class="pill pill-teal">Improve Efficiency</span>
+        <span class="pill pill-green">Increase Brand Reputation</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section id="s2">
+    <div class="sec-head">
+      <h2>2 · Problem Statement</h2>
+      <span class="tag">Critical Care Gaps</span>
+    </div>
+    <div class="sec-body">
+      <div class="row row-2">
+        <div class="card">
+          <div class="card-label">Scenario A - Patient in ICU</div>
+          <div class="card-val">
+            Patient deteriorates (blood in NG tube, drop in BP, high heart rate)
+            while senior specialist is physically outside the hospital - golden
+            hour is lost.
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-label">Scenario B - Specialist Outside</div>
+          <div class="card-val">
+            Remote specialist lacks real-time access to clinical notes, vital
+            signs, prescribed medication, clinical symptoms, and investigations - cannot act.
+          </div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div
+        style="
+          font-size: 12px;
+          font-weight: 500;
+          color: var(--color-text-secondary);
+          margin-bottom: 8px;
+        "
+      >
+        Quantified Global Implications
+      </div>
+      <table>
+        <tr>
+          <th>Metric</th>
+          <th>Region</th>
+          <th>Value</th>
+        </tr>
+        <tr>
+          <td>ICU delay-related deaths</td>
+          <td>USA</td>
+          <td>53,000/year</td>
+        </tr>
+        <tr>
+          <td>Litigation cost (ICU delay)</td>
+          <td>USA</td>
+          <td>~$55.6B</td>
+        </tr>
+        <tr>
+          <td>Inefficient collaboration cost</td>
+          <td>USA</td>
+          <td>~$12B/year</td>
+        </tr>
+        <tr>
+          <td>Medical error deaths</td>
+          <td>India</td>
+          <td>5 Million/year</td>
+        </tr>
+        <tr>
+          <td>Sub-optimal ICU bed utilisation</td>
+          <td>Global</td>
+          <td>53%</td>
+        </tr>
+        <tr>
+          <td>Avoidable ICU cost (TCO)</td>
+          <td>Global</td>
+          <td>6.4% (~$148.2B)</td>
+        </tr>
+        <tr>
+          <td>Lost revenue/month</td>
+          <td>USA hospitals</td>
+          <td>$50.7B</td>
+        </tr>
+        <tr>
+          <td>Lost revenue/month</td>
+          <td>Low/mid-income countries</td>
+          <td>$52B</td>
+        </tr>
+        <tr>
+          <td>Healthcare workers died (COVID)</td>
+          <td>Global (WHO)</td>
+          <td>115,000</td>
+        </tr>
+        <tr>
+          <td>Doctors lost in India (COVID)</td>
+          <td>India (IMA)</td>
+          <td>1,341</td>
+        </tr>
+      </table>
+      <div class="divider"></div>
+      <div
+        style="
+          font-size: 12px;
+          font-weight: 500;
+          color: var(--color-text-secondary);
+          margin-bottom: 8px;
+        "
+      >
+        Hospital Implications (4 Pain Points)
+      </div>
+      <div class="row row-2">
+        <div class="card">
+          <div class="card-label">Clinical</div>
+          <div class="card-val">
+            Reduced quality of care · Increased mortality
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-label">Financial</div>
+          <div class="card-val">
+            Reduced revenue & profits · Lost brand reputation
+          </div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div
+        style="
+          font-size: 12px;
+          font-weight: 500;
+          color: var(--color-text-secondary);
+          margin-bottom: 8px;
+        "
+      >
+        Market Validation Sources
+      </div>
+      <ul class="plain">
+        <li>
+          24/7 interventionist model can save 53,850 lives/year in USA, reduce
+          mortality ~60% (NCBI)
+        </li>
+        <li>
+          India medical error deaths ~5M/year can be cut by 50% (Harvard study,
+          Business Standard)
+        </li>
+        <li>
+          India: shortage of ~600K doctors and ~2M nurses; ranked 145/195 on HAQ
+          Index
+        </li>
+        <li>
+          Point-in-time intervention could avoid 12.8% of total ICU bed-days and
+          6.4% of total ICU costs (JAMA)
+        </li>
+        <li>
+          US hospitals waste $12B/year due to communication inefficiencies, 47%
+          from wasted nurse/physician time (NCBI)
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- MARKET -->
+  <section id="s3">
+    <div class="sec-head">
+      <h2>3 · Market Size</h2>
+      <span class="tag">India First, USA Next</span>
+    </div>
+    <div class="sec-body">
+      <div class="row row-3">
+        <div class="card">
+          <div class="card-label">Total Hospitals (India)</div>
+          <div class="card-val big">9,300</div>
+        </div>
+        <div class="card">
+          <div class="card-label">Total ICU Beds (India)</div>
+          <div class="card-val big">111K</div>
+        </div>
+        <div class="card">
+          <div class="card-label">Non-ICU Beds</div>
+          <div class="card-val big">2,300K</div>
+        </div>
+      </div>
+      <div class="row row-3">
+        <div class="card">
+          <div class="card-label">Addressable Hospitals (Tier 1&2)</div>
+          <div class="card-val big">2,800</div>
+        </div>
+        <div class="card">
+          <div class="card-label">Addressable ICU Beds</div>
+          <div class="card-val big">31K</div>
+        </div>
+        <div class="card">
+          <div class="card-label">Non-ICU Addressable</div>
+          <div class="card-val big">200K</div>
+        </div>
+      </div>
+      <div class="kv">
+        <span class="kv-k">Market CAGR</span><span class="kv-v">8%</span>
+      </div>
+      <div class="kv">
+        <span class="kv-k">India opportunity</span
+        ><span class="kv-v">Multibillion USD</span>
+      </div>
+      <div class="kv">
+        <span class="kv-k">USA opportunity</span
+        ><span class="kv-v">Higher multibillion USD (untapped)</span>
+      </div>
+      <div class="divider"></div>
+      <div
+        style="
+          font-size: 12px;
+          font-weight: 500;
+          color: var(--color-text-secondary);
+          margin-bottom: 8px;
+        "
+      >
+        Why India First?
+      </div>
+      <div style="margin-top: 4px">
+        <span class="pill pill-green">Paid Pilot & Signed MOUs</span>
+        <span class="pill pill-teal">Massive untapped opportunity</span>
+        <span class="pill pill-amber">Economical compliance readiness</span>
+        <span class="pill pill-blue">Lowest barrier to entry</span>
+        <span class="pill pill-coral">Fastest speed to market</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUTION -->
+  <section id="s4">
+    <div class="sec-head">
+      <h2>4 · Solution - PiMed (QLMed)</h2>
+      <span class="tag">Smart ICU on Mobile™</span>
+    </div>
+    <div class="sec-body">
+      <div class="card" style="margin-bottom: 10px">
+        <div class="card-label">One-line definition</div>
+        <div class="card-val">
+          An Intelligent and Integrated Care Delivery ecosystem for hospitals to
+          deliver point-in-time ICU care via mobile devices, 24×7.
+        </div>
+      </div>
+      <div
+        style="
+          font-size: 12px;
+          font-weight: 500;
+          color: var(--color-text-secondary);
+          margin-bottom: 8px;
+        "
+      >
+        Three Core Pillars
+      </div>
+      <div class="row row-3">
+        <div class="card">
+          <div class="card-label">24×7 Continuous Monitoring</div>
+          <div class="card-val">
+            Automated real-time medical device data streaming with anomaly
+            highlights, intelligent alerts & insights
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-label">24×7 Connected Care</div>
+          <div class="card-val">
+            Point-in-time care intervention through real-time health data,
+            platform-enabled decision and seamless collaboration
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-label">Compliant & Fault-Tolerant Platform</div>
+          <div class="card-val">
+            Secured, highly available, interoperable and compliant data capture,
+            transfer, storage and display
+          </div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div
+        style="
+          font-size: 12px;
+          font-weight: 500;
+          color: var(--color-text-secondary);
+          margin-bottom: 8px;
+        "
+      >
+        Key Features
+      </div>
+      <ul class="plain">
+        <li>Smart ICU on Mobile™ - full ICU dashboard on a mobile device</li>
+        <li>Continuous monitoring with instant high-risk alerts</li>
+        <li>Early detection of ICU patient deterioration</li>
+        <li>Actionable guidance during critical situations</li>
+        <li>Data asset to enable predictive ICU care over time</li>
+        <li>AI-driven clinical pathways, engagements & workflow</li>
+        <li>Connects instantly with remote doctors for timely intervention</li>
+        <li>
+          Continuous data-learning loop enabling predictive ICU intelligence
+        </li>
+        <li>Gen AI–enabled triage & clinical pathways</li>
+        <li>Seamless instant collaboration between care teams</li>
+      </ul>
+      <div class="divider"></div>
+      <div
+        style="
+          font-size: 12px;
+          font-weight: 500;
+          color: var(--color-text-secondary);
+          margin-bottom: 8px;
+        "
+      >
+        Architecture Stack
+      </div>
+      <div class="row row-2">
+        <div class="card">
+          <div class="card-label">Hospital Side</div>
+          <div class="card-val">
+            Medical devices → AI-enabled Edge Devices → In-transit security →
+            Cloud
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-label">Clinician Side</div>
+          <div class="card-val">
+            Digital channel (including mobile) → Care Delivery Platform → Secure
+            Data Store → AI/ML Extension
+          </div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div
+        style="
+          font-size: 12px;
+          font-weight: 500;
+          color: var(--color-text-secondary);
+          margin-bottom: 8px;
+        "
+      >
+        Value to Hospitals & Care Providers
+      </div>
+      <div style="margin-top: 4px">
+        <span class="pill pill-blue">↑ Revenue</span>
+        <span class="pill pill-green">↑ Profitability</span>
+        <span class="pill pill-teal">↑ Utilisation</span>
+        <span class="pill pill-amber">↑ Brand Reputation</span>
+        <span class="pill pill-coral">↑ Working Conditions</span>
+      </div>
+      <div
+        style="
+          font-size: 12px;
+          font-weight: 500;
+          color: var(--color-text-secondary);
+          margin: 10px 0 6px;
+        "
+      >
+        Value to Care Recipients & Families
+      </div>
+      <div>
+        <span class="pill pill-blue">Affordable</span>
+        <span class="pill pill-green">Personalised</span>
+        <span class="pill pill-teal">Health Wallet</span>
+        <span class="pill pill-amber">Accessibility</span>
+        <span class="pill pill-coral">Peace of Mind</span>
+      </div>
+      <div class="divider"></div>
+      <div
+        style="
+          font-size: 12px;
+          font-weight: 500;
+          color: var(--color-text-secondary);
+          margin-bottom: 8px;
+        "
+      >
+        Hospital ROI Drivers
+      </div>
+      <ul class="plain">
+        <li>
+          Reduction in medical errors → avoids legal implications and reputation
+          risk
+        </li>
+        <li>
+          Enhanced care provider utilisation → reduced cognitive workload, more
+          patients per clinician
+        </li>
+        <li>
+          Decreased LOS (Length of Stay) → more patient inflow through optimal
+          ICU bed utilisation
+        </li>
+        <li>
+          Streamlined workflow → reduces manual tasks and administrative burden
+          on care staff
+        </li>
+        <li>
+          Reduced waste management → AI/ML analytics minimises resource waste
+        </li>
+        <li>
+          Proactive and preventive care → prevents costly complications or
+          emergencies
+        </li>
+        <li>ROI within 1 year with savings ~5× with base product features</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- COMPETITIVE EDGE -->
+  <section id="s5">
+    <div class="sec-head">
+      <h2>5 · Competitive Landscape</h2>
+      <span class="tag">Unique Value Proposition</span>
+    </div>
+    <div class="sec-body">
+      <div class="row row-2" style="margin-bottom: 10px">
+        <div class="card">
+          <div class="card-label">Positioning claim 1</div>
+          <div class="card-val">
+            Affordable "Vendor Agnostic Smart ICU on Mobile" over Expensive
+            "Vendor-specific Tele-ICU"
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-label">Positioning claim 2</div>
+          <div class="card-val">
+            Decentralised "Future Ways of Care" over Centralised Command Centre
+          </div>
+        </div>
+      </div>
+      <div class="comp-row">
+        <div class="comp-cell comp-hdr">Dimension</div>
+        <div class="comp-cell comp-hdr">Tele-ICU (Philips, GE, Siemens)</div>
+        <div class="comp-cell comp-hdr">
+          Tele-Intensivist (Cloudphysician, CLEW)
+        </div>
+        <div class="comp-cell comp-hdr" style="color: #0f6e56">
+          QLMed / PiMed
+        </div>
+      </div>
+      <div class="comp-row">
+        <div class="comp-cell comp-hdr">Offering</div>
+        <div class="comp-cell bad">
+          Centralised Command Centre - no mobility
+        </div>
+        <div class="comp-cell bad">
+          Centralised Command Centre - no mobility
+        </div>
+        <div class="comp-cell good">
+          Integrated ICU monitoring on mobile device
+        </div>
+      </div>
+      <div class="comp-row">
+        <div class="comp-cell comp-hdr">Vendor lock-in</div>
+        <div class="comp-cell bad">Only specific hardware vendor devices</div>
+        <div class="comp-cell bad">
+          Audio-visual tech care augmentation only
+        </div>
+        <div class="comp-cell good">
+          Device agnostic - works with existing ICU equipment
+        </div>
+      </div>
+      <div class="comp-row">
+        <div class="comp-cell comp-hdr">Adoption pathway</div>
+        <div class="comp-cell bad">
+          Hesitant - lacks seamless experience; addresses small problem set
+        </div>
+        <div class="comp-cell bad">
+          Sceptical - external intensivist not preferred
+        </div>
+        <div class="comp-cell good">
+          Lightweight deployment, pilot-first, start small & scale
+        </div>
+      </div>
+      <div class="comp-row comp-row-last">
+        <div class="comp-cell comp-hdr">Affordability</div>
+        <div class="comp-cell bad">High CAPEX + High OPEX</div>
+        <div class="comp-cell bad">
+          High CAPEX + OPEX with quality delivery challenges
+        </div>
+        <div class="comp-cell good">
+          Utilisation-based pricing - low upfront cost, scale per usage
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRACTION -->
+  <section id="s6">
+    <div class="sec-head">
+      <h2>6 · Traction & Accomplishments</h2>
+      <span class="tag">Market Adoption · Product · Investments</span>
+    </div>
+    <div class="sec-body">
+      <div class="row row-3">
+        <div class="card">
+          <div class="card-label">Market Adoption</div>
+          <ul class="plain" style="margin-top: 6px">
+            <li>Paid pilot secured with a leading hospital group</li>
+            <li>MoUs signed with multiple hospitals</li>
+            <li>Key success factors agreed for value realisation</li>
+            <li>
+              Government health traction - public sector pathway validated
+            </li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-label">Product State</div>
+          <ul class="plain" style="margin-top: 6px">
+            <li>TRL 4 established - technology fully de-risked</li>
+            <li>Complex features built & tested in controlled environment</li>
+            <li>
+              Integrated with select ICU devices, real-time data capture
+              validated
+            </li>
+            <li>
+              AI-driven clinical workflows co-designed with health professionals
+            </li>
+            <li>Provisional IP filed to protect key technology components</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-label">Investments & Governance</div>
+          <ul class="plain" style="margin-top: 6px">
+            <li>Founding team with deep healthcare & technology expertise</li>
+            <li>Backed by industry stakeholders</li>
+            <li>Core execution team ready with investments</li>
+            <li>Two Provisional IP filings completed</li>
+            <li>
+              Product Advisory Council live (clinical, technology & strategy
+              leaders)
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div
+        style="
+          font-size: 12px;
+          font-weight: 500;
+          color: var(--color-text-secondary);
+          margin-bottom: 8px;
+        "
+      >
+        Testimonials (Healthcare Thought Leaders)
+      </div>
+      <div>
+        <span class="pill pill-blue">Narayana Health</span>
+        <span class="pill pill-teal">Ruban Hospitals</span>
+        <span class="pill pill-amber">Reddy Labs</span>
+      </div>
+      <div class="divider"></div>
+      <div
+        style="
+          font-size: 12px;
+          font-weight: 500;
+          color: var(--color-text-secondary);
+          margin-bottom: 8px;
+        "
+      >
+        Pilot Hospital Targets (India) - Maturity Analysis
+      </div>
+      <table>
+        <tr>
+          <th>Hospital</th>
+          <th>Process Accreditation</th>
+          <th>Digital Adoption</th>
+          <th>ICU/OT Digitisation</th>
+          <th>IT Maturity</th>
+        </tr>
+        <tr>
+          <td>Hospital A - Delhi</td>
+          <td>Significant</td>
+          <td>Significant</td>
+          <td>Partial</td>
+          <td>Low</td>
+        </tr>
+        <tr>
+          <td>Hospital B - Bangalore</td>
+          <td>Partial</td>
+          <td>Partial</td>
+          <td>Low</td>
+          <td>Partial</td>
+        </tr>
+        <tr>
+          <td>Hospital C - Kolkata</td>
+          <td>Partial</td>
+          <td>Low</td>
+          <td>Low</td>
+          <td>Significant</td>
+        </tr>
+        <tr>
+          <td>Hospital D - Ahmedabad</td>
+          <td>Partial</td>
+          <td>Partial</td>
+          <td>Significant</td>
+          <td>Significant</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- BUSINESS MODEL -->
+  <section id="s7">
+    <div class="sec-head">
+      <h2>7 · Business Model</h2>
+      <span class="tag">SaaS · Utilisation-Based</span>
+    </div>
+    <div class="sec-body">
+      <div class="row row-3">
+        <div class="card">
+          <div class="card-label">Model</div>
+          <div class="card-val">
+            SaaS - Utilisation-based pricing (per bed per day)
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-label">Base price range</div>
+          <div class="card-val big">$6 – $15</div>
+          <div
+            class="card-val"
+            style="font-size: 11px; color: var(--color-text-secondary)"
+          >
+            per bed/day (tiered)
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-label">One-time hardware cost</div>
+          <div class="card-val big">$325</div>
+          <div
+            class="card-val"
+            style="font-size: 11px; color: var(--color-text-secondary)"
+          >
+            per bed (edge computing device)
+          </div>
+        </div>
+      </div>
+      <div class="kv">
+        <span class="kv-k">Primary customer</span
+        ><span class="kv-v">Direct to hospital - in-patient care</span>
+      </div>
+      <div class="kv">
+        <span class="kv-k">Pricing options</span
+        ><span class="kv-v">Fixed pricing vs utilisation-based pricing</span>
+      </div>
+      <div class="divider"></div>
+      <div
+        style="
+          font-size: 12px;
+          font-weight: 500;
+          color: var(--color-text-secondary);
+          margin-bottom: 8px;
+        "
+      >
+        Target Ward Types (Current Focus)
+      </div>
+      <div>
+        <span class="pill pill-coral">ICU (General/Specialised)</span>
+        <span class="pill pill-blue">General Ward / Other Specialty</span>
+        <span class="pill pill-teal">Private Ward</span>
+        <span class="pill pill-amber">Emergency Ward</span>
+        <span class="pill pill-green">Semi-ICU (HDU/CCU)</span>
+        <span class="pill pill-blue">Post-discharge Care</span>
+      </div>
+      <div class="divider"></div>
+      <div
+        style="
+          font-size: 12px;
+          font-weight: 500;
+          color: var(--color-text-secondary);
+          margin-bottom: 8px;
+        "
+      >
+        Tiered Pricing Factors
+      </div>
+      <ul class="plain">
+        <li>Dedicated support level</li>
+        <li>Special devices integration (Medical IoT)</li>
+        <li>Advanced features (AI/ML)</li>
+        <li>User provisioning scale</li>
+        <li>Storage for compliance</li>
+        <li>Number and type of medical devices connected</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FINANCIALS -->
+  <section id="s8">
+    <div class="sec-head">
+      <h2>8 · Financial Projections</h2>
+      <span class="tag">5-Year Plan · $USD</span>
+    </div>
+    <div class="sec-body">
+      <table>
+        <tr>
+          <th>Year</th>
+          <th>Theme</th>
+          <th>ICU Beds</th>
+          <th>Non-ICU Beds</th>
+          <th>Revenue</th>
+          <th>Profitability</th>
+        </tr>
+        <tr>
+          <td>Year 1</td>
+          <td>Adopt</td>
+          <td>50</td>
+          <td>0</td>
+          <td>$27K</td>
+          <td>Pre-revenue / 50 ICU bed acquisition</td>
+        </tr>
+        <tr>
+          <td>Year 2</td>
+          <td>Buzz</td>
+          <td>400</td>
+          <td>100</td>
+          <td>$1.6M</td>
+          <td>Scale ICU & adoption to Non-ICU</td>
+        </tr>
+        <tr>
+          <td>Year 3</td>
+          <td>Impact</td>
+          <td>2,500</td>
+          <td>2,000</td>
+          <td>$13.2M</td>
+          <td>&gt;30% · Break even · Exit opportunity</td>
+        </tr>
+        <tr>
+          <td>Year 4</td>
+          <td>Scale</td>
+          <td>5,000</td>
+          <td>10,000</td>
+          <td>$51.2M</td>
+          <td>&gt;50%</td>
+        </tr>
+        <tr>
+          <td>Year 5</td>
+          <td>Threat</td>
+          <td>10,000</td>
+          <td>25,000</td>
+          <td>$130.7M</td>
+          <td>&gt;60%</td>
+        </tr>
+      </table>
+      <div class="divider"></div>
+      <div class="row row-3">
+        <div class="card">
+          <div class="card-label">Series 1 trigger</div>
+          <div class="card-val">Year 2 - Advanced features milestone</div>
+        </div>
+        <div class="card">
+          <div class="card-label">Break-even / Exit</div>
+          <div class="card-val">Year 3 - Impact phase</div>
+        </div>
+        <div class="card">
+          <div class="card-label">Revenue unit</div>
+          <div class="card-val">K = $1,000 · M = $1,000,000</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROADMAP & GTM -->
+  <section id="s9">
+    <div class="sec-head">
+      <h2>9 · Product Roadmap & GTM</h2>
+      <span class="tag">Timeframe · Go-to-Market</span>
+    </div>
+    <div class="sec-body">
+      <div
+        style="
+          font-size: 12px;
+          font-weight: 500;
+          color: var(--color-text-secondary);
+          margin-bottom: 8px;
+        "
+      >
+        Product Phases
+      </div>
+      <div class="row row-3">
+        <div class="card">
+          <div class="card-label">PiMed - Life (Year 1, Q1–Q3)</div>
+          <div class="card-val">
+            Digitise ICU workflow · Real-time medical device data streaming ·
+            Secured collaboration · AI/ML actionable care insights · Gen AI
+            clinical pathways · India regulatory compliance
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-label">PiMed - Elixir (Year 2–3)</div>
+          <div class="card-val">
+            Advanced critical care features · Integrated care management ·
+            Diagnostics case assessment · Extended AI/ML insights · Automated
+            post-discharge
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-label">PiMed - Nirvana (Year 4–5)</div>
+          <div class="card-val">
+            Trusted connected care ecosystem · AI contextual diagnosis · AI
+            proactive diagnosis · AI prognosis & treatment
+          </div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div
+        style="
+          font-size: 12px;
+          font-weight: 500;
+          color: var(--color-text-secondary);
+          margin-bottom: 8px;
+        "
+      >
+        GTM Timeline (Post-Funding Year 1)
+      </div>
+      <table>
+        <tr>
+          <th>Milestone</th>
+          <th>Timing</th>
+        </tr>
+        <tr>
+          <td>Current product base feature readiness</td>
+          <td>&gt;60% complete at funding</td>
+        </tr>
+        <tr>
+          <td>Product development completion (post-funding)</td>
+          <td>Q1–Q4 Year 1</td>
+        </tr>
+        <tr>
+          <td>Regulatory compliance & IP/copyright</td>
+          <td>Q1–Q3 Year 1</td>
+        </tr>
+        <tr>
+          <td>Marketing campaign (webinar/podcast)</td>
+          <td>Q2–Q4 Year 1</td>
+        </tr>
+        <tr>
+          <td>Pilot launch - select customers (alpha/beta)</td>
+          <td>~4 months post-funding</td>
+        </tr>
+        <tr>
+          <td>Pilot outcome delivered</td>
+          <td>~8 months post-funding</td>
+        </tr>
+        <tr>
+          <td>Board presentation · Order & PO · Revenue realisation</td>
+          <td>~10–11 months post-funding</td>
+        </tr>
+        <tr>
+          <td>Commercial launch</td>
+          <td>~12 months post-funding</td>
+        </tr>
+      </table>
+      <div class="divider"></div>
+      <div
+        style="
+          font-size: 12px;
+          font-weight: 500;
+          color: var(--color-text-secondary);
+          margin-bottom: 8px;
+        "
+      >
+        Pilot Revenue Flow
+      </div>
+      <ul class="plain">
+        <li>
+          Pilot engagement → phased delivery & freemium feature monetisation
+        </li>
+        <li>Value realisation delivered (three deployments)</li>
+        <li>Pre-order & PO → Order & PO → Revenue realisation (30-day RR)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section id="s10">
+    <div class="sec-head">
+      <h2>10 · Team</h2>
+      <span class="tag">8 Core Members</span>
+    </div>
+    <div class="sec-body">
+      <div class="team-grid">
+        <div class="tm">
+          <span class="tm-name">Awadhesh Kumar</span
+          ><span class="tm-role">Founder & CEO</span>
+        </div>
+        <div class="tm">
+          <span class="tm-name">Ramesh Subramaniam</span
+          ><span class="tm-role">Chief Technology Officer</span>
+        </div>
+        <div class="tm">
+          <span class="tm-name">Dr. Kamaljit Parmar</span
+          ><span class="tm-role">Intensivist · Product Owner</span>
+        </div>
+        <div class="tm">
+          <span class="tm-name">Dr. Kamal Sharma</span
+          ><span class="tm-role">Cardiologist · AI Lead</span>
+        </div>
+        <div class="tm">
+          <span class="tm-name">Sushil Kumar</span
+          ><span class="tm-role">Engineering Lead</span>
+        </div>
+        <div class="tm">
+          <span class="tm-name">Dr. Supten Sarbadhikari</span
+          ><span class="tm-role">Interoperability Lead</span>
+        </div>
+        <div class="tm">
+          <span class="tm-name">Dr. Chetan Mehndiratta</span
+          ><span class="tm-role">Compliance & Growth Lead</span>
+        </div>
+        <div class="tm">
+          <span class="tm-name">Sanjit Anand</span
+          ><span class="tm-role">Implementation Lead</span>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="card">
+        <div class="card-label">Contact</div>
+        <div class="card-val">
+          Awadhesh Kumar · awadhesh.kumar@plasmitvector.com · +61 431 770 499 ·
+          www.plasmitvector.com
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FUND ASK -->
+  <section id="s11">
+    <div class="sec-head">
+      <h2>11 · Fund Ask</h2>
+      <span class="tag">Seed Round</span>
+    </div>
+    <div class="sec-body">
+      <div class="row row-2">
+        <div class="card">
+          <div class="card-label">Total ask</div>
+          <div class="card-val big">$1.0M USD</div>
+        </div>
+        <div class="card">
+          <div class="card-label">Valuation</div>
+          <div class="card-val big">$25M USD</div>
+          <div
+            class="card-val"
+            style="font-size: 11px; color: var(--color-text-secondary)"
+          >
+            via Convertible Notes
+          </div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div
+        style="
+          font-size: 12px;
+          font-weight: 500;
+          color: var(--color-text-secondary);
+          margin-bottom: 8px;
+        "
+      >
+        Fund Allocation
+      </div>
+      <table>
+        <tr>
+          <th>Category</th>
+          <th>Allocation</th>
+          <th>Purpose</th>
+        </tr>
+        <tr>
+          <td>Pilot Value Realisation</td>
+          <td>40%</td>
+          <td>Execute and demonstrate ROI from hospital pilots</td>
+        </tr>
+        <tr>
+          <td>Product Build (MMF)</td>
+          <td>35%</td>
+          <td>
+            Complete minimum marketable features for commercial deployment
+          </td>
+        </tr>
+        <tr>
+          <td>Marketing & Operations</td>
+          <td>15%</td>
+          <td>Webinars, podcasts, sales, team operations</td>
+        </tr>
+        <tr>
+          <td>Compliance & IP</td>
+          <td>10%</td>
+          <td>Regulatory certifications and patent filings</td>
+        </tr>
+      </table>
+      <div class="divider"></div>
+      <div
+        style="
+          font-size: 12px;
+          font-weight: 500;
+          color: var(--color-text-secondary);
+          margin-bottom: 8px;
+        "
+      >
+        Y1 Milestone Commitments (use of funds)
+      </div>
+      <ul class="plain">
+        <li>Product ready for commercial deployment</li>
+        <li>Secure revenue from 1–2 hospitals</li>
+        <li>Clinical & financial ROI quantified and documented</li>
+        <li>Regulatory compliance and certifications achieved</li>
+        <li>Patents secured</li>
+        <li>Testimonials in hand · strong hospital pipeline ready to scale</li>
+      </ul>
+    </div>
+  </section>
+</div>

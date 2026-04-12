@@ -17,7 +17,7 @@ export function TimelineSection({
   return (
     <Section tone="muted">
       <SectionHeading badge={badge} title={title} description={description} />
-      <div className="mt-10 grid gap-4">
+      <div className="mt-6 grid gap-3">
         {steps.map((step, index) => (
           <Card
             key={step.title}

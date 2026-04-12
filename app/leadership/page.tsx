@@ -6,7 +6,7 @@ import { LeadershipPageView } from "@/components/pages/leadership/LeadershipPage
 export const metadata: Metadata = buildPageMetadata({
   title: "Leadership",
   description:
-    "Meet the PlasmIT leadership team spanning clinical care, interoperability, data, research, product, and healthcare technology delivery.",
+    "Core eight-person team from the investor pack: CEO, CTO, intensivist product owner, AI lead, engineering, interoperability, compliance and growth, and implementation.",
   path: "/leadership",
 })
 

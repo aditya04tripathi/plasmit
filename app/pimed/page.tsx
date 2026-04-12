@@ -4,9 +4,9 @@ import { buildPageMetadata } from "@/lib/page-metadata"
 import { PiMedPageView } from "@/components/pages/pimed/PiMedPageView"
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "PiMed Product Overview",
+  title: "PiMed: PlasmIT flagship product",
   description:
-    "Explore PiMed as a connected, mobile-first digital care platform built for continuous monitoring, collaboration, and intervention across care settings.",
+    "PiMed (QLMed), Smart ICU on Mobile™ by PlasmIT Pty Ltd: product definition, features, edge-to-cloud architecture, and Life / Elixir / Nirvana roadmap phases.",
   path: "/pimed",
 })
 

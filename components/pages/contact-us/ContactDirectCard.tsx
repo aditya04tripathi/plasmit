@@ -17,7 +17,24 @@ export function ContactDirectCard() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4 text-sm leading-7 text-muted-foreground">
-        <p>{contactDetails.email}</p>
+        <p>
+          <span className="font-medium text-foreground">General: </span>
+          <a
+            className="text-foreground underline-offset-4 hover:underline"
+            href={`mailto:${contactDetails.email}`}
+          >
+            {contactDetails.email}
+          </a>
+        </p>
+        <p>
+          <span className="font-medium text-foreground">Founder: </span>
+          <a
+            className="text-foreground underline-offset-4 hover:underline"
+            href={`mailto:${contactDetails.founderEmail}`}
+          >
+            {contactDetails.founderEmail}
+          </a>
+        </p>
         <p>{contactDetails.phone}</p>
         <p>{contactDetails.australia}</p>
       </CardContent>

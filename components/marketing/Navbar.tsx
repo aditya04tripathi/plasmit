@@ -5,7 +5,7 @@ import { useEffect, useState } from "react"
 import { Menu, ArrowUpRight } from "lucide-react"
 import { ThemeToggle } from "./ThemeToggle"
 
-import { navLinks } from "@/lib/site-content"
+import { navLinks, siteMeta } from "@/lib/site-content"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import {
@@ -17,8 +17,13 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet"
 import { Separator } from "@/components/ui/separator"
+import Image from "next/image"
 
-export function Navbar({ revealAfterHero = false }: { revealAfterHero?: boolean }) {
+export function Navbar({
+  revealAfterHero = false,
+}: {
+  revealAfterHero?: boolean
+}) {
   const [scrollRevealed, setScrollRevealed] = useState(false)
   const revealed = !revealAfterHero || scrollRevealed
 
@@ -54,21 +59,14 @@ export function Navbar({ revealAfterHero = false }: { revealAfterHero?: boolean 
     >
       <div className="mx-auto flex min-h-[76px] max-w-7xl items-center justify-between gap-6 px-4 py-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-3">
-          <span
-            className={cn(
-              "inline-flex h-10 w-10 items-center justify-center border text-[10px] font-semibold tracking-[0.3em] uppercase",
-              revealAfterHero
-                ? "border-foreground/14 bg-foreground/5 text-foreground"
-                : "border-foreground/12 bg-foreground/5 text-foreground"
-            )}
-          >
-            PV
-          </span>
+          <Image src="/media/logo.svg" alt="PlasmIT" width={32} height={32} />
           <div>
             <p
               className={cn(
                 "text-[11px] tracking-[0.32em] uppercase",
-                revealAfterHero ? "text-muted-foreground" : "text-muted-foreground"
+                revealAfterHero
+                  ? "text-muted-foreground"
+                  : "text-muted-foreground"
               )}
             >
               PlasmIT
@@ -79,19 +77,22 @@ export function Navbar({ revealAfterHero = false }: { revealAfterHero?: boolean 
                 revealAfterHero ? "text-foreground" : "text-foreground"
               )}
             >
-              Healthcare IT Vector
+              {siteMeta.companyTagline}
             </p>
           </div>
         </Link>
 
-        <nav className="hidden items-center gap-1 lg:flex">
+        <nav
+          className="hidden items-center gap-0.5 lg:flex"
+          aria-label="Primary"
+        >
           {navLinks.map((link) => (
             <Button
               key={link.href}
               variant="ghost"
               asChild
               className={cn(
-                "h-9 px-3",
+                "h-auto min-h-10 px-3 py-2",
                 revealAfterHero
                   ? "text-muted-foreground hover:bg-foreground/8 hover:text-foreground"
                   : "text-muted-foreground hover:bg-foreground/8 hover:text-foreground"
@@ -107,7 +108,7 @@ export function Navbar({ revealAfterHero = false }: { revealAfterHero?: boolean 
             <Button
               asChild
               className={cn(
-                "h-9 px-4",
+                "h-auto min-h-10 px-4 py-2",
                 revealAfterHero
                   ? "border border-primary/60 bg-primary text-primary-foreground hover:bg-primary/85"
                   : "border border-primary/60 bg-primary text-primary-foreground hover:bg-primary/85"
@@ -129,18 +130,21 @@ export function Navbar({ revealAfterHero = false }: { revealAfterHero?: boolean 
             <SheetTrigger asChild>
               <Button
                 variant="outline"
-                size="icon"
                 aria-label="Open menu"
                 className={cn(
+                  "size-11 shrink-0",
                   revealAfterHero
                     ? "border-foreground/14 bg-foreground/5 text-foreground hover:bg-foreground/10"
                     : "border-foreground/14 bg-foreground/5 text-foreground hover:bg-foreground/10"
                 )}
               >
-                <Menu className="size-4" />
+                <Menu className="size-5" aria-hidden />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="border-l border-foreground/8 bg-background text-foreground">
+            <SheetContent
+              side="right"
+              className="border-l border-foreground/8 bg-background text-foreground"
+            >
               <SheetHeader>
                 <SheetTitle>Navigate</SheetTitle>
                 <SheetDescription className="text-muted-foreground">
@@ -148,20 +152,23 @@ export function Navbar({ revealAfterHero = false }: { revealAfterHero?: boolean 
                 </SheetDescription>
               </SheetHeader>
               <Separator />
-              <div className="grid gap-2 p-4">
+              <div className="grid gap-1 p-4">
                 {navLinks.map((link) => (
                   <Button
                     key={link.href}
                     variant="ghost"
                     asChild
-                    className="justify-start px-0 text-muted-foreground hover:bg-foreground/8 hover:text-foreground"
+                    className="h-auto min-h-11 justify-start px-3 py-3 text-muted-foreground hover:bg-foreground/8 hover:text-foreground"
                   >
                     <Link href={link.href}>{link.label}</Link>
                   </Button>
                 ))}
                 <Separator className="my-2" />
                 <div className="flex flex-col gap-2">
-                  <Button asChild className="border border-primary/60 bg-primary text-primary-foreground hover:bg-primary/85">
+                  <Button
+                    asChild
+                    className="h-auto min-h-11 border border-primary/60 bg-primary px-4 py-3 text-primary-foreground hover:bg-primary/85"
+                  >
                     <Link href="/contact-us">Start a conversation</Link>
                   </Button>
                   <ThemeToggle />

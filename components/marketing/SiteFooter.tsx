@@ -1,26 +1,31 @@
 import Link from "next/link"
 
-import { contactDetails, footerGroups, proofPoints } from "@/lib/site-content"
+import {
+  contactDetails,
+  footerGroups,
+  proofPoints,
+  siteMeta,
+} from "@/lib/site-content"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-foreground/8 bg-background py-12 text-foreground">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[1fr_2fr] lg:px-8">
-        <div className="flex min-w-0 flex-col gap-6">
+    <footer className="border-t border-foreground/8 bg-background py-8 text-foreground">
+      <div className="mx-auto grid max-w-7xl gap-6 px-4 sm:px-6 lg:grid-cols-[1fr_2fr] lg:px-8">
+        <div className="flex min-w-0 flex-col gap-4">
           <Badge
             variant="outline"
             className="w-fit border-foreground/12 bg-foreground/4 text-muted-foreground"
           >
-            Continuous connected care
+            {siteMeta.name}
           </Badge>
           <h2 className="max-w-xl text-3xl leading-tight font-medium tracking-[-0.04em] text-foreground sm:text-4xl">
-            Premium clinical infrastructure needs trust in both product and
-            posture.
+            A critical care company first. PiMed is how we ship that mission
+            to hospitals today.
           </h2>
-          <ul className="grid gap-3 text-sm text-muted-foreground">
+          <ul className="grid gap-2.5 text-sm text-muted-foreground">
             {proofPoints.map((point) => (
               <li key={point} className="flex gap-3">
                 <span className="mt-2 h-1.5 w-1.5 shrink-0 bg-primary" />
@@ -64,10 +69,10 @@ export function SiteFooter() {
         </div>
       </div>
 
-      <div className="mx-auto mt-12 max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto mt-8 max-w-7xl px-4 sm:px-6 lg:px-8">
         <Separator />
         <div className="flex flex-col gap-4 pt-6 text-xs tracking-[0.22em] text-muted-foreground uppercase sm:flex-row sm:items-center sm:justify-between">
-          <p>© 2026 PlasmIT Healthcare IT Vector</p>
+          <p>© 2026 {siteMeta.legalName}</p>
           <div className="flex flex-wrap gap-4">
             <p className="max-w-prose text-pretty normal-case tracking-normal">
               {contactDetails.footerAustralia}

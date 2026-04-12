@@ -4,9 +4,9 @@ import { buildPageMetadata } from "@/lib/page-metadata"
 import { HomePageView } from "@/components/pages/home/HomePageView"
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Connected Critical Care",
+  title: "PlasmIT: critical care health technology",
   description:
-    "PlasmIT homepage introducing PiMed, the shift from physical rounds to continuous connected care, and the core paths for hospitals and investors.",
+    "PlasmIT Pty Ltd builds connected critical care infrastructure. Flagship product PiMed (QLMed), Smart ICU on Mobile™, for hospitals; Australia-headquartered, India-first GTM.",
   path: "/",
 })
 

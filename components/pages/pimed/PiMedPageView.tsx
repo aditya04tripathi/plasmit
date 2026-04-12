@@ -1,4 +1,8 @@
-import { platformFeatures, productTimeline } from "@/lib/site-content"
+import {
+  platformFeatures,
+  productRoadmapPhases,
+  productTimeline,
+} from "@/lib/site-content"
 import { SiteFrame } from "@/components/marketing/SiteFrame"
 import {
   CTASection,
@@ -12,34 +16,41 @@ export function PiMedPageView() {
   return (
     <SiteFrame>
       <PageHero
-        badge="PiMed Product"
-        title="A mobile-first critical care surface for continuous connected monitoring and action."
-        intro="PiMed is a next-generation connected, intelligent, integrated, immersive, secured, and compliant digital care platform for hospitals."
+        badge="PlasmIT flagship product"
+        title="PiMed (QLMed): Smart ICU on Mobile™."
+        intro="PiMed is PlasmIT’s intelligent integrated care delivery ecosystem for hospitals: point-in-time ICU care via mobile devices, with continuous monitoring, connected collaboration, and a compliant fault-tolerant core."
         primary={{ label: "See Hospital Value", href: "/hospital-corner" }}
         secondary={{ label: "Contact Product Team", href: "/contact-us" }}
       />
 
       <FeatureGrid
         badge="Capability set"
-        title="An intelligent clinical operating layer."
-        description="PiMed connects devices, workflows, and clinicians into one persistent care experience to support point-in-time intervention."
+        title="Key features from the investor materials."
+        description="From full mobile ICU dashboards to Gen AI–enabled triage and predictive intelligence loops."
         items={platformFeatures}
       />
 
       <TimelineSection
-        badge="Operational flow"
-        title="Connecting devices, context, and decisions into one continuous care loop."
-        description="From AI/ML edge streaming to real-time intervention, PiMed ensures all stakeholders remain continuously informed across any device."
+        badge="Architecture flow"
+        title="Edge ingestion through to clinician delivery."
+        description="Medical devices to AI-enabled edge, secured transit and cloud processing, then mobile care delivery with AI/ML extensions."
         steps={productTimeline}
+      />
+
+      <TimelineSection
+        badge="Product phases"
+        title="Life, Elixir, and Nirvana."
+        description="Roadmap phases as named in the investor pack: deepening critical care scope and intelligence over five years."
+        steps={productRoadmapPhases}
       />
 
       <SplitShowcase
         badge="Product thesis"
-        title="Designed for speed to intervention and continuity of visibility."
+        title="Speed to intervention with enterprise-grade resilience."
         leftTitle="Clinical layer"
-        leftBody="Real-time vitals, abnormality detection, collaboration, and guided pathways keep decision-making close to live patient context."
+        leftBody="Continuous streaming, intelligent alerts, AI-driven pathways, and instant collaboration including remote intensivist support."
         rightTitle="Infrastructure layer"
-        rightBody="A compliant and fault-tolerant platform ensuring secure data transfer and high availability from the ICU to home care."
+        rightBody="Secured, highly available, interoperable capture, transfer, storage, and display aligned with hospital compliance expectations."
       />
 
       <CTASection

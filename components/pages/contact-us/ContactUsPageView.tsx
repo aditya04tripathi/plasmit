@@ -1,5 +1,6 @@
-import { contactDetails, contactFaqs, offices } from "@/lib/site-content"
+import { contactDetails, contactFaqs, officeMapLocations, offices } from "@/lib/site-content"
 import { ContactForm } from "@/components/forms/contact/ContactForm"
+import { ContactOfficeMapSlot } from "@/components/forms/contact/ContactOfficeMapSlot"
 import { SiteFrame } from "@/components/marketing/SiteFrame"
 import {
   FAQSection,
@@ -27,12 +28,23 @@ export function ContactUsPageView() {
           title="The fastest way to connect."
           description="Please provide your details and the nature of your enquiry so we can route you to the right expert."
         />
-        <div className="mt-10 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+        <div className="mt-6 grid gap-5 lg:grid-cols-[1.1fr_0.9fr]">
           <ContactForm />
           <div className="grid gap-6">
             <ContactDirectCard />
             <OfficeCards items={offices} />
           </div>
+        </div>
+      </Section>
+
+      <Section>
+        <SectionHeading
+          badge="Location"
+          title="Find us in Melbourne."
+          description="Map tiles and data from OpenStreetMap contributors. Open the marker for the full address."
+        />
+        <div className="mt-6 overflow-hidden border border-foreground/8 bg-card shadow-marketing-md">
+          <ContactOfficeMapSlot locations={officeMapLocations} />
         </div>
       </Section>
 

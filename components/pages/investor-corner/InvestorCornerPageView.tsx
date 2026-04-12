@@ -1,65 +1,116 @@
-import { investorHighlights, investorMetrics } from "@/lib/site-content"
+import {
+  investorDisclaimer,
+  investorEssentials,
+  investorFundAsk,
+  investorHighlights,
+  investorMetrics,
+  investorProblemSolution,
+} from "@/lib/site-content"
 import { SiteFrame } from "@/components/marketing/SiteFrame"
 import {
   CTASection,
   FeatureGrid,
   PageHero,
+  Section,
+  SectionHeading,
   SplitShowcase,
   StoryGrid,
 } from "@/components/marketing/sections"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
 
-const investorStoryItems = [
-  {
-    title: "Commercialisation stage",
-    body: "The product is nearing full market readiness, actively seeking visionary growth partners to accelerate scaling.",
-  },
-  {
-    title: "Market access signals",
-    body: "Validated through hospital viability acceptance and strategic MOUs across the Indian healthcare ecosystem.",
-  },
-] as const
+import { InvestorDueDiligenceAccordion } from "@/components/pages/investor-corner/InvestorDueDiligenceAccordion"
 
 export function InvestorCornerPageView() {
   return (
     <SiteFrame>
       <PageHero
-        badge="Investor Corner"
-        title="Scaling the future of digital critical care."
-        intro="PlasmIT is scaling a commercialisation-stage platform that solves a global care gap with standards-aware infrastructure."
-        primary={{ label: "Send Investor Enquiry", href: "/contact-us" }}
-        secondary={{ label: "Read About PlasmIT", href: "/about-us" }}
+        badge="Investors"
+        title="Seed round for connected critical care infrastructure."
+        intro="PlasmIT Pty Ltd is raising to finish MMF, prove pilot ROI, and scale PiMed (QLMed): India-first, utilisation-based SaaS."
+        primary={{ label: "Investor enquiry", href: "/contact-us" }}
+        secondary={{ label: "Leadership", href: "/leadership" }}
         metrics={investorMetrics}
       />
 
       <FeatureGrid
-        badge="The Opportunity"
-        title="Market reach and commercial readiness."
-        description="With significant traction in India and a product nearing full commercialisation, PlasmIT is positioned for global growth."
+        badge="Thesis"
+        title="Why the opportunity is differentiated."
+        description="Traction, product maturity, mobility, and economics versus legacy tele-ICU."
         items={investorHighlights}
       />
 
-      <SplitShowcase
-        badge="The Thesis"
-        title="Clinical pain meets platform scalability."
-        leftTitle="The Problem"
-        leftBody="Critical care delivery suffers from fragmented visibility and delayed decisions, creating a massive opportunity for connected infrastructure."
-        rightTitle="The Solution"
-        rightBody="A system that improves intervention speed and hospital efficiency, targeting a USD $6B market opportunity in India alone."
+      <StoryGrid
+        badge="Snapshot"
+        title="Market and momentum."
+        description="Scale first, then proof."
+        items={[...investorEssentials]}
       />
 
-      <StoryGrid
-        badge="Current Position"
-        title="Market access and traction."
-        description="Our progress is validated by signed MOUs with prominent hospitals and global interest in our interoperability posture."
-        items={[...investorStoryItems]}
+      <SplitShowcase
+        badge="Problem / solution"
+        title="Visibility gaps versus a mobile intervention surface."
+        leftTitle={investorProblemSolution.problemTitle}
+        leftBody={investorProblemSolution.problemBody}
+        rightTitle={investorProblemSolution.solutionTitle}
+        rightBody={investorProblemSolution.solutionBody}
       />
+
+      <Section tone="muted">
+        <SectionHeading
+          badge="Fund ask"
+          title={`${investorFundAsk.round} terms (summary).`}
+          description="Indicative only; confirm with the company. Not an offer to sell securities."
+        />
+        <div className="mt-6 grid gap-px border border-foreground/8 bg-foreground/8 md:grid-cols-2">
+          <Card className="border-0 bg-background/90 text-foreground">
+            <CardHeader>
+              <CardTitle className="text-3xl font-medium tracking-[-0.04em] sm:text-4xl">
+                {investorFundAsk.amountUsd}
+              </CardTitle>
+              <CardDescription>Raise target</CardDescription>
+            </CardHeader>
+          </Card>
+          <Card className="border-0 bg-background/90 text-foreground">
+            <CardHeader>
+              <CardTitle className="text-3xl font-medium tracking-[-0.04em] sm:text-4xl">
+                {investorFundAsk.valuationUsd}
+              </CardTitle>
+              <CardDescription>
+                Indicative valuation · {investorFundAsk.instrument}
+              </CardDescription>
+            </CardHeader>
+          </Card>
+        </div>
+      </Section>
+
+      <Section>
+        <SectionHeading
+          badge="Due diligence"
+          title="Tables and roadmap."
+          description="Open a section for full figures. Same data as the investor pack extraction."
+        />
+        <Card className="mt-6 border border-foreground/8 bg-card/72 text-card-foreground">
+          <CardContent className="px-4 pt-2 pb-4 sm:px-6">
+            <InvestorDueDiligenceAccordion />
+          </CardContent>
+        </Card>
+        <p className="mt-4 max-w-3xl text-xs leading-5 text-muted-foreground">
+          {investorDisclaimer}
+        </p>
+      </Section>
 
       <CTASection
-        badge="Investor next step"
-        title="Partner with us in saving millions of lives."
-        description="We are seeking growth-oriented investors to join us in radically transforming the critical care ecosystem."
-        primary={{ label: "Send Investor Enquiry", href: "/contact-us" }}
-        secondary={{ label: "Review Leadership", href: "/leadership" }}
+        badge="Next"
+        title="Request the data room."
+        description="Full diligence, clinical appendix, and introductions via contact."
+        primary={{ label: "Contact", href: "/contact-us" }}
+        secondary={{ label: "Leadership", href: "/leadership" }}
       />
     </SiteFrame>
   )

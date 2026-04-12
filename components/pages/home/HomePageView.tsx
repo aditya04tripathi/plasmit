@@ -16,55 +16,55 @@ import {
 
 export function HomePageView() {
   return (
-    <SiteFrame hideTopBar revealNavAfterHero>
+    <SiteFrame revealNavAfterHero>
       <PrimaryHeroGallery />
 
       <StoryGrid
-        badge="Our Vision"
-        title="From physical round to continuous connected round."
-        description="PiMed enables a fundamental shift in critical care, moving from time-bound bedside rounds to a persistent, connected care experience."
+        badge="PlasmIT"
+        title="Who we are."
+        description="Entity, focus, vision, mission, and founding credibility."
+        items={aboutHighlights}
+      />
+
+      <StoryGrid
+        badge="Problem"
+        title="Why mobile ICU context matters."
+        description="Off-rounds deterioration and remote specialists without live data."
         items={homePage.story}
       />
 
       <FeatureGrid
-        badge="Platform capability"
-        title="A connected clinical layer built around visibility, response, and trust."
-        description="Intelligent, Integrated, and Immersive. PiMed provides a secured and compliant digital care platform for the modern hospital."
+        badge="Flagship product"
+        title="PiMed (QLMed): Smart ICU on Mobile™."
+        description="Devices, pathways, and teams on one secured surface."
         items={platformFeatures}
       />
 
       <TimelineSection
-        badge="How it works"
-        title="Continuous Monitoring and Real-time Intervention."
-        description="Our operational flow ensures that medical data streaming from the edge provides stakeholders with continuous context and early warnings."
+        badge="PiMed"
+        title="Edge to mobile."
+        description="Ingestion, streaming, delivery, extension across care settings."
         steps={productTimeline}
       />
 
       <SplitShowcase
-        badge="Commercial framing"
-        title="One platform, two distinct value propositions."
-        description="PiMed solves the critical care visibility gap, creating value for both hospital operations and strategic investors."
+        badge="Stakeholders"
+        title="Hospitals and investors."
+        description="Operations versus capital: same company, different questions."
         leftTitle="For hospitals"
         leftLink="/hospital-corner"
-        leftBody="Improve intervention speed, care continuity, and workforce utilisation while opening new revenue channels through post-discharge care."
+        leftBody="Outcomes, efficiency, and brand through 24×7 connected monitoring and collaboration via PiMed deployment."
         rightTitle="For investors"
         rightLink="/investor-corner"
-        rightBody="A commercialisation-stage platform solving a global care gap with standards-aware infrastructure and significant market reach in India and beyond."
-      />
-
-      <StoryGrid
-        badge="Our Mission"
-        title="Clinical credibility matched with systems thinking."
-        description="Founded by healthcare and technology experts, PlasmIT is dedicated to making world-class critical care more accessible and continuous."
-        items={aboutHighlights}
+        rightBody="PlasmIT Pty Ltd seed narrative: traction, competitive positioning, financial model, and fund ask."
       />
 
       <CTASection
         badge="Next step"
-        title="Start a conversation with the PlasmIT team."
-        description="Whether you are seeking a hospital business case or an investment opportunity, we are ready to discuss the future of connected care."
-        primary={{ label: "Explore Hospital Corner", href: "/hospital-corner" }}
-        secondary={{ label: "Contact PlasmIT", href: "/contact-us" }}
+        title="Talk with PlasmIT."
+        description="Company, product, hospital deployment, or investment: route the conversation that fits you."
+        primary={{ label: "About the company", href: "/about-us" }}
+        secondary={{ label: "Contact", href: "/contact-us" }}
       />
     </SiteFrame>
   )

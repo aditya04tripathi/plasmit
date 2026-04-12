@@ -12,26 +12,26 @@ export function LeadershipPageView() {
     <SiteFrame>
       <PageHero
         badge="Leadership"
-        title="Experts in clinical care and digital transformation."
-        intro="Our leadership team combines decades of global critical care experience with deep expertise in interoperability and data architecture."
+        title="Eight-person core team from the investor pack."
+        intro="Founder-led execution spanning CEO, CTO, clinical product ownership, AI, engineering, interoperability, compliance, and implementation, aligned to PiMed (QLMed) commercialisation."
         primary={{ label: "Contact the Team", href: "/contact-us" }}
         secondary={{ label: "Read About PlasmIT", href: "/about-us" }}
       />
 
       <TeamSection
-        badge="Executive and advisory team"
-        title="Clinical depth and standards credibility."
-        description="A multidisciplinary team dedicated to bridging the gap in critical care delivery through the PiMed platform."
+        badge="Core team"
+        title="Operators building Smart ICU on Mobile™."
+        description="Roles and names match the structured investor extraction; short summaries describe mandate only."
         sections={leadershipProfileSections}
       />
 
       <SplitShowcase
-        badge="Our Posture"
-        title="The team is the foundation of our trust."
+        badge="Our posture"
+        title="Why this composition matters."
         leftTitle="For hospitals"
-        leftBody="Our team's depth in ICU and interoperability reassures buyers that PiMed is rooted in real-world clinical experience."
+        leftBody="Intensivist-led product ownership plus implementation leadership signals deployment realism and bedside credibility."
         rightTitle="For investors"
-        rightBody="Our composition signals strong founder-market fit and the ability to navigate complex, regulated healthcare environments."
+        rightBody="CEO/CTO pairing, interoperability leadership tied to FHIR, and compliance/growth leadership map directly to regulated health-tech scale."
       />
 
       <CTASection

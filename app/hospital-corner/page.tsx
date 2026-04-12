@@ -6,7 +6,7 @@ import { HospitalCornerPageView } from "@/components/pages/hospital-corner/Hospi
 export const metadata: Metadata = buildPageMetadata({
   title: "Hospital Corner",
   description:
-    "Review the hospital-facing case for PiMed, including ICU outcome claims, workflow improvements, resource optimization, and revenue expansion potential.",
+    "Hospital ROI narrative for PiMed (QLMed): save lives, efficiency, brand, utilisation-based SaaS, pilot-first deployment, and value drivers from investor materials.",
   path: "/hospital-corner",
 })
 

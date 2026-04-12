@@ -11,7 +11,7 @@ export function Section({
 }) {
   return (
     <section className={sectionClassName(tone)}>
-      <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-18 lg:px-8 lg:py-24">
+      <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
         {children}
       </div>
     </section>

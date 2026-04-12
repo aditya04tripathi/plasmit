@@ -6,7 +6,7 @@ import { VisionAndValuesPageView } from "@/components/pages/vision-and-values/Vi
 export const metadata: Metadata = buildPageMetadata({
   title: "Vision and Values",
   description:
-    "Read PlasmIT’s mission, care philosophy, and the six operating principles derived from the company’s public 6C framework narrative.",
+    "Official vision and mission from the investor pack, plus six operating principles for connected, contextual, compliant care delivery.",
   path: "/vision-and-values",
 })
 

@@ -20,8 +20,6 @@ export function PageHero({
   primary,
   secondary,
   metrics,
-  asideTitle,
-  asideBody,
 }: {
   badge: string
   title: string
@@ -29,54 +27,57 @@ export function PageHero({
   primary?: { label: string; href: string }
   secondary?: { label: string; href: string }
   metrics?: MetricCard[]
-  asideTitle?: string
-  asideBody?: string
 }) {
   return (
     <Section>
-      <div className="grid gap-10 lg:grid-cols-[1.3fr_0.7fr] lg:items-end">
-        <div>
+      <div className="space-y-5 sm:space-y-6">
+        <div className="space-y-5 sm:space-y-6">
           <Badge
             variant="outline"
-            className="border-foreground/12 bg-foreground/4 text-muted-foreground"
+            className="w-fit border-foreground/12 bg-foreground/4 text-muted-foreground"
           >
             {badge}
           </Badge>
-          <h1 className="mt-6 max-w-5xl text-[clamp(2.25rem,10.5vw,5rem)] leading-[0.95] font-medium tracking-[-0.055em] text-foreground sm:text-6xl sm:leading-[0.92] sm:tracking-[-0.06em] lg:text-8xl">
+
+          <h1 className="max-w-[min(100%,42rem)] text-[clamp(2.25rem,10.5vw,5rem)] leading-[0.95] font-medium tracking-[-0.055em] text-foreground text-balance sm:max-w-[min(100%,48rem)] sm:text-6xl sm:leading-[0.92] sm:tracking-[-0.06em] lg:text-8xl">
             {title}
           </h1>
-          <p className="mt-6 max-w-3xl text-base leading-8 text-muted-foreground sm:text-lg">
+
+          <p className="max-w-prose text-base leading-8 text-muted-foreground text-pretty sm:text-lg sm:leading-8">
             {intro}
           </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-            {primary ? (
-              <Button
-                asChild
-                size="lg"
-                className="min-h-11 w-full border border-primary/60 bg-primary px-4 text-primary-foreground hover:bg-primary/85 sm:w-auto"
-              >
-                <Link href={primary.href}>
-                  {primary.label}
-                  <ArrowRight className="size-4" />
-                </Link>
-              </Button>
-            ) : null}
-            {secondary ? (
-              <Button
-                asChild
-                size="lg"
-                variant="outline"
-                className="min-h-11 w-full border-foreground/12 bg-foreground/4 px-4 text-foreground hover:bg-foreground/8 hover:text-foreground sm:w-auto"
-              >
-                <Link href={secondary.href}>{secondary.label}</Link>
-              </Button>
-            ) : null}
-          </div>
+
+          {primary || secondary ? (
+            <div className="flex flex-col gap-3 border-t border-foreground/10 pt-6 sm:flex-row sm:flex-wrap sm:pt-8">
+              {primary ? (
+                <Button
+                  asChild
+                  size="lg"
+                  className="min-h-11 w-full border border-primary/60 bg-primary px-4 text-primary-foreground hover:bg-primary/85 sm:w-auto"
+                >
+                  <Link href={primary.href}>
+                    {primary.label}
+                    <ArrowRight className="size-4" />
+                  </Link>
+                </Button>
+              ) : null}
+              {secondary ? (
+                <Button
+                  asChild
+                  size="lg"
+                  variant="outline"
+                  className="min-h-11 w-full border-foreground/12 bg-foreground/4 px-4 text-foreground hover:bg-foreground/8 hover:text-foreground sm:w-auto"
+                >
+                  <Link href={secondary.href}>{secondary.label}</Link>
+                </Button>
+              ) : null}
+            </div>
+          ) : null}
         </div>
       </div>
 
       {metrics?.length ? (
-        <div className="mt-10 grid gap-px border border-foreground/8 bg-foreground/8 md:grid-cols-3">
+        <div className="mt-8 grid gap-px border border-foreground/8 bg-foreground/8 sm:mt-10 md:grid-cols-3">
           {metrics.map((metric) => (
             <Card
               key={`${metric.value}-${metric.label}`}

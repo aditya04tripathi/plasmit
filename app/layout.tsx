@@ -42,6 +42,12 @@ export default function RootLayout({
         )}
       >
         <ThemeProvider>
+          <a
+            href="#main-content"
+            className="bg-primary text-primary-foreground fixed top-0 left-4 z-[100] -translate-y-full px-4 py-2 text-sm font-medium transition-transform focus:translate-y-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          >
+            Skip to content
+          </a>
           {children}
         </ThemeProvider>
       </body>

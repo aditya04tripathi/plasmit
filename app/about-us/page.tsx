@@ -6,7 +6,7 @@ import { AboutUsPageView } from "@/components/pages/about-us/AboutUsPageView"
 export const metadata: Metadata = buildPageMetadata({
   title: "About PlasmIT",
   description:
-    "Learn about PlasmIT’s origin, healthcare systems focus, Australia-plus-India footprint, and the company narrative behind PiMed.",
+    "PlasmIT Pty Ltd: Australia-headquartered critical care health-tech, PiMed (QLMed) Smart ICU on Mobile™, vision and mission from the investor pack.",
   path: "/about-us",
 })
 

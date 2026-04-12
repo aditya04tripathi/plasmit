@@ -6,7 +6,7 @@ import { InvestorCornerPageView } from "@/components/pages/investor-corner/Inves
 export const metadata: Metadata = buildPageMetadata({
   title: "Investor Corner",
   description:
-    "Investor-facing overview of PlasmIT and PiMed, covering commercialization timing, market opportunity, hospital traction, and platform thesis.",
+    "PlasmIT Pty Ltd seed narrative: thesis, market snapshot, fund summary, and expandable diligence tables (financials, GTM, roadmap).",
   path: "/investor-corner",
 })
 

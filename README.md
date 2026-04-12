@@ -29,7 +29,7 @@ The site uses a shared content model, token-based light/dark theming, and page v
 - [app](/app): route entrypoints (`page.tsx`, `layout.tsx`, `globals.css`)
 - [components/marketing](/components/marketing): shell (`SiteFrame`, `Navbar`, `SiteFooter`, `PrimaryHeroGallery`, …) and [components/marketing/sections](/components/marketing/sections)
 - [components/pages](/components/pages): `*PageView` components per route
-- [components/forms/contact](/components/forms/contact): contact form and map UI
+- [components/forms/contact](/components/forms/contact): contact form and office map (Leaflet / OpenStreetMap)
 - [components/layout](/components/layout): shared layout helpers (e.g. page transitions)
 - [components/providers](/components/providers): theme provider
 - [components/ui](/components/ui): shadcn-style primitives and hero animation helpers
@@ -53,7 +53,7 @@ Static marketing routes include `/`, `/pimed`, `/hospital-corner`, `/investor-co
 
 ## Media
 
-- [public/output.webm](/public/output.webm) — static video asset (if present in your checkout).
+- [public/output.webm](/public/output.webm): static video asset (if present in your checkout).
 
 ## Development
 

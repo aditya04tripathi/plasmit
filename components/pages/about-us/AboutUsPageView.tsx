@@ -12,28 +12,26 @@ export function AboutUsPageView() {
     <SiteFrame>
       <PageHero
         badge="About PlasmIT"
-        title="A healthcare IT company positioning connected care as clinical infrastructure."
-        intro="PlasmIT describes itself as an Australia-based health-tech company created by healthcare visionaries and digital technology leaders to close a significant gap in the critical care ecosystem."
+        title="PlasmIT Pty Ltd: critical care infrastructure from Australia, built for global scale."
+        intro="Health-tech / critical care company delivering PiMed (QLMed), Smart ICU on Mobile™: an intelligent integrated care delivery ecosystem for point-in-time ICU care via mobile, 24×7."
         primary={{ label: "Read Vision & Values", href: "/vision-and-values" }}
         secondary={{ label: "Meet Leadership", href: "/leadership" }}
-        asideTitle="Company narrative"
-        asideBody="This page compresses the live site's repeated origin story into a cleaner overview of why the company exists, what it builds, and how it wants to be evaluated."
       />
 
       <StoryGrid
         badge="Origin"
-        title="PlasmIT frames its story around care access, interoperability, and system-level redesign."
-        description="The live site is strongest when it explains the motivation behind PiMed rather than repeating feature marketing."
+        title="Vision, mission, and founding credibility."
+        description="Aligned with the investor pack company overview."
         items={aboutHighlights}
       />
 
       <SplitShowcase
         badge="Operating footprint"
-        title="Australia-based positioning with India-linked execution and market relevance."
-        leftTitle="Company setup"
-        leftBody="Public-facing material presents PlasmIT as an Australia-based company with a subsidiary in India and a cross-market health technology orientation."
-        rightTitle="What that signals"
-        rightBody="The combined footprint supports the hospital and investor stories: clinical credibility, standards-aware product positioning, and access to a large, urgent care-delivery market."
+        title="Australia headquarters with India-first commercial momentum."
+        leftTitle="Entity and sector"
+        leftBody="PlasmIT Pty Ltd, headquartered in Australia, operates at the intersection of health technology and critical care delivery."
+        rightTitle="Go-to-market"
+        rightBody="India-first strategy supported by paid pilot, multiple hospital MOUs, economical compliance readiness, and the lowest barrier to entry for scaled adoption before expanding to the United States."
       />
 
       <CTASection
