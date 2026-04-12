@@ -26,12 +26,12 @@ export function CTASection({
 }) {
   return (
     <Section>
-      <Card className="shadow-marketing-md border border-foreground/8 bg-card/72 text-card-foreground">
+      <Card className="border border-border bg-card/85 text-card-foreground shadow-marketing-md">
         <CardHeader className="flex flex-col justify-center gap-2">
           {badge ? (
             <Badge
               variant="outline"
-              className="border-foreground/12 bg-foreground/4 text-muted-foreground"
+              className="border-border bg-muted/40 font-normal tracking-normal text-muted-foreground normal-case"
             >
               {badge}
             </Badge>
@@ -47,7 +47,7 @@ export function CTASection({
           <Button
             asChild
             size="lg"
-            className="border border-primary/60 bg-primary px-4 text-primary-foreground hover:bg-primary/85"
+            className="min-h-11 border border-primary/60 bg-primary px-4 text-primary-foreground hover:bg-primary/85 active:bg-primary/90"
           >
             <Link href={primary.href}>{primary.label}</Link>
           </Button>
@@ -56,7 +56,7 @@ export function CTASection({
               asChild
               size="lg"
               variant="outline"
-              className="border-foreground/12 bg-foreground/4 px-4 text-foreground hover:bg-foreground/8 hover:text-foreground"
+              className="min-h-11 border-border bg-muted/30 px-4 text-foreground hover:bg-muted/50 hover:text-foreground active:bg-muted/40"
             >
               <Link href={secondary.href}>{secondary.label}</Link>
             </Button>

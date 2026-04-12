@@ -11,12 +11,12 @@ export function OfficeCards({
       {items.map((item) => (
         <Card
           key={item.label}
-          className="border border-foreground/8 bg-card/72 text-card-foreground transition-all duration-200 hover:-translate-y-0.5 hover:border-foreground/14 hover:bg-card/84"
+          className="border border-border bg-card/80 text-card-foreground shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/25 hover:bg-card active:translate-y-0"
         >
           <CardHeader className="flex flex-col justify-center gap-2">
             <Badge
               variant="outline"
-              className="w-fit border-foreground/12 bg-foreground/4 text-muted-foreground"
+              className="w-fit border-border bg-muted/40 font-normal tracking-normal text-muted-foreground normal-case"
             >
               {item.label}
             </Badge>

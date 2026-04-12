@@ -13,7 +13,11 @@ export function SiteFrame({
   return (
     <div className="min-h-dvh overflow-x-clip bg-background text-foreground">
       <Navbar revealAfterHero={revealNavAfterHero} />
-      <main id="main-content" tabIndex={-1} className="outline-none">
+      <main
+        id="main-content"
+        tabIndex={-1}
+        className="outline-none focus-visible:ring-2 focus-visible:ring-ring/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+      >
         {children}
       </main>
       <SiteFooter />

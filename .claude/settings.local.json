@@ -2,7 +2,11 @@
   "permissions": {
     "allow": [
       "Bash(*)",
-      "WebSearch"
+      "WebSearch",
+      "Skill(gsd:do)",
+      "Skill(gsd:new-project)",
+      "*",
+      "WebFetch(domain:plasmitvector.com)"
     ]
   }
 }

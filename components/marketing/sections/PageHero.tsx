@@ -34,12 +34,12 @@ export function PageHero({
         <div className="space-y-5 sm:space-y-6">
           <Badge
             variant="outline"
-            className="w-fit border-foreground/12 bg-foreground/4 text-muted-foreground"
+            className="w-fit border-border bg-muted/40 font-normal tracking-normal text-muted-foreground normal-case"
           >
             {badge}
           </Badge>
 
-          <h1 className="max-w-[min(100%,42rem)] text-[clamp(2.25rem,10.5vw,5rem)] leading-[0.95] font-medium tracking-[-0.055em] text-foreground text-balance sm:max-w-[min(100%,48rem)] sm:text-6xl sm:leading-[0.92] sm:tracking-[-0.06em] lg:text-8xl">
+          <h1 className="max-w-[min(100%,40rem)] text-[clamp(2.05rem,8.5vw,3.85rem)] leading-[0.97] font-medium tracking-[-0.052em] text-foreground text-balance sm:max-w-[min(100%,44rem)] sm:text-[clamp(2.35rem,6vw,3.35rem)] sm:leading-[0.95] lg:text-[clamp(2.75rem,4.5vw,3.85rem)]">
             {title}
           </h1>
 
@@ -53,7 +53,7 @@ export function PageHero({
                 <Button
                   asChild
                   size="lg"
-                  className="min-h-11 w-full border border-primary/60 bg-primary px-4 text-primary-foreground hover:bg-primary/85 sm:w-auto"
+                  className="min-h-11 w-full border border-primary/60 bg-primary px-4 text-primary-foreground hover:bg-primary/85 active:bg-primary/90 sm:w-auto"
                 >
                   <Link href={primary.href}>
                     {primary.label}
@@ -66,7 +66,7 @@ export function PageHero({
                   asChild
                   size="lg"
                   variant="outline"
-                  className="min-h-11 w-full border-foreground/12 bg-foreground/4 px-4 text-foreground hover:bg-foreground/8 hover:text-foreground sm:w-auto"
+                  className="min-h-11 w-full border-border bg-muted/30 px-4 text-foreground hover:bg-muted/50 hover:text-foreground active:bg-muted/40 sm:w-auto"
                 >
                   <Link href={secondary.href}>{secondary.label}</Link>
                 </Button>
@@ -77,11 +77,11 @@ export function PageHero({
       </div>
 
       {metrics?.length ? (
-        <div className="mt-8 grid gap-px border border-foreground/8 bg-foreground/8 sm:mt-10 md:grid-cols-3">
+        <div className="mt-8 grid gap-px border border-border bg-border sm:mt-10 md:grid-cols-3">
           {metrics.map((metric) => (
             <Card
               key={`${metric.value}-${metric.label}`}
-              className="border-0 bg-background/90 text-foreground transition-colors duration-200 hover:bg-card"
+              className="border-0 bg-card/95 text-foreground transition-colors duration-200 hover:bg-card dark:bg-card/90"
             >
               <CardHeader className="flex flex-col justify-center gap-2">
                 <CardTitle className="text-4xl leading-none font-medium tracking-[-0.05em] text-foreground sm:text-5xl">

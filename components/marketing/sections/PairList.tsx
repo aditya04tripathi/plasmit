@@ -9,7 +9,7 @@ export function PairList({
   items: { title: string; body: string }[]
 }) {
   return (
-    <Card className="border border-foreground/8 bg-card/72 text-card-foreground">
+    <Card className="border border-border bg-card/80 text-card-foreground shadow-sm">
       <CardHeader className="flex flex-col justify-center gap-2">
         <CardTitle className="text-2xl leading-tight font-medium tracking-[-0.03em] text-foreground">
           {title}

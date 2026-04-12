@@ -92,7 +92,7 @@ export function Navbar({
               variant="ghost"
               asChild
               className={cn(
-                "h-auto min-h-10 px-3 py-2",
+                "h-auto min-h-11 px-3 py-2",
                 revealAfterHero
                   ? "text-muted-foreground hover:bg-foreground/8 hover:text-foreground"
                   : "text-muted-foreground hover:bg-foreground/8 hover:text-foreground"
@@ -108,7 +108,7 @@ export function Navbar({
             <Button
               asChild
               className={cn(
-                "h-auto min-h-10 px-4 py-2",
+                "h-auto min-h-11 px-4 py-2",
                 revealAfterHero
                   ? "border border-primary/60 bg-primary text-primary-foreground hover:bg-primary/85"
                   : "border border-primary/60 bg-primary text-primary-foreground hover:bg-primary/85"
@@ -143,7 +143,7 @@ export function Navbar({
             </SheetTrigger>
             <SheetContent
               side="right"
-              className="border-l border-foreground/8 bg-background text-foreground"
+              className="border-l border-border bg-background pb-[max(1rem,env(safe-area-inset-bottom))] text-foreground"
             >
               <SheetHeader>
                 <SheetTitle>Navigate</SheetTitle>

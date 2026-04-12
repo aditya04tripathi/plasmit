@@ -28,12 +28,12 @@ export function SectionHeading({
       {badge ? (
         <Badge
           variant="outline"
-          className="mb-3 w-fit border-foreground/12 bg-foreground/4 text-muted-foreground"
+          className="mb-3 w-fit border-border bg-muted/40 font-normal tracking-normal text-muted-foreground normal-case"
         >
           {badge}
         </Badge>
       ) : null}
-      <h2 className="text-[clamp(2.1rem,9.5vw,3.75rem)] leading-[0.95] font-medium tracking-[-0.055em] text-foreground sm:text-5xl lg:text-6xl">
+      <h2 className="text-[clamp(1.75rem,5.2vw,2.85rem)] leading-[1.05] font-medium tracking-[-0.045em] text-balance text-foreground sm:text-4xl lg:text-[2.85rem]">
         {title}
       </h2>
       {description ? (

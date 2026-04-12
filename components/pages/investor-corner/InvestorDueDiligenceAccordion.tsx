@@ -23,12 +23,16 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 export function InvestorDueDiligenceAccordion() {
   return (
-    <Accordion type="multiple" className="w-full">
+    <Accordion
+      type="multiple"
+      className="w-full"
+      aria-label="Investor diligence tables and roadmap"
+    >
       <AccordionItem value="competitive">
         <AccordionTrigger className="text-sm font-medium text-foreground">
           Competitive comparison
         </AccordionTrigger>
-        <AccordionContent>
+        <AccordionContent className="max-w-none">
           <SimpleTable
             srTitle="Tele-ICU and PiMed comparison"
             columns={investorCompetitiveColumns}
@@ -40,7 +44,7 @@ export function InvestorDueDiligenceAccordion() {
         <AccordionTrigger className="text-sm font-medium text-foreground">
           Five-year financial model (USD)
         </AccordionTrigger>
-        <AccordionContent>
+        <AccordionContent className="max-w-none">
           <SimpleTable
             caption="Bed counts, revenue, and profitability themes. K = $1,000 · M = $1,000,000."
             columns={investorFinancialColumns}
@@ -52,20 +56,20 @@ export function InvestorDueDiligenceAccordion() {
         <AccordionTrigger className="text-sm font-medium text-foreground">
           Fund allocation and year-one commitments
         </AccordionTrigger>
-        <AccordionContent className="space-y-4">
+        <AccordionContent className="max-w-none space-y-4">
           <SimpleTable
             caption="Allocation of funds"
             columns={investorFundAllocationColumns}
             rows={investorFundAllocationRows}
           />
-          <Card className="border border-foreground/8 bg-card/72 text-card-foreground">
+          <Card className="border border-border bg-card/90 text-card-foreground shadow-sm">
             <CardHeader className="pb-2">
               <CardTitle className="text-base font-medium tracking-[-0.02em]">
                 Year-one milestones
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <ul className="list-disc space-y-1.5 pl-5 text-sm leading-6 text-muted-foreground">
+              <ul className="max-w-[65ch] list-disc space-y-1.5 ps-5 text-sm leading-6 text-muted-foreground">
                 {investorFundAsk.y1Milestones.map((m) => (
                   <li key={m}>{m}</li>
                 ))}
@@ -78,7 +82,7 @@ export function InvestorDueDiligenceAccordion() {
         <AccordionTrigger className="text-sm font-medium text-foreground">
           Post-funding Year 1 GTM
         </AccordionTrigger>
-        <AccordionContent>
+        <AccordionContent className="max-w-none">
           <SimpleTable
             caption="Post-funding Year 1 milestones"
             columns={investorGtmColumns}
@@ -91,7 +95,7 @@ export function InvestorDueDiligenceAccordion() {
           Product phases (Life → Nirvana)
         </AccordionTrigger>
         <AccordionContent>
-          <ul className="space-y-3 text-sm leading-6 text-muted-foreground">
+          <ul className="max-w-[65ch] space-y-3 text-sm leading-6 text-muted-foreground">
             {productRoadmapPhases.map((p) => (
               <li key={p.title}>
                 <span className="font-medium text-foreground">{p.title}.</span>{" "}

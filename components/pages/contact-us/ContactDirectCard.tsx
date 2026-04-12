@@ -4,11 +4,11 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 export function ContactDirectCard() {
   return (
-    <Card className="border border-foreground/8 bg-card/72 text-card-foreground">
+    <Card className="border border-border bg-card/80 text-card-foreground shadow-sm">
       <CardHeader className="flex flex-col justify-center gap-2">
         <Badge
           variant="outline"
-          className="w-fit border-foreground/12 bg-foreground/4 text-muted-foreground"
+          className="w-fit border-border bg-muted/40 font-normal tracking-normal text-muted-foreground normal-case"
         >
           Direct contact
         </Badge>

@@ -95,7 +95,7 @@ export function ContactForm({
     const nextErrors = validate(values)
     setErrors(nextErrors)
     if (Object.keys(nextErrors).length > 0) {
-      toast.error("Check the highlighted fields.")
+      toast.error("Fix the fields below.")
       return
     }
 
@@ -111,11 +111,11 @@ export function ContactForm({
           throw new Error(`HTTP ${res.status}`)
         }
         toast.success("Message sent", {
-          description: "We’ll get back to you shortly.",
+          description: "We will reply soon.",
         })
       } else {
         toast.success("Thanks for your message.", {
-          description: `This site isn’t delivering form email yet. Please also write to ${contactDetails.email} so we can respond.`,
+          description: `Forms are not emailed from this site yet. Please also email ${contactDetails.email}.`,
         })
       }
       setValues({
@@ -129,9 +129,7 @@ export function ContactForm({
       })
       setErrors({})
     } catch {
-      toast.error(
-        "Couldn’t send right now. Please try again or email us directly."
-      )
+      toast.error("Send failed. Try again or email us directly.")
     } finally {
       setIsSubmitting(false)
     }
@@ -142,7 +140,7 @@ export function ContactForm({
       className={
         isLight
           ? "shadow-marketing-md rounded-none border border-border bg-card text-card-foreground"
-          : "border border-foreground/8 bg-card/72 text-card-foreground"
+          : "border border-border bg-card/90 text-card-foreground shadow-sm"
       }
     >
       <CardHeader className="flex flex-col justify-center gap-2 pb-0">
@@ -158,7 +156,7 @@ export function ContactForm({
             isLight ? "text-foreground" : "text-foreground"
           }`}
         >
-          Send a note. We’ll reply with the fastest next step.
+          Send a note. We will reply with the fastest next step.
         </CardTitle>
       </CardHeader>
 
@@ -169,25 +167,28 @@ export function ContactForm({
           }`}
         >
           <p>
-            Fields marked with
-            <span className="text-foreground">*</span> are required.
+            <span className="text-foreground">*</span> Required fields.
           </p>
           {!SUBMIT_ENDPOINT ? (
             <p>
-              Submissions are not emailed automatically yet; please also
-              contact{" "}
+              Also email{" "}
               <a
                 href={`mailto:${contactDetails.email}`}
                 className="text-foreground underline-offset-4 hover:underline"
               >
                 {contactDetails.email}
-              </a>
-              .
+              </a>{" "}
+              so we can respond.
             </p>
           ) : null}
         </div>
-        <form onSubmit={onSubmit} className="mt-6 grid gap-4 sm:grid-cols-2">
+        <form
+          dir="auto"
+          onSubmit={onSubmit}
+          className="mt-6 grid min-w-0 grid-cols-1 gap-4 sm:grid-cols-2"
+        >
           <Field
+            className="min-w-0"
             data-invalid={Boolean(errors.firstName)}
             data-disabled={isSubmitting}
           >
@@ -222,6 +223,7 @@ export function ContactForm({
           </Field>
 
           <Field
+            className="min-w-0"
             data-invalid={Boolean(errors.lastName)}
             data-disabled={isSubmitting}
           >
@@ -255,7 +257,7 @@ export function ContactForm({
             </FieldContent>
           </Field>
 
-          <Field data-disabled={isSubmitting}>
+          <Field className="min-w-0" data-disabled={isSubmitting}>
             <FieldLabel
               className="text-xs tracking-[0.22em] text-muted-foreground uppercase"
               htmlFor="mobile"
@@ -283,6 +285,7 @@ export function ContactForm({
           </Field>
 
           <Field
+            className="min-w-0"
             data-invalid={Boolean(errors.email)}
             data-disabled={isSubmitting}
           >
@@ -319,7 +322,7 @@ export function ContactForm({
           </Field>
 
           <Field
-            className="sm:col-span-2"
+            className="min-w-0 sm:col-span-2"
             data-invalid={Boolean(errors.country)}
             data-disabled={isSubmitting}
           >
@@ -370,7 +373,7 @@ export function ContactForm({
           </Field>
 
           <Field
-            className="sm:col-span-2"
+            className="min-w-0 sm:col-span-2"
             data-invalid={Boolean(errors.enquiryType)}
             data-disabled={isSubmitting}
           >
@@ -423,7 +426,7 @@ export function ContactForm({
           </Field>
 
           <Field
-            className="sm:col-span-2"
+            className="min-w-0 sm:col-span-2"
             data-invalid={Boolean(errors.message)}
             data-disabled={isSubmitting}
           >

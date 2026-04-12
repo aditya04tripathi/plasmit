@@ -10,7 +10,8 @@ export const siteMeta = {
 } as const
 
 export const companyHero = {
-  headline: "PlasmIT builds connected critical care infrastructure.",
+  headline:
+    "PlasmIT builds connected critical care\u00a0infrastructure.",
   lead: "PlasmIT Pty Ltd is an Australia-headquartered health-tech company focused on critical care. The team blends national healthcare strategy experience with interoperability depth, including FHIR and large-scale digital health programmes.",
   productLine:
     "Flagship platform: PiMed (QLMed), Smart ICU on Mobile™: point-in-time ICU care on mobile, 24×7, with vendor-agnostic edge-to-cloud delivery.",
@@ -41,10 +42,8 @@ export const contactDetails = {
 export const navLinks = [
   { label: "Home", href: "/" },
   { label: "PiMed", href: "/pimed" },
-  { label: "Hospital", href: "/hospital-corner" },
+  { label: "Hospitals", href: "/hospital-corner" },
   { label: "Investors", href: "/investor-corner" },
-  { label: "About", href: "/about-us" },
-  { label: "Leadership", href: "/leadership" },
   { label: "Contact", href: "/contact-us" },
 ] as const
 
@@ -76,9 +75,9 @@ export const footerGroups = [
 ] as const
 
 export const proofPoints = [
-  "PlasmIT Pty Ltd: Australia-headquartered critical care health-tech with India-first commercial traction and investor-ready governance.",
-  "Flagship product PiMed (QLMed), Smart ICU on Mobile™: continuous monitoring, connected intervention, and a compliant fault-tolerant platform.",
-  "Vendor-agnostic edge-to-cloud architecture, FHIR-aware interoperability, and utilisation-based SaaS economics for hospitals.",
+  "Commercial path: paid pilots, hospital MOUs, and public-sector traction referenced in investor materials.",
+  "Hospital economics: utilisation-based tiers; hardware and model detail sit in diligence tables on the investor corner.",
+  "About, vision, values, and leadership stay one click away in the footer under Company.",
 ] as const
 
 export type StoryCard = {
@@ -250,13 +249,15 @@ export const productRoadmapPhases = [
 export const hospitalMetrics = [
   {
     value: "~5×",
-    label: "Target savings multiple with base product features within the first year.",
-    note: "As stated in investor materials; realised outcomes depend on deployment and local factors.",
+    label:
+      "Illustrative savings multiple from investor materials, not a forecast for your hospital.",
+    note: "Real results depend on how PiMed is deployed and on local practice and economics.",
   },
   {
     value: "~1 yr",
-    label: "ROI horizon framed around base product value realisation.",
-    note: "Investor pack narrative; not a guarantee.",
+    label:
+      "Illustrative time-to-value story from investor materials, not a promised timeline.",
+    note: "Your path will depend on scope, integration, and adoption.",
   },
   {
     value: "24×7",
@@ -266,23 +267,23 @@ export const hospitalMetrics = [
 
 export const hospitalFeatures = [
   {
-    title: "Save lives",
-    body: "Earlier detection, continuous context, and faster coordination to reduce avoidable adverse events and mortality risk.",
+    title: "Safer, faster response",
+    body: "Keep the right people seeing the right signal sooner so the team can act in time, not after the fact.",
     icon: "stethoscope",
   },
   {
-    title: "Improve efficiency",
-    body: "Digitised rounds, streamlined workflows, and lower cognitive load so specialist time scales across more patients.",
+    title: "Less friction for staff",
+    body: "Fewer handoffs through scattered systems; rounds and escalations stay in one coherent mobile workflow.",
     icon: "building",
   },
   {
-    title: "Increase brand reputation",
-    body: "Differentiated critical care experience and transparency for patients and referrers.",
+    title: "Clearer experience for families and referrers",
+    body: "A more consistent critical-care story: coordinated teams, visible diligence, less confusion at the bedside.",
     icon: "badge-check",
   },
   {
-    title: "Revenue and utilisation",
-    body: "Stronger bed utilisation, shorter length of stay where clinically appropriate, and pathways for post-discharge continuity.",
+    title: "Bed and pathway utilisation",
+    body: "Where clinically appropriate, better use of capacity and cleaner paths to step-down or follow-up care.",
     icon: "briefcase",
   },
 ] satisfies FeatureCard[]
@@ -340,10 +341,10 @@ export const investorEssentials = [
 export const investorProblemSolution = {
   problemTitle: "Fragmented ICU visibility",
   problemBody:
-    "Off-rounds deterioration and missing live data for remote specialists shrink intervention windows and raise coordination cost: a structural ICU utilisation and delay-risk problem.",
+    "When live data drops off between rounds, remote teams lose time and coordination cost rises. That is the utilisation and delay risk PiMed targets.",
   solutionTitle: "PiMed (QLMed) on mobile",
   solutionBody:
-    "Edge-to-cloud streaming, early abnormality signals, and mobile point-in-time ICU care with team collaboration, 24×7.",
+    "Streaming from the edge, early signals, and mobile point-in-time ICU care with team collaboration, 24×7.",
 } as const
 
 export const investorCompetitiveRows: SimpleTableRow[] = [
@@ -482,7 +483,28 @@ export const investorFundAsk = {
 } as const
 
 export const investorDisclaimer =
-  "Figures and timelines are taken from internal investor materials and are forward-looking. They are not an offer to sell or a solicitation to buy securities. Past or projected performance is not indicative of future results."
+  "From internal investor materials; forward-looking; not an offer or solicitation. Past or projected performance is not a guide to future results."
+
+export const investorPageIntro =
+  "Raising to ship MMF, prove pilot ROI, and scale PiMed as India-first utilisation-based SaaS."
+
+export const investorSnapshotProse =
+  "India: large hospital and ICU bed base with a focused Tier 1–2 wedge; multibillion-USD framing in investor materials, with US expansion after India proof. Traction today includes a paid pilot, multiple MOUs, public-sector signals, TRL 4 product depth, real-time device capture, co-designed AI workflows, and provisional IP; named reference relationships appear in diligence."
+
+export const investorAtGlance = [
+  {
+    label: "Round",
+    value: "Indicative $1.0M seed · convertible notes · $25M pre-money framing.",
+  },
+  {
+    label: "Readiness",
+    value: ">60% product base at funding; paid pilot, MOUs, and public-sector traction.",
+  },
+  {
+    label: "Model",
+    value: "Utilisation-based hospital SaaS; full tables and roadmap expand in diligence below.",
+  },
+] as const
 
 export const aboutHighlights = [
   {
@@ -614,12 +636,17 @@ export const contactFaqs = [
       "PiMed is the commercial product name; QLMed appears in investor materials as an aligned identifier. Smart ICU on Mobile™ is the trademarked positioning line.",
   },
   {
+    question: "Where are About, vision, and leadership?",
+    answer:
+      "The top navigation highlights product, hospitals, investors, and contact. Company pages (About us, Vision and values, Leadership) are grouped in the footer under Company.",
+  },
+  {
     question: "How should I contact leadership?",
     answer: `General enquiries: ${contactDetails.email}. Founder contact on file in investor materials: ${contactDetails.founderEmail}.`,
   },
   {
     question: "Are financial figures on the investor page binding?",
     answer:
-      "No. They summarise forward-looking plans from investor materials and are provided for context only, not as investment advice or an offer to sell securities.",
+      "No. They summarise forward-looking plans for context only, not as investment advice or an offer to sell securities.",
   },
 ] as const

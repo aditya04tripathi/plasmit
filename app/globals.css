@@ -173,7 +173,13 @@
         transparent 20%
       ),
       linear-gradient(180deg, var(--bg-gradient-start), var(--bg-gradient-end));
-    background-attachment: fixed;
+    background-attachment: scroll;
+  }
+
+  @media (min-width: 1024px) {
+    body {
+      background-attachment: fixed;
+    }
   }
 
   .dark body,

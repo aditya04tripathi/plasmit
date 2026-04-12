@@ -43,7 +43,7 @@ export function ContactUsPageView() {
           title="Find us in Melbourne."
           description="Map tiles and data from OpenStreetMap contributors. Open the marker for the full address."
         />
-        <div className="mt-6 overflow-hidden border border-foreground/8 bg-card shadow-marketing-md">
+        <div className="mt-6 overflow-hidden border border-border bg-card shadow-sm">
           <ContactOfficeMapSlot locations={officeMapLocations} />
         </div>
       </Section>

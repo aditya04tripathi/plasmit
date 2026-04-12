@@ -26,7 +26,7 @@ export function SplitShowcase({
   rightBody: string
 }) {
   const leftCard = (
-    <Card className="border border-foreground/8 bg-card/72 text-card-foreground transition-all duration-200 hover:-translate-y-0.5 hover:border-foreground/14 hover:bg-card/84">
+    <Card className="border border-border bg-card/80 text-card-foreground shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/20 hover:bg-card active:translate-y-0">
       <CardHeader className="flex flex-col justify-center gap-2">
         <CardTitle className="text-2xl leading-tight font-medium tracking-[-0.03em] text-foreground">
           {leftTitle}
@@ -39,7 +39,7 @@ export function SplitShowcase({
   )
 
   const rightCard = (
-    <Card className="border border-foreground/8 bg-card/72 text-card-foreground transition-all duration-200 hover:-translate-y-0.5 hover:border-foreground/14 hover:bg-card/84">
+    <Card className="border border-border bg-card/80 text-card-foreground shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/20 hover:bg-card active:translate-y-0">
       <CardHeader className="flex flex-col justify-center gap-2">
         <CardTitle className="text-2xl leading-tight font-medium tracking-[-0.03em] text-foreground">
           {rightTitle}
@@ -56,14 +56,20 @@ export function SplitShowcase({
       <SectionHeading badge={badge} title={title} description={description} />
       <div className="mt-6 grid gap-5 lg:grid-cols-2">
         {leftLink ? (
-          <Link href={leftLink} className="block">
+          <Link
+            href={leftLink}
+            className="block rounded-none outline-none focus-visible:ring-2 focus-visible:ring-ring/55 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          >
             {leftCard}
           </Link>
         ) : (
           leftCard
         )}
         {rightLink ? (
-          <Link href={rightLink} className="block">
+          <Link
+            href={rightLink}
+            className="block rounded-none outline-none focus-visible:ring-2 focus-visible:ring-ring/55 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          >
             {rightCard}
           </Link>
         ) : (
