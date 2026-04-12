@@ -9,7 +9,8 @@ export const siteMeta = {
 export const contactDetails = {
   australia:
     "PlasmIT Pty Ltd, Level 17, Tower 4, 727 Collins Street, Docklands VIC 3008, Australia",
-  footerAustralia: "28-36 Foveaux St, Surry Hills NSW 2010, Australia",
+  footerAustralia:
+    "PlasmIT Pty Ltd, Level 17, Tower 4 , 727 Collins street, Docklands, Victoria, 3008 Australia",
   india: "A-335, Second Floor, Defence Colony, New Delhi 110024, India",
   email: "info@plasmitvector.com",
   phone: "+61 431 770 499",
@@ -101,9 +102,15 @@ export type LeadershipProfile = {
   credentials?: string
 }
 
+export type LeadershipProfileSection = {
+  title: string
+  profiles: LeadershipProfile[]
+}
+
 export const homePage = {
   eyebrow: "Clinical infrastructure for continuous connected care",
-  title: "A premium narrative for hospitals, investors, and care teams evaluating PiMed.",
+  title:
+    "A premium narrative for hospitals, investors, and care teams evaluating PiMed.",
   intro:
     "PlasmIT positions PiMed as the shift from physical rounds to continuous connected rounds: a mobile-first care surface that keeps patient context, alerts, and collaboration available from anywhere.",
   ctaPrimary: { label: "Explore PiMed", href: "/pimed" },
@@ -123,15 +130,18 @@ export const homePage = {
   metrics: [
     {
       value: "24×7",
-      label: "Connected visibility across ICU, emergency, ward, and home care settings.",
+      label:
+        "Connected visibility across ICU, emergency, ward, and home care settings.",
     },
     {
       value: "AI/ML",
-      label: "Edge-led data streaming, anomaly detection, and alerting as described on the live site.",
+      label:
+        "Edge-led data streaming, anomaly detection, and alerting as described on the live site.",
     },
     {
       value: "FHIR",
-      label: "Interoperability posture positioned around standards-aware, compliant health infrastructure.",
+      label:
+        "Interoperability posture positioned around standards-aware, compliant health infrastructure.",
     },
   ] satisfies MetricCard[],
   sections: [
@@ -241,7 +251,7 @@ export const hospitalFeatures = [
 
 export const investorMetrics = [
   {
-    value: "USD 6B",
+    value: "Multi-Billion USD",
     label: "India opportunity cited on the current investor page.",
   },
   {
@@ -319,56 +329,75 @@ export const values = [
   },
 ] satisfies StoryCard[]
 
-export const leadershipProfiles = [
+export const leadershipProfileSections = [
   {
-    name: "Awadhesh Kumar",
-    role: "Chief Technology Officer",
-    summary:
-      "20+ years in digital products and transformation, with a track record of translating emerging technology into business outcomes.",
+    title: "Leadership",
+    profiles: [
+      {
+        name: "Awadhesh Kumar",
+        role: "Chief Technology Officer",
+        summary:
+          "20+ years in digital products and transformation, with a track record of translating emerging technology into business outcomes.",
+      },
+      {
+        name: "Dr. Kamaljit Parmar",
+        role: "Chief Product Officer",
+        summary:
+          "Critical care specialist with more than two decades of experience across Australia, the UK, and India.",
+      },
+      {
+        name: "Dr. Subrata Panda",
+        role: "Chief Medical Officer",
+        summary:
+          "Senior clinical leader with 40+ years at AIIMS New Delhi and deep academic recognition.",
+      },
+      {
+        name: "Dr. Supten Sarbadhikari",
+        role: "Chief Interoperability Officer",
+        summary:
+          "Healthcare digitisation leader connected to HL7/FHIR, WHO advisory work, and national digital health programmes.",
+      },
+      {
+        name: "Dr. Steven Schilders",
+        role: "Chief Data Officer",
+        summary:
+          "Data-first healthcare systems leader with experience in security, digital twins, and large-scale platform delivery.",
+      },
+    ],
   },
   {
-    name: "Dr. Kamaljit Parmar",
-    role: "Chief Product Officer",
-    summary:
-      "Critical care specialist with more than two decades of experience across Australia, the UK, and India.",
+    title: "Product & delivery",
+    profiles: [
+      {
+        name: "Kartik Thakkar",
+        role: "Product Development Lead",
+        summary:
+          "Senior business and technology operator focused on delivery assurance, portfolio execution, and capability uplift.",
+      },
+      {
+        name: "Dr. Chandrakant Pandav",
+        role: "Product SME",
+        summary:
+          "Public health leader and advisor with decades of policy, clinical, and institutional expertise.",
+      },
+    ],
   },
   {
-    name: "Dr. Subrata Panda",
-    role: "Chief Medical Officer",
-    summary:
-      "Senior clinical leader with 40+ years at AIIMS New Delhi and deep academic recognition.",
+    title: "Scientific & research",
+    profiles: [
+      {
+        name: "Dr. Kamal Sharma",
+        role: "Scientific & Research Lead",
+        summary:
+          "Interventional cardiologist with extensive academic output, awards, and translational research experience.",
+      },
+    ],
   },
-  {
-    name: "Dr. Supten Sarbadhikari",
-    role: "Chief Interoperability Officer",
-    summary:
-      "Healthcare digitisation leader connected to HL7/FHIR, WHO advisory work, and national digital health programmes.",
-  },
-  {
-    name: "Dr. Kamal Sharma",
-    role: "Scientific & Research Lead",
-    summary:
-      "Interventional cardiologist with extensive academic output, awards, and translational research experience.",
-  },
-  {
-    name: "Dr. Steven Schilders",
-    role: "Chief Data Officer",
-    summary:
-      "Data-first healthcare systems leader with experience in security, digital twins, and large-scale platform delivery.",
-  },
-  {
-    name: "Kartik Thakkar",
-    role: "Product Development Lead",
-    summary:
-      "Senior business and technology operator focused on delivery assurance, portfolio execution, and capability uplift.",
-  },
-  {
-    name: "Dr. Chandrakant Pandav",
-    role: "Product SME",
-    summary:
-      "Public health leader and advisor with decades of policy, clinical, and institutional expertise.",
-  },
-] satisfies LeadershipProfile[]
+] satisfies LeadershipProfileSection[]
+
+export const leadershipProfiles = leadershipProfileSections.flatMap(
+  (section) => section.profiles
+) satisfies LeadershipProfile[]
 
 export const offices = [
   {
@@ -376,11 +405,11 @@ export const offices = [
     address: contactDetails.australia,
     note: "Primary office shown in the current page-level contact blocks.",
   },
-  {
-    label: "India",
-    address: contactDetails.india,
-    note: "Subsidiary and market footprint referenced throughout the company narrative.",
-  },
+  // {
+  //   label: "India",
+  //   address: contactDetails.india,
+  //   note: "Subsidiary and market footprint referenced throughout the company narrative.",
+  // },
 ] as const
 
 export const contactFaqs = [

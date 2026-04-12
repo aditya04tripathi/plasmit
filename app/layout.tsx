@@ -4,7 +4,7 @@ import { Manrope, Newsreader } from "next/font/google"
 import { siteMeta } from "@/lib/site-content"
 import { cn } from "@/lib/utils"
 
-import { ThemeProvider } from "@/components/theme-provider"
+import { ThemeProvider } from "@/components/providers/theme-provider"
 
 import "./globals.css"
 
