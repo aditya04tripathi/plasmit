@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { useEffect, useState } from "react"
-import { Menu, ArrowUpRight } from "lucide-react"
+import { Menu } from "lucide-react"
 import { ThemeToggle } from "./ThemeToggle"
 
 import { navLinks, siteMeta } from "@/lib/site-content"
@@ -61,22 +61,10 @@ export function Navbar({
         <Link href="/" className="flex items-center gap-3">
           <Image src="/media/logo.svg" alt="PlasmIT" width={32} height={32} />
           <div>
-            <p
-              className={cn(
-                "tracking-[0.32em] uppercase",
-                revealAfterHero
-                  ? "text-muted-foreground"
-                  : "text-muted-foreground"
-              )}
-            >
+            <p className="tracking-[0.32em] text-muted-foreground uppercase">
               PlasmIT
             </p>
-            <p
-              className={cn(
-                "font-medium",
-                revealAfterHero ? "text-foreground" : "text-foreground"
-              )}
-            >
+            <p className="font-medium text-foreground">
               {siteMeta.companyTagline}
             </p>
           </div>
@@ -91,39 +79,12 @@ export function Navbar({
               key={link.href}
               variant="ghost"
               asChild
-              className={cn(
-                "h-auto min-h-11 px-3 py-2",
-                revealAfterHero
-                  ? "text-muted-foreground hover:bg-foreground/8 hover:text-foreground"
-                  : "text-muted-foreground hover:bg-foreground/8 hover:text-foreground"
-              )}
+              className="h-auto min-h-11 px-3 py-2 text-muted-foreground hover:bg-foreground/8 hover:text-foreground"
             >
               <Link href={link.href}>{link.label}</Link>
             </Button>
           ))}
         </nav>
-
-        <div className="hidden items-center gap-2 lg:flex">
-          <div>
-            <Button
-              asChild
-              className={cn(
-                "h-auto min-h-11 px-4 py-2",
-                revealAfterHero
-                  ? "border border-primary/60 bg-primary text-primary-foreground hover:bg-primary/85"
-                  : "border border-primary/60 bg-primary text-primary-foreground hover:bg-primary/85"
-              )}
-            >
-              <Link href="/contact-us">
-                Start a conversation
-                <ArrowUpRight className="size-4" />
-              </Link>
-            </Button>
-          </div>
-          <div className="flex items-center">
-            <ThemeToggle />
-          </div>
-        </div>
 
         <div className="lg:hidden">
           <Sheet>
@@ -131,12 +92,7 @@ export function Navbar({
               <Button
                 variant="outline"
                 aria-label="Open menu"
-                className={cn(
-                  "size-11 shrink-0",
-                  revealAfterHero
-                    ? "border-foreground/14 bg-foreground/5 text-foreground hover:bg-foreground/10"
-                    : "border-foreground/14 bg-foreground/5 text-foreground hover:bg-foreground/10"
-                )}
+                className="size-11 shrink-0 border-foreground/14 bg-foreground/5 text-foreground hover:bg-foreground/10"
               >
                 <Menu className="size-5" aria-hidden />
               </Button>
