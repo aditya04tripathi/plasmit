@@ -57,7 +57,7 @@ export function Navbar({
           : "translate-y-0 opacity-100"
       )}
     >
-      <div className="mx-auto flex min-h-[76px] max-w-7xl items-center justify-between gap-6 px-4 py-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex min-h-19 max-w-7xl items-center justify-between gap-6 px-4 py-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-3">
           <Image src="/media/logo.svg" alt="PlasmIT" width={32} height={32} />
           <div>

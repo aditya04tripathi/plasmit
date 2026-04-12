@@ -9,6 +9,7 @@ import {
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
+import { ThemeToggle } from "./ThemeToggle"
 
 export function SiteFooter() {
   return (
@@ -29,12 +30,12 @@ export function SiteFooter() {
             {proofPoints.map((point) => (
               <li key={point} className="flex gap-3">
                 <span className="mt-2 h-1.5 w-1.5 shrink-0 bg-primary" />
-                <span className="min-w-0 break-words">{point}</span>
+                <span className="min-w-0 wrap-break-word">{point}</span>
               </li>
             ))}
           </ul>
           <Separator />
-          <div className="flex flex-wrap gap-x-4 gap-y-2 text-muted-foreground">
+          <div className="flex flex-col flex-wrap gap-x-4 gap-y-2 text-muted-foreground">
             <span className="min-w-0 break-all">
               <span className="font-medium text-foreground">Email:</span>{" "}
               <Link
@@ -53,6 +54,11 @@ export function SiteFooter() {
                 {contactDetails.phone}
               </Link>
             </span>
+            <span className="flex w-full items-center justify-start gap-4">
+              <span>Dark</span>
+              <ThemeToggle />
+              <span>Light</span>
+            </span>
           </div>
         </div>
 
@@ -68,9 +74,9 @@ export function SiteFooter() {
                     key={link.href}
                     variant="ghost"
                     asChild
-                    className="h-auto min-h-0 justify-start px-0 py-1 text-muted-foreground transition-colors hover:bg-transparent hover:text-foreground"
+                    className="min-h-11 justify-start px-0 py-2 text-muted-foreground transition-colors hover:bg-transparent hover:text-foreground"
                   >
-                    <Link className="px-4" href={link.href}>
+                    <Link className="px-3" href={link.href}>
                       {link.label}
                     </Link>
                   </Button>
