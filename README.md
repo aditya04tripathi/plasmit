@@ -1,61 +1,87 @@
 # PlasmIT
 
-Marketing site for PlasmIT / PiMed, built with Next.js App Router, shadcn/ui, Tailwind CSS v4, and scroll-driven hero components.
+PlasmIT is a Next.js App Router marketing site for PiMed (Smart ICU on Mobile). The codebase combines structured marketing pages, a file-based MDX blog, shared content definitions, and a semantic global typography system.
 
-The site uses a shared content model, token-based light/dark theming, and page views composed from marketing sections.
+## Highlights
 
-## What Was Done
-
-- Reframed the homepage around the PiMed thesis: moving from physical rounds to continuous connected care.
-- Marketing routes for hospitals, investors, product, leadership, values, about, and contact.
-- Scroll-driven hero and structured sections (story, features, timeline, split showcase, FAQ, CTA, team).
-- shadcn-style UI primitives; icons resolved in client components to avoid server serialization issues.
-- Page-specific metadata on `app/**/page.tsx` files.
-- Shared copy and structure in `lib/site-content.ts` instead of scattering strings across components.
+- Next.js 16 + React 19 + TypeScript
+- App Router with per-page metadata and Open Graph/Twitter defaults
+- Blog system with category pages and dynamic slug pages
+- MDX content pipeline using `gray-matter` + `next-mdx-remote/rsc`
+- Shared site copy and navigation metadata in a single content module
+- Contact form with optional API endpoint and graceful fallback behavior
+- Tokenized light/dark theme with global semantic typography in `app/globals.css`
 
 ## Tech Stack
 
-- Next.js 16 App Router
+- Next.js 16 (App Router)
 - React 19
-- TypeScript
-- Tailwind CSS v4
-- shadcn/ui (Radix primitives)
-- Framer Motion / Motion
-- Lenis
-- Lucide React
+- TypeScript 5
+- Tailwind CSS v4 + `tw-animate-css`
+- shadcn-style UI primitives and Radix/Base UI components
+- Framer Motion + Motion
+- Leaflet + React Leaflet
+- Sonner (toasts)
+
+## Route Map
+
+### Core pages
+
+- `/`
+- `/about-us`
+- `/contact-us`
+- `/hospital-corner`
+- `/investor-corner`
+- `/leadership`
+- `/pimed`
+- `/vision-and-values`
+
+### Blog pages
+
+- `/blog`
+- `/blog/healthcare`
+- `/blog/technical`
+- `/blog/[slug]` (generated from MDX files)
 
 ## Project Structure
 
-- [app](/app): route entrypoints (`page.tsx`, `layout.tsx`, `globals.css`)
-- [components/marketing](/components/marketing): shell (`SiteFrame`, `Navbar`, `SiteFooter`, `PrimaryHeroGallery`, …) and [components/marketing/sections](/components/marketing/sections)
-- [components/pages](/components/pages): `*PageView` components per route
-- [components/forms/contact](/components/forms/contact): contact form and office map (Leaflet / OpenStreetMap)
-- [components/layout](/components/layout): shared layout helpers (e.g. page transitions)
-- [components/providers](/components/providers): theme provider
-- [components/ui](/components/ui): shadcn-style primitives and hero animation helpers
-- [lib/site-content.ts](/lib/site-content.ts): site copy and structured content
-- [lib/page-metadata.ts](/lib/page-metadata.ts): metadata helpers
-- [public](/public): static assets
+- `app/`
+	- Route entry points and layout.
+	- `app/layout.tsx` defines fonts and root metadata.
+	- `app/globals.css` defines theme tokens, gradients, shadows, and semantic tag-based typography.
+- `components/pages/`
+	- Per-route page composition (`*PageView` components).
+- `components/marketing/`
+	- Site shell (`Navbar`, `SiteFooter`, `SiteFrame`, `RouteFocus`) and reusable sections.
+- `components/blog/`
+	- Blog list/filter/pagination/search/post rendering and MDX component overrides.
+- `components/forms/contact/`
+	- Contact form + office map slot.
+- `components/ui/`
+	- Reusable UI primitives (`button`, `card`, `accordion`, `sheet`, `field`, `select`, etc.).
+- `content/blog/`
+	- MDX post files organized by category (`technical`, `healthcare`).
+- `lib/`
+	- `site-content.ts`: canonical marketing copy, nav/footer links, contact data.
+	- `page-metadata.ts`: shared metadata builder.
+	- `blog.ts`: content loading, parsing, sorting, and reading-time calculation.
 
-## Routes
+## Environment Variables
 
-Static marketing routes include `/`, `/pimed`, `/hospital-corner`, `/investor-corner`, `/about-us`, `/vision-and-values`, `/leadership`, `/contact-us`, and `/_not-found`.
+Only one app-level variable is currently used:
 
-## Content and Metadata
+- `NEXT_PUBLIC_CONTACT_FORM_ENDPOINT` (optional)
 
-- [lib/site-content.ts](/lib/site-content.ts) holds narrative, leadership, contact, metrics, and page blocks.
-- [lib/page-metadata.ts](/lib/page-metadata.ts) builds consistent `Metadata` for App Router pages.
+If set, `components/forms/contact/ContactForm.tsx` posts JSON form payloads to this URL.
+If unset, the UI shows a fallback message and asks users to email the address from `lib/site-content.ts`.
 
-## Design Notes
+Create `.env.local` if needed:
 
-- Semantic colors and marketing shadows live in [app/globals.css](/app/globals.css).
-- Contact form supports light and dark surface variants for different page contexts.
+```bash
+NEXT_PUBLIC_CONTACT_FORM_ENDPOINT=https://your-endpoint.example/api/contact
+```
 
-## Media
-
-- [public/output.webm](/public/output.webm): static video asset (if present in your checkout).
-
-## Development
+## Local Development
 
 Install dependencies:
 
@@ -63,36 +89,66 @@ Install dependencies:
 npm install
 ```
 
-After install, Husky runs via the `prepare` script and installs [`.husky/pre-commit`](.husky/pre-commit) (runs `npm run lint` and `npm run build`) and [`.husky/commit-msg`](.husky/commit-msg) (validates [Conventional Commits](https://www.conventionalcommits.org/) with Commitlint). Commit messages must look like `feat(scope): description`.
-
-Optional: set `NEXT_PUBLIC_CONTACT_FORM_ENDPOINT` to a URL that accepts `POST` with JSON body matching the contact fields. If unset, the form explains that email is not sent from the site and points users to the address in `lib/site-content.ts`.
-
-Run the dev server:
+Start dev server:
 
 ```bash
 npm run dev
 ```
 
-Typecheck:
+The app runs with Turbopack in development (`next dev --turbopack`).
 
-```bash
-npm run typecheck
+## Scripts
+
+- `npm run dev` - Start local dev server
+- `npm run build` - Create production build
+- `npm run start` - Run built app
+- `npm run lint` - Run ESLint
+- `npm run typecheck` - TypeScript type check (`tsc --noEmit`)
+- `npm run format` - Prettier format for `*.ts`/`*.tsx`
+
+## Blog Authoring
+
+Posts are loaded from:
+
+- `content/blog/technical/*.mdx`
+- `content/blog/healthcare/*.mdx`
+
+Required frontmatter fields:
+
+```md
+---
+title: "Post title"
+description: "One-line summary"
+date: "2026-04-01"
+category: "technical" # or "healthcare"
+keywords: ["edge", "icu", "monitoring"]
+---
 ```
 
-Production build:
+Implementation notes:
 
-```bash
-npm run build
-```
+- `lib/blog.ts` reads files, parses frontmatter, computes reading time, and sorts by date.
+- `app/blog/[slug]/page.tsx` statically generates slug routes from all MDX posts.
 
-Lint:
+## Theming and Typography
 
-```bash
-npm run lint
-```
+- Fonts are configured in `app/layout.tsx` via `next/font/google`.
+- Typography is semantic and tag-driven in `app/globals.css` (`h1..h6`, `p`, `li`, form controls, etc.).
+- Theme colors, chart tokens, gradients, and marketing shadows are CSS variables in `:root`/`.dark`.
+
+## Quality Gates and Git Hooks
+
+Husky is configured via `prepare` script and installs hooks from `.husky/`.
+
+- `.husky/pre-commit`
+	- Runs `npm run lint`
+	- Runs `npm run build`
+- `.husky/commit-msg`
+	- Runs Commitlint with conventional commit rules
+
+Commitlint config is in `commitlint.config.mjs` and extends `@commitlint/config-conventional`.
 
 ## Notes
 
-- Remote images (e.g. Unsplash) are configured in [next.config.mjs](/next.config.mjs).
-- Root metadata base is set in [app/layout.tsx](/app/layout.tsx).
-- The repository may still point at a GitHub remote named `plasmid`; if the repo is renamed to `plasmit`, update `origin` to match.
+- `next.config.mjs` currently uses default image config (`images: {}`).
+- Route transition top-scroll/focus behavior is handled in `components/marketing/RouteFocus.tsx`.
