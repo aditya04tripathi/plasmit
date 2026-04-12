@@ -20,7 +20,21 @@ export function ProfileCard({ profile }: { profile: LeadershipProfile }) {
         </CardTitle>
       </CardHeader>
       <CardContent className="leading-7 text-muted-foreground">
-        {profile.summary}
+        <p>{profile.summary}</p>
+        {profile.credentials ? (
+          <p className="mt-2 text-foreground/80">{profile.credentials}</p>
+        ) : null}
+        {profile.linkedin ? (
+          <a
+            href={profile.linkedin}
+            target="_blank"
+            rel="noreferrer noopener"
+            className="mt-4 inline-block text-primary underline-offset-4 hover:underline"
+            aria-label={`Open LinkedIn profile for ${profile.name}`}
+          >
+            LinkedIn
+          </a>
+        ) : null}
       </CardContent>
     </Card>
   )

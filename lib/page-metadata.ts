@@ -147,6 +147,7 @@ export function buildPageMetadata({
 }: PageMetadataInput): Metadata {
   const urlPath = path === "/" ? "/" : path.replace(/\/+$/, "")
   const fullTitle = `${title} | ${siteMeta.name}`
+  const ogImageUrl = new URL("/media/og-image.png", siteMeta.url).toString()
 
   return {
     title,
@@ -163,7 +164,7 @@ export function buildPageMetadata({
       type: "website",
       images: [
         {
-          url: "/media/og-image.png",
+          url: ogImageUrl,
           width: 1200,
           height: 630,
           alt: fullTitle,
@@ -174,7 +175,7 @@ export function buildPageMetadata({
       card: "summary_large_image",
       title: fullTitle,
       description,
-      images: ["/media/og-image.png"],
+      images: [ogImageUrl],
     },
   }
 }

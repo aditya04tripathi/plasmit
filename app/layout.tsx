@@ -23,7 +23,7 @@ const display = Lora({
   display: "swap",
 })
 
-export const rootMetadata: Metadata = {
+export const metadata: Metadata = {
   metadataBase: new URL(siteMeta.url),
   title: {
     default: `${siteMeta.name} | Smart ICU on Mobile™`,
@@ -39,6 +39,11 @@ export const rootMetadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  icons: {
+    icon: [{ url: "/favicon.ico" }],
+    shortcut: ["/favicon.ico"],
+    apple: [{ url: "/favicon.ico" }],
+  },
   openGraph: {
     type: "website",
     url: siteMeta.url,
@@ -49,7 +54,7 @@ export const rootMetadata: Metadata = {
     locale: "en_AU",
     images: [
       {
-        url: "/media/og-image.png",
+        url: new URL("/media/og-image.png", siteMeta.url).toString(),
         width: 1200,
         height: 630,
         alt: `${siteMeta.name} — Smart ICU on Mobile™`,
@@ -63,7 +68,7 @@ export const rootMetadata: Metadata = {
     title: `${siteMeta.name} | Smart ICU on Mobile™`,
     description:
       "AI-powered, device-agnostic Smart ICU on Mobile™ platform for hospitals. Real-time ICU monitoring, 24×7 remote care intervention, and AI-driven clinical pathways.",
-    images: ["/media/og-image.png"],
+    images: [new URL("/media/og-image.png", siteMeta.url).toString()],
   },
   robots: {
     index: true,
@@ -98,7 +103,7 @@ export default function RootLayout({
           <RouteFocus />
           <a
             href="#main-content"
-            className="fixed top-0 left-4 z-[100] -translate-y-full bg-primary px-4 py-2 font-medium text-primary-foreground transition-transform focus:translate-y-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            className="fixed top-0 left-4 z-100 -translate-y-full bg-primary px-4 py-2 font-medium text-primary-foreground transition-transform focus:translate-y-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           >
             Skip to content
           </a>

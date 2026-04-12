@@ -7,7 +7,7 @@ export const siteMeta = {
   title: "PlasmIT: health technology for critical care.",
   description:
     "PlasmIT Pty Ltd is an Australia-headquartered company reimagining critical care through connected infrastructure. Flagship product PiMed (QLMed), Smart ICU on Mobile™, delivers point-in-time ICU care on mobile, 24×7, vendor-agnostic, standards-aware, built with hospitals and clinicians.",
-  url: "https://www.plasmitvector.com",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://www.plasmitvector.com",
   twitterHandle: "@plasmitvector",
 } as const
 
@@ -45,6 +45,7 @@ export const navLinks = [
   { label: "PiMed", href: "/pimed" },
   { label: "Hospitals", href: "/hospital-corner" },
   { label: "Investors", href: "/investor-corner" },
+  { label: "Leadership", href: "/leadership" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact-us" },
 ] as const
@@ -144,6 +145,7 @@ export type LeadershipProfile = {
   role: string
   summary: string
   credentials?: string
+  linkedin?: string
 }
 
 export type LeadershipProfileSection = {
@@ -580,51 +582,103 @@ export const leadershipProfileSections = [
     profiles: [
       {
         name: "Awadhesh Kumar",
-        role: "Founder and Chief Executive Officer",
-        summary:
-          "Leads company strategy, fundraising, and hospital and partner relationships.",
-      },
-      {
-        name: "Ramesh Subramaniam",
         role: "Chief Technology Officer",
         summary:
-          "Owns technology architecture, engineering execution, and platform scalability.",
+          "20+ years in digital products and transformation. Led digital strategy across geographies and is recognised for helping business leaders achieve outcomes through digital transformation and emerging technology.",
+        linkedin: "https://www.linkedin.com/in/awadhesh-kumar-info/",
       },
       {
         name: "Dr. Kamaljit Parmar",
-        role: "Intensivist · Product owner",
+        role: "Chief Product Officer",
         summary:
-          "Defines clinical product requirements, ICU workflows, and safety-critical use cases.",
+          "20+ years of critical care experience across Australia, UK, and India. ICU Intensivist in Australia for the last 12 years.",
+        credentials:
+          "MBBS, DNB Anesthesiology, EDIC, FCICM Australia, Associate Fellowship in Medical Administration (Australia)",
+        linkedin: "https://www.linkedin.com/in/dr-kamaljit-parmar-b6464299/",
       },
       {
-        name: "Dr. Kamal Sharma",
-        role: "Cardiologist · AI lead",
+        name: "Dr. Subrata Panda",
+        role: "Chief Medical Officer",
         summary:
-          "Aligns clinical AI, translational research, and cardiology domain depth with the product roadmap.",
-      },
-      {
-        name: "Sushil Kumar",
-        role: "Engineering lead",
-        summary:
-          "Drives delivery of integrations, edge-to-cloud pipelines, and release quality.",
+          "40+ years of experience at AIIMS, New Delhi. Former Professor and Head of Department, AIIMS, New Delhi. Recipient of the Shanti Swarup Bhatnagar Award.",
+        linkedin: "https://www.linkedin.com/in/subrat-panda-6902671a",
       },
       {
         name: "Dr. Supten Sarbadhikari",
-        role: "Interoperability lead",
+        role: "Chief Interoperability Officer",
         summary:
-          "Leads HL7/FHIR interoperability strategy and national digital health alignment.",
+          "30+ years of expertise in healthcare digitisation. Founding member of HL7/FHIR and advisor to WHO for Digital Health in India.",
+        credentials:
+          "Project Director, India National Health Portal initiative",
+        linkedin:
+          "https://www.linkedin.com/in/prof-supten-sarbadhikari-phd-fiahsi-ba99233/",
       },
       {
-        name: "Dr. Chetan Mehndiratta",
-        role: "Compliance and growth lead",
+        name: "Dr. Kamal Sharma",
+        role: "Scientific and Research Lead",
         summary:
-          "Owns regulatory compliance pathways, quality systems, and growth execution.",
+          "17+ years as an interventional cardiologist with 22 academic gold medals, 188 publications, and 7000+ citations.",
+        linkedin:
+          "https://www.linkedin.com/in/dr-kamal-sharma-md-dnb-dm-mnams-facc-fesc-fscai-803ab219/",
       },
       {
-        name: "Sanjit Anand",
-        role: "Implementation lead",
+        name: "Dr. Steven Schilders (PhD)",
+        role: "Chief Data Officer",
         summary:
-          "Runs hospital deployments, onboarding, and value realisation with customers.",
+          "Architect specialising in data-first solutions focused on data security, digital twins, and AI, with experience leading billion-dollar data programmes.",
+        linkedin: "https://www.linkedin.com/in/dr-steven-schilders-816970/",
+      },
+      {
+        name: "Kartik Thakkar",
+        role: "Product Development Lead",
+        summary:
+          "Senior business and technology leader specialised in delivery enablement, assurance functions, capability uplift programmes, and large portfolio execution.",
+        linkedin: "https://www.linkedin.com/in/kartik-thakkar-a603b05/",
+      },
+      {
+        name: "Dr. Chandrakant Pandav",
+        role: "Product SME",
+        summary:
+          "Padma Shri awardee with 40+ years of experience. Advisor to NITI Aayog nutrition programmes and former Professor at AIIMS, New Delhi.",
+        linkedin:
+          "https://www.linkedin.com/in/dr-chandrakant-s-pandav-7b00476a/",
+      },
+    ],
+  },
+  {
+    title: "Advisors",
+    profiles: [
+      {
+        name: "Dr. Meera Iyer",
+        role: "Clinical Governance Advisor",
+        summary:
+          "Dummy profile. Supports clinical governance frameworks, patient safety reviews, and care quality pathways across ICU programmes.",
+        linkedin:
+          "https://www.linkedin.com/search/results/all/?keywords=Dr.%20Meera%20Iyer",
+      },
+      {
+        name: "Arjun Mehta",
+        role: "Digital Health Advisor",
+        summary:
+          "Dummy profile. Advises on digital platform adoption, health-system modernisation, and scaled transformation operating models.",
+        linkedin:
+          "https://www.linkedin.com/search/results/all/?keywords=Arjun%20Mehta",
+      },
+      {
+        name: "Dr. Nisha Rao",
+        role: "AI Safety Advisor",
+        summary:
+          "Dummy profile. Focuses on safe AI deployment practices, model governance, and clinical risk controls for production systems.",
+        linkedin:
+          "https://www.linkedin.com/search/results/all/?keywords=Dr.%20Nisha%20Rao",
+      },
+      {
+        name: "Vikram Sen",
+        role: "Market Strategy Advisor",
+        summary:
+          "Dummy profile. Supports go-to-market planning, partnership strategy, and commercial scaling across target hospital networks.",
+        linkedin:
+          "https://www.linkedin.com/search/results/all/?keywords=Vikram%20Sen",
       },
     ],
   },

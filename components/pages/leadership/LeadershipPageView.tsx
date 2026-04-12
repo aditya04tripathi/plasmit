@@ -12,16 +12,16 @@ export function LeadershipPageView() {
     <SiteFrame>
       <PageHero
         badge="Leadership"
-        title="Eight-person core team from the investor pack."
-        intro="Founder-led execution spanning CEO, CTO, clinical product ownership, AI, engineering, interoperability, compliance, and implementation, aligned to PiMed (QLMed) commercialisation."
+        title="Leadership team and advisors shaping critical-care innovation."
+        intro="Meet the cross-functional leadership team and advisor bench supporting product strategy, clinical excellence, interoperability, data, and delivery for PiMed."
         primary={{ label: "Contact the Team", href: "/contact-us" }}
         secondary={{ label: "Read About PlasmIT", href: "/about-us" }}
       />
 
       <TeamSection
-        badge="Core team"
-        title="Operators building Smart ICU on Mobile™."
-        description="Roles and names match the structured investor extraction; short summaries describe mandate only."
+        badge="Team"
+        title="Leadership and advisors driving Smart ICU on Mobile™."
+        description="The leadership section includes core operators; the advisors section highlights additional strategic support profiles."
         sections={leadershipProfileSections}
       />
 

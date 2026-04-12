@@ -23,7 +23,7 @@ export function TeamSection({
             <h3 className="mb-4 font-semibold tracking-[0.28em] text-muted-foreground uppercase">
               {section.title}
             </h3>
-            <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+            <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
               {section.profiles.map((profile) => (
                 <ProfileCard key={profile.name} profile={profile} />
               ))}
