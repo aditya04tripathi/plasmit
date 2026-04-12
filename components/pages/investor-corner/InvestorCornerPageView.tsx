@@ -40,7 +40,7 @@ export function InvestorCornerPageView() {
       />
 
       <Section tone="muted" density="compact">
-        <p className="max-w-[65ch] text-base leading-7 text-muted-foreground">
+        <p className="max-w-[65ch] leading-7 text-muted-foreground">
           {investorSnapshotProse}
         </p>
       </Section>
@@ -71,7 +71,7 @@ export function InvestorCornerPageView() {
           <div className="mt-6 grid gap-px border border-border bg-border md:grid-cols-2">
             <Card className="border-0 bg-card text-foreground">
               <CardHeader>
-                <CardTitle className="text-3xl font-medium tracking-[-0.04em] sm:text-4xl">
+                <CardTitle className="metric-value font-medium tracking-[-0.04em]">
                   {investorFundAsk.amountUsd}
                 </CardTitle>
                 <CardDescription>Raise target</CardDescription>
@@ -79,7 +79,7 @@ export function InvestorCornerPageView() {
             </Card>
             <Card className="border-0 bg-card text-foreground">
               <CardHeader>
-                <CardTitle className="text-3xl font-medium tracking-[-0.04em] sm:text-4xl">
+                <CardTitle className="metric-value font-medium tracking-[-0.04em]">
                   {investorFundAsk.valuationUsd}
                 </CardTitle>
                 <CardDescription>
@@ -93,16 +93,16 @@ export function InvestorCornerPageView() {
 
       <Section>
         <div className="border-b border-border pb-10">
-          <p className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
+          <p className="font-medium tracking-wide text-muted-foreground uppercase">
             At a glance
           </p>
           <dl className="mt-6 grid gap-6 sm:grid-cols-3 sm:gap-8">
             {investorAtGlance.map((row) => (
               <div key={row.label} className="min-w-0">
-                <dt className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
+                <dt className="font-medium tracking-wide text-muted-foreground uppercase">
                   {row.label}
                 </dt>
-                <dd className="mt-2 text-sm leading-6 text-pretty text-foreground">
+                <dd className="mt-2 leading-6 text-pretty text-foreground">
                   {row.value}
                 </dd>
               </div>
@@ -121,7 +121,7 @@ export function InvestorCornerPageView() {
             <InvestorDueDiligenceAccordion />
           </CardContent>
         </Card>
-        <p className="mt-4 max-w-[65ch] text-xs leading-5 text-muted-foreground">
+        <p className="mt-4 max-w-[65ch] leading-5 text-muted-foreground">
           {investorDisclaimer}
         </p>
       </Section>

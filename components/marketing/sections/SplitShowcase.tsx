@@ -28,11 +28,11 @@ export function SplitShowcase({
   const leftCard = (
     <Card className="border border-border bg-card/80 text-card-foreground shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/20 hover:bg-card active:translate-y-0">
       <CardHeader className="flex flex-col justify-center gap-2">
-        <CardTitle className="text-2xl leading-tight font-medium tracking-[-0.03em] text-foreground">
+        <CardTitle className="leading-snug font-medium tracking-[-0.03em] text-foreground">
           {leftTitle}
         </CardTitle>
       </CardHeader>
-      <CardContent className="text-sm leading-7 text-muted-foreground">
+      <CardContent className="leading-7 text-muted-foreground">
         {leftBody}
       </CardContent>
     </Card>
@@ -41,11 +41,11 @@ export function SplitShowcase({
   const rightCard = (
     <Card className="border border-border bg-card/80 text-card-foreground shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/20 hover:bg-card active:translate-y-0">
       <CardHeader className="flex flex-col justify-center gap-2">
-        <CardTitle className="text-2xl leading-tight font-medium tracking-[-0.03em] text-foreground">
+        <CardTitle className="leading-snug font-medium tracking-[-0.03em] text-foreground">
           {rightTitle}
         </CardTitle>
       </CardHeader>
-      <CardContent className="text-sm leading-7 text-muted-foreground">
+      <CardContent className="leading-7 text-muted-foreground">
         {rightBody}
       </CardContent>
     </Card>

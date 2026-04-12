@@ -63,7 +63,7 @@ export function Navbar({
           <div>
             <p
               className={cn(
-                "text-[11px] tracking-[0.32em] uppercase",
+                "tracking-[0.32em] uppercase",
                 revealAfterHero
                   ? "text-muted-foreground"
                   : "text-muted-foreground"
@@ -73,7 +73,7 @@ export function Navbar({
             </p>
             <p
               className={cn(
-                "text-sm font-medium",
+                "font-medium",
                 revealAfterHero ? "text-foreground" : "text-foreground"
               )}
             >
@@ -103,8 +103,8 @@ export function Navbar({
           ))}
         </nav>
 
-        <div className="flex items-center gap-2">
-          <div className="hidden lg:block">
+        <div className="hidden items-center gap-2 lg:flex">
+          <div>
             <Button
               asChild
               className={cn(
@@ -120,7 +120,7 @@ export function Navbar({
               </Link>
             </Button>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center">
             <ThemeToggle />
           </div>
         </div>
@@ -164,14 +164,20 @@ export function Navbar({
                   </Button>
                 ))}
                 <Separator className="my-2" />
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-3">
                   <Button
                     asChild
                     className="h-auto min-h-11 border border-primary/60 bg-primary px-4 py-3 text-primary-foreground hover:bg-primary/85"
                   >
                     <Link href="/contact-us">Start a conversation</Link>
                   </Button>
-                  <ThemeToggle />
+
+                  <div className="flex min-h-11 items-center justify-between border border-border bg-muted/25 px-3 py-2 text-muted-foreground">
+                    <span className="font-medium tracking-[0.18em] uppercase">
+                      Theme
+                    </span>
+                    <ThemeToggle />
+                  </div>
                 </div>
               </div>
             </SheetContent>

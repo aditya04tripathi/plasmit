@@ -8,6 +8,7 @@ export const metadata: Metadata = buildPageMetadata({
   description:
     "Official vision and mission from the investor pack, plus six operating principles for connected, contextual, compliant care delivery.",
   path: "/vision-and-values",
+  keywords: ["healthcare ethics", "connected care principles", "patient-centric care"],
 })
 
 export default function VisionAndValuesPage() {

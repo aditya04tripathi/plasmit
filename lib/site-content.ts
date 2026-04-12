@@ -7,11 +7,12 @@ export const siteMeta = {
   title: "PlasmIT: health technology for critical care.",
   description:
     "PlasmIT Pty Ltd is an Australia-headquartered company reimagining critical care through connected infrastructure. Flagship product PiMed (QLMed), Smart ICU on Mobile™, delivers point-in-time ICU care on mobile, 24×7, vendor-agnostic, standards-aware, built with hospitals and clinicians.",
+  url: "https://www.plasmitvector.com",
+  twitterHandle: "@plasmitvector",
 } as const
 
 export const companyHero = {
-  headline:
-    "PlasmIT builds connected critical care\u00a0infrastructure.",
+  headline: "PlasmIT builds connected critical care\u00a0infrastructure.",
   lead: "PlasmIT Pty Ltd is an Australia-headquartered health-tech company focused on critical care. The team blends national healthcare strategy experience with interoperability depth, including FHIR and large-scale digital health programmes.",
   productLine:
     "Flagship platform: PiMed (QLMed), Smart ICU on Mobile™: point-in-time ICU care on mobile, 24×7, with vendor-agnostic edge-to-cloud delivery.",
@@ -44,6 +45,7 @@ export const navLinks = [
   { label: "PiMed", href: "/pimed" },
   { label: "Hospitals", href: "/hospital-corner" },
   { label: "Investors", href: "/investor-corner" },
+  { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact-us" },
 ] as const
 
@@ -62,6 +64,7 @@ export const footerGroups = [
       { label: "About Us", href: "/about-us" },
       { label: "Vision & Values", href: "/vision-and-values" },
       { label: "Leadership", href: "/leadership" },
+      { label: "Blog", href: "/blog" },
     ],
   },
   {
@@ -70,6 +73,27 @@ export const footerGroups = [
       { label: "Contact Us", href: "/contact-us" },
       { label: "Email", href: `mailto:${contactDetails.email}` },
       { label: "WhatsApp", href: contactDetails.whatsapp },
+    ],
+  },
+  {
+    title: "Socials",
+    links: [
+      {
+        label: "Facebook",
+        href: "https://www.facebook.com/plasmititvector",
+      },
+      {
+        label: "X (formerly Twitter)",
+        href: "https://x.com/plasmitvector",
+      },
+      {
+        label: "LinkedIn",
+        href: "https://www.linkedin.com/company/plasmit-healthcare-it-vector/",
+      },
+      {
+        label: "Youtube",
+        href: "https://www.youtube.com/@plasmithealthcarevector626",
+      },
     ],
   },
 ] as const
@@ -261,7 +285,8 @@ export const hospitalMetrics = [
   },
   {
     value: "24×7",
-    label: "Point-in-time ICU care delivery via mobile, per product definition.",
+    label:
+      "Point-in-time ICU care delivery via mobile, per product definition.",
   },
 ] satisfies MetricCard[]
 
@@ -441,20 +466,13 @@ export const investorFundAllocationRows: SimpleTableRow[] = [
     "15%",
     "Webinars, podcasts, sales, and team operations",
   ],
-  [
-    "Compliance and IP",
-    "10%",
-    "Regulatory certifications and patent filings",
-  ],
+  ["Compliance and IP", "10%", "Regulatory certifications and patent filings"],
 ]
 
 export const investorGtmColumns: SimpleTableColumn[] = ["Milestone", "Timing"]
 
 export const investorGtmRows: SimpleTableRow[] = [
-  [
-    "Current product base feature readiness",
-    ">60% complete at funding",
-  ],
+  ["Current product base feature readiness", ">60% complete at funding"],
   ["Product development completion (post-funding)", "Q1–Q4 Year 1"],
   ["Regulatory compliance and IP/copyright", "Q1–Q3 Year 1"],
   ["Marketing campaign (webinar/podcast)", "Q2–Q4 Year 1"],
@@ -494,15 +512,18 @@ export const investorSnapshotProse =
 export const investorAtGlance = [
   {
     label: "Round",
-    value: "Indicative $1.0M seed · convertible notes · $25M pre-money framing.",
+    value:
+      "Indicative $1.0M seed · convertible notes · $25M pre-money framing.",
   },
   {
     label: "Readiness",
-    value: ">60% product base at funding; paid pilot, MOUs, and public-sector traction.",
+    value:
+      ">60% product base at funding; paid pilot, MOUs, and public-sector traction.",
   },
   {
     label: "Model",
-    value: "Utilisation-based hospital SaaS; full tables and roadmap expand in diligence below.",
+    value:
+      "Utilisation-based hospital SaaS; full tables and roadmap expand in diligence below.",
   },
 ] as const
 
@@ -624,7 +645,7 @@ export const offices = [
 export const officeMapLocations = [
   {
     label: "PlasmIT, Docklands",
-    position: { lat: -37.82125, lng: 144.95565 } as const,
+    position: { lat: -37.820499, lng: 144.949966 } as const,
     address: contactDetails.australia,
   },
 ] as const

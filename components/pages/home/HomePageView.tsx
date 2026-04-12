@@ -24,10 +24,10 @@ export function HomePageView() {
       <PrimaryHeroGallery />
 
       <Section density="airy">
-        <blockquote className="max-w-[min(100%,42rem)] border-l-[3px] border-primary py-1 ps-6 font-(family-name:--font-display) text-[clamp(1.25rem,4vw,1.65rem)] leading-snug font-medium tracking-[-0.02em] text-pretty text-foreground">
+        <blockquote className="max-w-[min(100%,42rem)] border-l-[3px] border-primary py-1 ps-6 font-heading leading-snug font-medium tracking-[-0.02em] text-pretty text-foreground">
           {companyVision}
         </blockquote>
-        <p className="mt-6 max-w-prose text-base leading-7 text-pretty text-muted-foreground">
+        <p className="mt-6 max-w-prose leading-8 text-pretty text-muted-foreground">
           {companyMission}
         </p>
         <div className="mt-8">
@@ -42,10 +42,10 @@ export function HomePageView() {
       </Section>
 
       <Section tone="muted" density="compact">
-        <h1 className="text-xl leading-tight font-medium tracking-[-0.05em] text-foreground">
+        <h2 className="leading-snug! font-medium tracking-[-0.025em] text-foreground">
           Why mobile context matters
-        </h1>
-        <div className="mt-4 max-w-[65ch] space-y-4 text-base leading-7 text-muted-foreground">
+        </h2>
+        <div className="mt-4 max-w-[65ch] space-y-4 leading-7 text-muted-foreground">
           {homePage.story.map((block) => (
             <p key={block.title}>
               <span className="font-medium text-foreground">

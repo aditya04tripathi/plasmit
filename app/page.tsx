@@ -8,6 +8,7 @@ export const metadata: Metadata = buildPageMetadata({
   description:
     "PlasmIT Pty Ltd builds connected critical care infrastructure. Flagship product PiMed (QLMed), Smart ICU on Mobile™, for hospitals; Australia-headquartered, India-first GTM.",
   path: "/",
+  keywords: ["healthtech startup", "critical care innovation", "digital health transformation"],
 })
 
 export default function Page() {

@@ -20,7 +20,7 @@ export function TeamSection({
       <div className="mt-6 space-y-8">
         {sections.map((section) => (
           <div key={section.title}>
-            <h3 className="mb-4 text-xl leading-tight font-medium tracking-[-0.03em] text-foreground">
+            <h3 className="mb-4 font-semibold tracking-[0.28em] text-muted-foreground uppercase">
               {section.title}
             </h3>
             <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">

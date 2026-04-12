@@ -29,7 +29,7 @@ export function InvestorDueDiligenceAccordion() {
       aria-label="Investor diligence tables and roadmap"
     >
       <AccordionItem value="competitive">
-        <AccordionTrigger className="text-sm font-medium text-foreground">
+        <AccordionTrigger className="font-medium text-foreground">
           Competitive comparison
         </AccordionTrigger>
         <AccordionContent className="max-w-none">
@@ -41,7 +41,7 @@ export function InvestorDueDiligenceAccordion() {
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="financials">
-        <AccordionTrigger className="text-sm font-medium text-foreground">
+        <AccordionTrigger className="font-medium text-foreground">
           Five-year financial model (USD)
         </AccordionTrigger>
         <AccordionContent className="max-w-none">
@@ -53,7 +53,7 @@ export function InvestorDueDiligenceAccordion() {
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="fund">
-        <AccordionTrigger className="text-sm font-medium text-foreground">
+        <AccordionTrigger className="font-medium text-foreground">
           Fund allocation and year-one commitments
         </AccordionTrigger>
         <AccordionContent className="max-w-none space-y-4">
@@ -64,12 +64,12 @@ export function InvestorDueDiligenceAccordion() {
           />
           <Card className="border border-border bg-card/90 text-card-foreground shadow-sm">
             <CardHeader className="pb-2">
-              <CardTitle className="text-base font-medium tracking-[-0.02em]">
+              <CardTitle className="font-medium tracking-[-0.02em]">
                 Year-one milestones
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <ul className="max-w-[65ch] list-disc space-y-1.5 ps-5 text-sm leading-6 text-muted-foreground">
+              <ul className="max-w-[65ch] list-disc space-y-1.5 ps-5 leading-6 text-muted-foreground">
                 {investorFundAsk.y1Milestones.map((m) => (
                   <li key={m}>{m}</li>
                 ))}
@@ -79,7 +79,7 @@ export function InvestorDueDiligenceAccordion() {
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="gtm">
-        <AccordionTrigger className="text-sm font-medium text-foreground">
+        <AccordionTrigger className="font-medium text-foreground">
           Post-funding Year 1 GTM
         </AccordionTrigger>
         <AccordionContent className="max-w-none">
@@ -91,11 +91,11 @@ export function InvestorDueDiligenceAccordion() {
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="roadmap">
-        <AccordionTrigger className="text-sm font-medium text-foreground">
+        <AccordionTrigger className="font-medium text-foreground">
           Product phases (Life → Nirvana)
         </AccordionTrigger>
         <AccordionContent>
-          <ul className="max-w-[65ch] space-y-3 text-sm leading-6 text-muted-foreground">
+          <ul className="max-w-[65ch] space-y-3 leading-6 text-muted-foreground">
             {productRoadmapPhases.map((p) => (
               <li key={p.title}>
                 <span className="font-medium text-foreground">{p.title}.</span>{" "}

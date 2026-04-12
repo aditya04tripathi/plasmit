@@ -8,6 +8,7 @@ export const metadata: Metadata = buildPageMetadata({
   description:
     "PiMed (QLMed), Smart ICU on Mobile™ by PlasmIT Pty Ltd: product definition, features, edge-to-cloud architecture, and Life / Elixir / Nirvana roadmap phases.",
   path: "/pimed",
+  keywords: ["PiMed features", "Smart ICU Mobile", "medical IoT architecture", "ICU monitoring"],
 })
 
 export default function PiMedPage() {

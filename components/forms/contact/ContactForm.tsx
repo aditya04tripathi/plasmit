@@ -145,14 +145,14 @@ export function ContactForm({
     >
       <CardHeader className="flex flex-col justify-center gap-2 pb-0">
         <p
-          className={`text-xs tracking-[0.26em] uppercase ${
+          className={`tracking-[0.26em] uppercase ${
             isLight ? "text-primary" : "text-muted-foreground"
           }`}
         >
           Enquiry form
         </p>
         <CardTitle
-          className={`mt-3 text-xl leading-[1.1] font-normal tracking-[-0.04em] ${
+          className={`mt-3 leading-[1.1] font-normal tracking-[-0.04em] ${
             isLight ? "text-foreground" : "text-foreground"
           }`}
         >
@@ -162,7 +162,7 @@ export function ContactForm({
 
       <CardContent className="pt-0">
         <div
-          className={`mt-4 space-y-2 text-xs leading-6 ${
+          className={`mt-4 space-y-2 leading-6 ${
             isLight ? "text-muted-foreground" : "text-muted-foreground"
           }`}
         >
@@ -193,7 +193,7 @@ export function ContactForm({
             data-disabled={isSubmitting}
           >
             <FieldLabel
-              className="text-xs tracking-[0.22em] text-muted-foreground uppercase"
+              className="tracking-[0.22em] text-muted-foreground uppercase"
               htmlFor="firstName"
             >
               First name*
@@ -217,7 +217,6 @@ export function ContactForm({
               />
               <FieldError
                 errors={errors.firstName ? [{ message: errors.firstName }] : []}
-                className="text-xs"
               />
             </FieldContent>
           </Field>
@@ -228,7 +227,7 @@ export function ContactForm({
             data-disabled={isSubmitting}
           >
             <FieldLabel
-              className="text-xs tracking-[0.22em] text-muted-foreground uppercase"
+              className="tracking-[0.22em] text-muted-foreground uppercase"
               htmlFor="lastName"
             >
               Last name*
@@ -252,14 +251,13 @@ export function ContactForm({
               />
               <FieldError
                 errors={errors.lastName ? [{ message: errors.lastName }] : []}
-                className="text-xs"
               />
             </FieldContent>
           </Field>
 
           <Field className="min-w-0" data-disabled={isSubmitting}>
             <FieldLabel
-              className="text-xs tracking-[0.22em] text-muted-foreground uppercase"
+              className="tracking-[0.22em] text-muted-foreground uppercase"
               htmlFor="mobile"
             >
               Mobile no.
@@ -290,7 +288,7 @@ export function ContactForm({
             data-disabled={isSubmitting}
           >
             <FieldLabel
-              className="text-xs tracking-[0.22em] text-muted-foreground uppercase"
+              className="tracking-[0.22em] text-muted-foreground uppercase"
               htmlFor="email"
             >
               Email*
@@ -316,7 +314,6 @@ export function ContactForm({
               />
               <FieldError
                 errors={errors.email ? [{ message: errors.email }] : []}
-                className="text-xs"
               />
             </FieldContent>
           </Field>
@@ -327,7 +324,7 @@ export function ContactForm({
             data-disabled={isSubmitting}
           >
             <FieldLabel
-              className="text-xs tracking-[0.22em] text-muted-foreground uppercase"
+              className="tracking-[0.22em] text-muted-foreground uppercase"
               htmlFor="contact-country"
             >
               Country*
@@ -367,7 +364,6 @@ export function ContactForm({
               </Select>
               <FieldError
                 errors={errors.country ? [{ message: errors.country }] : []}
-                className="text-xs"
               />
             </FieldContent>
           </Field>
@@ -378,7 +374,7 @@ export function ContactForm({
             data-disabled={isSubmitting}
           >
             <FieldLabel
-              className="text-xs tracking-[0.22em] text-muted-foreground uppercase"
+              className="tracking-[0.22em] text-muted-foreground uppercase"
               htmlFor="contact-enquiry-type"
             >
               Type of enquiry*
@@ -420,7 +416,6 @@ export function ContactForm({
                 errors={
                   errors.enquiryType ? [{ message: errors.enquiryType }] : []
                 }
-                className="text-xs"
               />
             </FieldContent>
           </Field>
@@ -431,7 +426,7 @@ export function ContactForm({
             data-disabled={isSubmitting}
           >
             <FieldLabel
-              className="text-xs tracking-[0.22em] text-muted-foreground uppercase"
+              className="tracking-[0.22em] text-muted-foreground uppercase"
               htmlFor="message"
             >
               Message*
@@ -454,7 +449,6 @@ export function ContactForm({
               />
               <FieldError
                 errors={errors.message ? [{ message: errors.message }] : []}
-                className="text-xs"
               />
             </FieldContent>
           </Field>

@@ -30,11 +30,11 @@ export function FeatureGrid({
                 <div className="inline-flex h-10 w-10 items-center justify-center border border-foreground/10 bg-foreground/5 text-primary">
                   <Icon className="size-4" />
                 </div>
-                <CardTitle className="text-xl leading-tight font-medium tracking-[-0.03em] text-foreground">
+                <CardTitle className="leading-snug font-medium tracking-[-0.025em] text-foreground">
                   {item.title}
                 </CardTitle>
               </CardHeader>
-              <CardContent className="text-sm leading-7 text-muted-foreground">
+              <CardContent className="leading-7 text-muted-foreground">
                 {item.body}
               </CardContent>
             </Card>

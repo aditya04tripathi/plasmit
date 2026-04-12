@@ -15,11 +15,11 @@ export function ProfileCard({ profile }: { profile: LeadershipProfile }) {
         >
           {profile.role}
         </Badge>
-        <CardTitle className="text-2xl leading-tight font-medium tracking-[-0.03em] text-foreground">
+        <CardTitle className="leading-snug font-medium tracking-[-0.025em] text-foreground">
           {profile.name}
         </CardTitle>
       </CardHeader>
-      <CardContent className="text-sm leading-7 text-muted-foreground">
+      <CardContent className="leading-7 text-muted-foreground">
         {profile.summary}
       </CardContent>
     </Card>

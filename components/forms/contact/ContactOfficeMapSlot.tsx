@@ -13,7 +13,7 @@ const OfficeMapClient = dynamic(
     ssr: false,
     loading: () => (
       <div
-        className="flex h-[min(50vh,420px)] min-h-[280px] w-full items-center justify-center border border-border bg-muted text-sm text-muted-foreground"
+        className="flex h-[min(50vh,420px)] min-h-[280px] w-full items-center justify-center border border-border bg-muted text-muted-foreground"
         role="status"
         aria-live="polite"
       >

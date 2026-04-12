@@ -1,0 +1,42 @@
+---
+title: "Edge Computing in the ICU: Why Latency Is a Clinical Problem"
+description: "Sending every vital sign to the cloud for processing introduces latency that is measured in seconds. In critical care, seconds matter. Here is how edge processing changes the equation."
+date: "2026-04-01"
+category: "technical"
+keywords: ["edge computing", "latency", "streaming", "ICU monitoring", "real-time", "cloud", "anomaly detection"]
+---
+
+## The Latency Problem Is Not Theoretical
+
+A standard cloud-round-trip for a processed vital sign — device reads, data serialises, transmits to cloud, algorithm runs, result returns to display — takes somewhere between 800ms and 3 seconds depending on network conditions and processing queue depth.
+
+For routine dashboards, that delay is imperceptible. For an alert that a patient's SpO₂ has dropped below 85%, the difference between 800ms and 3 seconds is clinically meaningful.
+
+Edge computing moves the first layer of processing to a device at or near the bedside. The algorithm that detects the anomaly runs locally. The alert fires in under 200ms.
+
+## What the Edge Node Actually Does
+
+In the PiMed architecture, the edge device is a small form-factor compute unit deployed per ICU bay. It handles:
+
+- **Protocol translation.** Medical devices speak dozens of proprietary protocols (HL7 v2, DICOM, vendor-specific serial formats). The edge node normalises these into a consistent internal representation before transmission.
+- **Real-time streaming.** Normalised streams are pushed to the cloud continuously rather than in batch intervals, enabling true real-time dashboards.
+- **Local anomaly detection.** A set of rules and lightweight ML models run on-device. High-priority alerts (critical thresholds, rate-of-change alarms) trigger locally without a cloud dependency.
+- **Buffering.** If network connectivity is lost, the edge node buffers readings locally and syncs when connection resumes. Patient monitoring continues uninterrupted.
+
+## The Offline Resilience Argument
+
+Hospital networks are not uniformly reliable, especially in Tier 2 facilities. An architecture that requires continuous cloud connectivity for basic monitoring is not appropriate for that environment.
+
+Edge-first design inverts the dependency: cloud connectivity enhances the experience (richer dashboards, historical analysis, AI model updates) but is not required for the core monitoring function. The edge node keeps the lights on when the uplink goes down.
+
+## Streaming vs Polling
+
+Traditional device integration systems use polling: ask the device for its current reading every N seconds. For a 15-second polling interval, you are always working with data that is up to 15 seconds stale.
+
+Streaming architectures — where the device or edge node pushes new readings as they are generated — give the application truly real-time data. For vitals that change rapidly (heart rate during a deterioration event, respiratory rate during respiratory distress), that freshness makes a material difference in how early an alert fires.
+
+## Engineering Trade-offs
+
+Edge computing introduces operational complexity. Each edge node is a piece of hardware that can fail, needs firmware updates, and must be physically accessible for replacement. Monitoring the fleet of edge nodes becomes an operational requirement.
+
+The trade-off is worth making for critical care: the clinical benefit of lower latency and offline resilience outweighs the operational overhead of managing a distributed compute layer. The key is keeping the edge node simple — focused on protocol translation, streaming, and local alerting — and pushing richer processing to the cloud where latency tolerance allows it.

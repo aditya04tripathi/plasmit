@@ -39,11 +39,11 @@ export function PageHero({
             {badge}
           </Badge>
 
-          <h1 className="max-w-[min(100%,40rem)] text-[clamp(2.05rem,8.5vw,3.85rem)] leading-[0.97] font-medium tracking-[-0.052em] text-foreground text-balance sm:max-w-[min(100%,44rem)] sm:text-[clamp(2.35rem,6vw,3.35rem)] sm:leading-[0.95] lg:text-[clamp(2.75rem,4.5vw,3.85rem)]">
+          <h1 className="max-w-[min(100%,44rem)] leading-[0.97] font-medium tracking-[-0.05em] text-balance text-foreground">
             {title}
           </h1>
 
-          <p className="max-w-prose text-base leading-8 text-muted-foreground text-pretty sm:text-lg sm:leading-8">
+          <p className="max-w-prose leading-8 text-pretty text-muted-foreground">
             {intro}
           </p>
 
@@ -84,15 +84,15 @@ export function PageHero({
               className="border-0 bg-card/95 text-foreground transition-colors duration-200 hover:bg-card dark:bg-card/90"
             >
               <CardHeader className="flex flex-col justify-center gap-2">
-                <CardTitle className="text-4xl leading-none font-medium tracking-[-0.05em] text-foreground sm:text-5xl">
+                <CardTitle className="metric-value leading-none font-medium tracking-[-0.04em] text-foreground">
                   {metric.value}
                 </CardTitle>
-                <CardDescription className="text-sm leading-6 text-muted-foreground">
+                <CardDescription className="leading-6 text-muted-foreground">
                   {metric.label}
                 </CardDescription>
               </CardHeader>
               {metric.note ? (
-                <CardContent className="pt-0 text-xs text-muted-foreground">
+                <CardContent className="pt-0 text-muted-foreground">
                   {metric.note}
                 </CardContent>
               ) : null}

@@ -12,11 +12,11 @@ export function ContactDirectCard() {
         >
           Direct contact
         </Badge>
-        <CardTitle className="text-2xl leading-tight font-medium tracking-[-0.03em] text-foreground">
+        <CardTitle className="leading-tight font-medium tracking-[-0.03em] text-foreground">
           Reach our team directly.
         </CardTitle>
       </CardHeader>
-      <CardContent className="space-y-4 text-sm leading-7 text-muted-foreground">
+      <CardContent className="space-y-4 leading-7 text-muted-foreground">
         <p>
           <span className="font-medium text-foreground">General: </span>
           <a

@@ -33,11 +33,11 @@ export function SectionHeading({
           {badge}
         </Badge>
       ) : null}
-      <h2 className="text-[clamp(1.75rem,5.2vw,2.85rem)] leading-[1.05] font-medium tracking-[-0.045em] text-balance text-foreground sm:text-4xl lg:text-[2.85rem]">
+      <h2 className="leading-[1.04] font-medium tracking-[-0.04em] text-balance text-foreground">
         {title}
       </h2>
       {description ? (
-        <p className="mt-3 max-w-2xl text-sm leading-7 text-muted-foreground sm:text-base">
+        <p className="mt-3 max-w-2xl leading-7 text-muted-foreground">
           {description}
         </p>
       ) : null}

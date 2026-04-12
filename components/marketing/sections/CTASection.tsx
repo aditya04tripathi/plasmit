@@ -26,7 +26,7 @@ export function CTASection({
 }) {
   return (
     <Section>
-      <Card className="border border-border bg-card/85 text-card-foreground shadow-marketing-md">
+      <Card className="shadow-marketing-md border border-border bg-card/85 text-card-foreground">
         <CardHeader className="flex flex-col justify-center gap-2">
           {badge ? (
             <Badge
@@ -36,10 +36,10 @@ export function CTASection({
               {badge}
             </Badge>
           ) : null}
-          <CardTitle className="max-w-3xl text-4xl leading-tight font-medium tracking-[-0.05em] text-foreground sm:text-5xl">
+          <CardTitle className="max-w-3xl leading-[1.04] font-medium tracking-[-0.04em] text-balance text-foreground">
             {title}
           </CardTitle>
-          <CardDescription className="max-w-2xl text-sm leading-7 text-muted-foreground">
+          <CardDescription className="max-w-2xl leading-7 text-muted-foreground">
             {description}
           </CardDescription>
         </CardHeader>

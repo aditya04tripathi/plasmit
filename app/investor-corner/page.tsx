@@ -8,6 +8,7 @@ export const metadata: Metadata = buildPageMetadata({
   description:
     "PlasmIT Pty Ltd seed narrative: thesis, market snapshot, fund summary, and expandable diligence tables (financials, GTM, roadmap).",
   path: "/investor-corner",
+  keywords: ["healthcare investment", "seed stage healthtech", "medical device market"],
 })
 
 export default function InvestorCornerPage() {

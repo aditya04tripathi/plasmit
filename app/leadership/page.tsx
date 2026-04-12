@@ -8,6 +8,7 @@ export const metadata: Metadata = buildPageMetadata({
   description:
     "Core eight-person team from the investor pack: CEO, CTO, intensivist product owner, AI lead, engineering, interoperability, compliance and growth, and implementation.",
   path: "/leadership",
+  keywords: ["healthcare experts", "critical care specialists", "PlasmIT team"],
 })
 
 export default function LeadershipPage() {

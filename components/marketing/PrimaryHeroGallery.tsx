@@ -40,7 +40,7 @@ export function PrimaryHeroGallery() {
         {HERO_IMAGES.map((image, index) => (
           <BentoCell
             key={image.src}
-            className="relative min-h-0 overflow-hidden border border-border bg-background shadow-marketing-lg"
+            className="shadow-marketing-lg relative min-h-0 overflow-hidden border border-border bg-background"
           >
             <Image
               fill
@@ -54,20 +54,20 @@ export function PrimaryHeroGallery() {
             <div className="bg-hero-image-scrim pointer-events-none absolute inset-0" />
           </BentoCell>
         ))}
-        <BentoCell className="relative flex min-h-0 items-center justify-center overflow-hidden border border-border bg-muted/40 p-3 shadow-marketing-lg">
+        <BentoCell className="shadow-marketing-lg relative flex min-h-0 items-center justify-center overflow-hidden border border-border bg-muted/40 p-3">
           <HeroArchitectureDiagram />
         </BentoCell>
       </BentoGrid>
 
       <ContainerScale className="z-10 w-[min(92vw,880px)] text-left sm:text-left">
-        <div className="min-w-0 border border-border border-t-primary border-t-4 bg-background p-4 pb-[max(1rem,env(safe-area-inset-bottom))] ps-[max(1rem,env(safe-area-inset-left))] pe-[max(1rem,env(safe-area-inset-right))] text-foreground shadow-marketing-xl backdrop-blur-none sm:p-7 sm:ps-8">
-          <h1 className="max-w-4xl text-balance text-[clamp(2.35rem,12vw,4rem)] leading-[0.9] font-medium tracking-[-0.065em] sm:mt-2 sm:text-6xl lg:text-7xl">
+        <div className="shadow-marketing-xl min-w-0 border border-t-4 border-border border-t-primary bg-background p-4 ps-[max(1rem,env(safe-area-inset-left))] pe-[max(1rem,env(safe-area-inset-right))] pb-[max(1rem,env(safe-area-inset-bottom))] text-foreground backdrop-blur-none sm:p-7 sm:ps-8">
+          <h1 className="max-w-4xl leading-[0.9] font-medium tracking-[-0.065em] text-balance sm:mt-2">
             {companyHero.headline}
           </h1>
-          <p className="mt-4 max-w-prose text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7">
+          <p className="mt-4 max-w-prose leading-6 text-muted-foreground sm:leading-7">
             {companyHero.lead}
           </p>
-          <p className="mt-3 max-w-prose text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7">
+          <p className="mt-3 max-w-prose leading-6 text-muted-foreground sm:leading-7">
             <span className="font-medium text-foreground">
               {companyHero.productLine}
             </span>
@@ -84,7 +84,7 @@ export function PrimaryHeroGallery() {
                 <ArrowRight className="size-4" />
               </Link>
             </Button>
-            <p className="flex flex-wrap items-center gap-x-1 gap-y-2 text-sm text-muted-foreground">
+            <p className="flex flex-wrap items-center gap-x-1 gap-y-2 text-muted-foreground">
               <Link
                 href="/pimed"
                 className="inline-flex min-h-11 min-w-11 items-center px-2 text-foreground underline-offset-4 hover:underline focus-visible:rounded-sm focus-visible:ring-2 focus-visible:ring-ring/55 focus-visible:outline-none active:opacity-80"

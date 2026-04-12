@@ -11,7 +11,7 @@ export function PairList({
   return (
     <Card className="border border-border bg-card/80 text-card-foreground shadow-sm">
       <CardHeader className="flex flex-col justify-center gap-2">
-        <CardTitle className="text-2xl leading-tight font-medium tracking-[-0.03em] text-foreground">
+        <CardTitle className="leading-tight font-medium tracking-[-0.03em] text-foreground">
           {title}
         </CardTitle>
       </CardHeader>
@@ -19,10 +19,8 @@ export function PairList({
         {items.map((item, index) => (
           <div key={item.title}>
             {index > 0 ? <Separator className="mb-4" /> : null}
-            <p className="text-sm font-medium text-foreground">{item.title}</p>
-            <p className="mt-2 text-sm leading-7 text-muted-foreground">
-              {item.body}
-            </p>
+            <p className="font-medium text-foreground">{item.title}</p>
+            <p className="mt-2 leading-7 text-muted-foreground">{item.body}</p>
           </div>
         ))}
       </CardContent>

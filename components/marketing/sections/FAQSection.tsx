@@ -27,10 +27,10 @@ export function FAQSection({
           <Accordion type="single" collapsible>
             {items.map((item) => (
               <AccordionItem key={item.question} value={item.question}>
-                <AccordionTrigger className="text-sm font-medium text-foreground">
+                <AccordionTrigger className="font-medium text-foreground">
                   {item.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-sm leading-7 text-muted-foreground">
+                <AccordionContent className="leading-7 text-muted-foreground">
                   {item.answer}
                 </AccordionContent>
               </AccordionItem>

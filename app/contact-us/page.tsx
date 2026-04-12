@@ -8,6 +8,7 @@ export const metadata: Metadata = buildPageMetadata({
   description:
     "Contact PlasmIT for hospital, investor, or general enquiries, with office details for Australia and India and a direct enquiry form.",
   path: "/contact-us",
+  keywords: ["contact PlasmIT", "healthcare partnerships", "medical tech inquiry"],
 })
 
 export default function ContactUsPage() {

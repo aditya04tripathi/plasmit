@@ -20,11 +20,11 @@ export function OfficeCards({
             >
               {item.label}
             </Badge>
-            <CardTitle className="text-2xl leading-tight font-medium tracking-[-0.03em] text-foreground">
+            <CardTitle className="leading-tight font-medium tracking-[-0.03em] text-foreground">
               {item.address}
             </CardTitle>
           </CardHeader>
-          <CardContent className="text-sm leading-7 text-muted-foreground">
+          <CardContent className="leading-7 text-muted-foreground">
             {item.note}
           </CardContent>
         </Card>

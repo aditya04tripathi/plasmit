@@ -8,6 +8,7 @@ export const metadata: Metadata = buildPageMetadata({
   description:
     "PlasmIT Pty Ltd: Australia-headquartered critical care health-tech, PiMed (QLMed) Smart ICU on Mobile™, vision and mission from the investor pack.",
   path: "/about-us",
+  keywords: ["PlasmIT company profile", "healthcare mission", "connected care vision"],
 })
 
 export default function AboutUsPage() {

@@ -1,0 +1,46 @@
+---
+title: "AI-Driven Anomaly Detection for ICU Vitals: From Rules to Models"
+description: "Static threshold alerts have kept ICU monitors largely the same for thirty years. Machine learning changes what an alert can know — and when it fires."
+date: "2026-03-15"
+category: "technical"
+keywords: ["AI", "machine learning", "anomaly detection", "vitals", "ICU", "alert fatigue", "predictive", "clinical AI"]
+---
+
+## The Alert Fatigue Problem
+
+An ICU monitor firing an alarm is not unusual. An ICU monitor firing an *actionable* alarm is rarer than it should be.
+
+Studies consistently show that ICU alarm rates run to hundreds per patient per day, of which the vast majority are false positives — SpO₂ probe displacement, motion artifact on the ECG, a transient reading outside threshold that self-resolves in seconds. Clinicians learn to tune out the noise, which means genuinely important alerts compete for attention against a wall of irrelevant ones.
+
+The root cause is the design of traditional alerting: a single static threshold (SpO₂ < 90% → alarm) applied without context about the patient, the trend, or the clinical situation.
+
+## What a Model-Based Approach Changes
+
+A machine learning approach to ICU anomaly detection shifts from "is this reading outside a threshold?" to "is this pattern abnormal *for this patient, at this time*?"
+
+That reframing enables several things:
+
+1. **Personalised baselines.** A patient with chronic COPD operates at a different SpO₂ baseline than a post-surgical patient. A model trained on that patient's recent history adjusts its expectations accordingly.
+2. **Multi-variate correlation.** Deterioration events rarely present as a single abnormal reading. They show up as correlated changes across heart rate, respiratory rate, blood pressure, and temperature simultaneously. A model that watches all channels simultaneously can identify the pattern before any individual channel crosses a static threshold.
+3. **Rate-of-change sensitivity.** A reading of SpO₂ 93% is different depending on whether it has been stable at 93% for two hours or dropped from 98% in the last ten minutes. Trend awareness is difficult to encode in threshold rules; it is a natural property of time-series models.
+
+## Technical Implementation
+
+PiMed's anomaly detection layer uses a combination of approaches depending on the computational environment:
+
+- **At the edge:** Lightweight rule sets for critical threshold crossings (these need to be fast and explainable), supplemented by simple statistical models (Z-score against rolling baseline) that can run on constrained hardware without cloud connectivity.
+- **In the cloud:** Richer time-series models — including LSTM-based sequence models trained on ICU cohort data — that run on aggregated streams and produce higher-confidence deterioration risk scores.
+
+The output from both layers is unified in the mobile application into a single alert hierarchy: critical alerts (act now), high-priority warnings (review within minutes), and informational flags (awareness, no immediate action required).
+
+## The Explainability Requirement
+
+Clinical AI has an additional requirement that general AI applications do not: the clinician needs to understand *why* an alert fired. A black-box model that says "deterioration risk elevated" without supporting evidence will not change clinical behaviour.
+
+PiMed's alert design pairs every AI-generated alert with the specific signal pattern that triggered it — "SpO₂ declining at 0.5%/min for 8 minutes, concurrent with respiratory rate increase from 16 to 22" — so the clinician can confirm or dismiss the alert with their own clinical judgement intact.
+
+## What This Looks Like in Practice
+
+A nurse in a 20-bed ICU receives three alerts in an hour. Two are yellow (high-priority warning), one is red (critical). The alert UI shows the trend that triggered each, the current reading, and the rate of change. The nurse can see at a glance which requires immediate escalation and which she can monitor for another five minutes.
+
+That workflow — high signal, low noise, with clinical context attached to every alert — is the actual target. The AI is not replacing clinical judgment; it is improving the quality of information that judgment acts on.
