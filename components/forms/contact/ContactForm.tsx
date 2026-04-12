@@ -55,6 +55,15 @@ const countries = [
 
 const enquiryTypes = ["Investor", "Hospital", "Others"] as const
 
+const errorIds = {
+  firstName: "contact-first-name-error",
+  lastName: "contact-last-name-error",
+  email: "contact-email-error",
+  country: "contact-country-error",
+  enquiryType: "contact-enquiry-type-error",
+  message: "contact-message-error",
+} as const
+
 function validate(values: FormState): Errors {
   const errors: Errors = {}
   if (!values.firstName.trim()) errors.firstName = "First name is required."
@@ -206,6 +215,10 @@ export function ContactForm({
                   setValues((v) => ({ ...v, firstName: e.target.value }))
                 }
                 aria-invalid={Boolean(errors.firstName)}
+                aria-describedby={
+                  errors.firstName ? errorIds.firstName : undefined
+                }
+                required
                 autoComplete="given-name"
                 maxLength={120}
                 disabled={isSubmitting}
@@ -216,6 +229,7 @@ export function ContactForm({
                 }
               />
               <FieldError
+                id={errorIds.firstName}
                 errors={errors.firstName ? [{ message: errors.firstName }] : []}
               />
             </FieldContent>
@@ -240,6 +254,10 @@ export function ContactForm({
                   setValues((v) => ({ ...v, lastName: e.target.value }))
                 }
                 aria-invalid={Boolean(errors.lastName)}
+                aria-describedby={
+                  errors.lastName ? errorIds.lastName : undefined
+                }
+                required
                 autoComplete="family-name"
                 maxLength={120}
                 disabled={isSubmitting}
@@ -250,6 +268,7 @@ export function ContactForm({
                 }
               />
               <FieldError
+                id={errorIds.lastName}
                 errors={errors.lastName ? [{ message: errors.lastName }] : []}
               />
             </FieldContent>
@@ -302,6 +321,8 @@ export function ContactForm({
                   setValues((v) => ({ ...v, email: e.target.value }))
                 }
                 aria-invalid={Boolean(errors.email)}
+                aria-describedby={errors.email ? errorIds.email : undefined}
+                required
                 autoComplete="email"
                 inputMode="email"
                 maxLength={254}
@@ -313,6 +334,7 @@ export function ContactForm({
                 }
               />
               <FieldError
+                id={errorIds.email}
                 errors={errors.email ? [{ message: errors.email }] : []}
               />
             </FieldContent>
@@ -345,6 +367,8 @@ export function ContactForm({
                       : "w-full border-foreground/10 bg-foreground/5 text-foreground data-placeholder:text-muted-foreground"
                   }
                   aria-invalid={Boolean(errors.country)}
+                  aria-required="true"
+                  aria-describedby={errors.country ? errorIds.country : undefined}
                 >
                   <SelectValue placeholder="Please choose an option" />
                 </SelectTrigger>
@@ -363,6 +387,7 @@ export function ContactForm({
                 </SelectContent>
               </Select>
               <FieldError
+                id={errorIds.country}
                 errors={errors.country ? [{ message: errors.country }] : []}
               />
             </FieldContent>
@@ -395,6 +420,10 @@ export function ContactForm({
                       : "w-full border-foreground/10 bg-foreground/5 text-foreground data-placeholder:text-muted-foreground"
                   }
                   aria-invalid={Boolean(errors.enquiryType)}
+                  aria-required="true"
+                  aria-describedby={
+                    errors.enquiryType ? errorIds.enquiryType : undefined
+                  }
                 >
                   <SelectValue placeholder="Please choose an option" />
                 </SelectTrigger>
@@ -413,6 +442,7 @@ export function ContactForm({
                 </SelectContent>
               </Select>
               <FieldError
+                id={errorIds.enquiryType}
                 errors={
                   errors.enquiryType ? [{ message: errors.enquiryType }] : []
                 }
@@ -439,6 +469,8 @@ export function ContactForm({
                   setValues((v) => ({ ...v, message: e.target.value }))
                 }
                 aria-invalid={Boolean(errors.message)}
+                aria-describedby={errors.message ? errorIds.message : undefined}
+                required
                 maxLength={8000}
                 className={
                   isLight
@@ -448,6 +480,7 @@ export function ContactForm({
                 disabled={isSubmitting}
               />
               <FieldError
+                id={errorIds.message}
                 errors={errors.message ? [{ message: errors.message }] : []}
               />
             </FieldContent>
