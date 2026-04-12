@@ -40,12 +40,27 @@ export function BlogListView({ posts }: BlogListViewProps) {
   }
 
   return (
-    <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-      {posts.map((post) => {
+    <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+      {posts.map((post, index) => {
         const cat = categoryConfig[post.category]
+
+        const isFeatured = index === 0 || index === 3
+
         return (
-          <Link key={post.slug} href={`/blog/${post.slug}`} className="group">
-            <Card className="flex h-full flex-col border border-border bg-card/80 text-card-foreground shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/25 hover:bg-card active:translate-y-0">
+          <Link
+            key={post.slug}
+            href={`/blog/${post.slug}`}
+            className={cn(
+              "group min-w-0",
+              isFeatured ? "md:col-span-2 xl:col-span-2" : "xl:col-span-1"
+            )}
+          >
+            <Card
+              className={cn(
+                "flex h-full flex-col border border-border bg-card/80 text-card-foreground shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/25 hover:bg-card active:translate-y-0",
+                isFeatured && "bg-card"
+              )}
+            >
               <CardHeader className="flex flex-col gap-3 pb-3">
                 {/* Category + reading time row */}
                 <div className="flex items-center justify-between gap-2">
@@ -65,7 +80,12 @@ export function BlogListView({ posts }: BlogListViewProps) {
                 </div>
 
                 {/* Title */}
-                <CardTitle className="line-clamp-2 leading-snug font-medium tracking-[-0.02em] text-foreground transition-colors duration-150 group-hover:text-primary">
+                <CardTitle
+                  className={cn(
+                    "line-clamp-2 leading-snug font-medium tracking-[-0.02em] text-foreground transition-colors duration-150 group-hover:text-primary",
+                    isFeatured && "line-clamp-3"
+                  )}
+                >
                   {post.title}
                 </CardTitle>
 
