@@ -89,6 +89,9 @@
   --chart-3: #efcc80;
   --chart-4: #e792ad;
   --chart-5: #ae92dd;
+  --badge-healthcare-border: color-mix(in srgb, #059669 30%, transparent);
+  --badge-healthcare-bg: color-mix(in srgb, #059669 10%, transparent);
+  --badge-healthcare-text: #047857;
   --shadow-marketing-md: 0 18px 70px #0f17291a;
   --shadow-marketing-lg: 0 25px 90px #0f17291f;
   --shadow-marketing-xl: 0 28px 120px #0f172924;
@@ -130,12 +133,21 @@
   --chart-3: #efcc80;
   --chart-4: #e792ad;
   --chart-5: #ae92dd;
+  --badge-healthcare-border: color-mix(in srgb, #34d399 40%, transparent);
+  --badge-healthcare-bg: color-mix(in srgb, #34d399 16%, transparent);
+  --badge-healthcare-text: #6ee7b7;
   --shadow-marketing-md: 0 18px 70px #00000059;
   --shadow-marketing-lg: 0 25px 90px #00000073;
   --shadow-marketing-xl: 0 28px 120px #00000073;
 }
 
 @layer utilities {
+  .badge-healthcare {
+    border-color: var(--badge-healthcare-border);
+    background-color: var(--badge-healthcare-bg);
+    color: var(--badge-healthcare-text);
+  }
+
   .metric-value {
     font-size: clamp(2rem, 4vw, 2.9rem);
     line-height: 1;

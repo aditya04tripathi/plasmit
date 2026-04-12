@@ -15,8 +15,7 @@ import { cn } from "@/lib/utils"
 const categoryConfig = {
   healthcare: {
     label: "Healthcare",
-    className:
-      "border-emerald-500/30 bg-emerald-500/8 text-emerald-700 dark:text-emerald-400",
+    className: "badge-healthcare",
   },
   technical: {
     label: "Technical",
