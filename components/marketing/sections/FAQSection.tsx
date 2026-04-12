@@ -22,8 +22,8 @@ export function FAQSection({
   return (
     <Section tone="muted">
       <SectionHeading badge={badge} title={title} description={description} />
-      <Card className="mt-6 border border-border bg-card/80 text-card-foreground shadow-sm">
-        <CardContent className="pt-4">
+      <Card className="mt-5 border border-border bg-card/80 text-card-foreground shadow-sm">
+        <CardContent className="pt-3">
           <Accordion type="single" collapsible>
             {items.map((item) => (
               <AccordionItem key={item.question} value={item.question}>

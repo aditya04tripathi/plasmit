@@ -54,7 +54,7 @@ export function SplitShowcase({
   return (
     <Section>
       <SectionHeading badge={badge} title={title} description={description} />
-      <div className="mt-6 grid gap-5 lg:grid-cols-2">
+      <div className="mt-5 grid gap-4 lg:grid-cols-2">
         {leftLink ? (
           <Link
             href={leftLink}

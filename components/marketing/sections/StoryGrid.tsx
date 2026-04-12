@@ -17,7 +17,7 @@ export function StoryGrid({
   return (
     <Section tone="muted">
       <SectionHeading badge={badge} title={title} description={description} />
-      <div className="mt-6 grid gap-6 lg:grid-cols-2 lg:gap-5">
+      <div className="mt-5 grid gap-5 lg:grid-cols-2 lg:gap-4">
         {items.map((item) => (
           <Card
             key={item.title}

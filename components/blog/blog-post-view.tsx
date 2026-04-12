@@ -33,10 +33,10 @@ export function BlogPostView({ post }: BlogPostViewProps) {
     <>
       {/* Article hero — matches PageHero visual language */}
       <section className={cn(sectionClassName("default"))}>
-        <div className="mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
+        <div className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-5 sm:py-10 lg:px-8 lg:py-12">
           {/* Breadcrumb */}
           <nav
-            className="mb-6 flex items-center gap-2 text-muted-foreground"
+            className="mb-5 flex items-center gap-2 text-muted-foreground"
             aria-label="Breadcrumb"
           >
             <Link
@@ -59,7 +59,7 @@ export function BlogPostView({ post }: BlogPostViewProps) {
           </nav>
 
           {/* Article header */}
-          <div className="w-full space-y-5">
+          <div className="w-full space-y-4">
             <Badge
               variant="outline"
               className={cn(
@@ -74,11 +74,11 @@ export function BlogPostView({ post }: BlogPostViewProps) {
               {post.title}
             </h1>
 
-            <p className="max-w-prose leading-8 text-pretty text-muted-foreground">
+            <p className="max-w-prose leading-7 text-pretty text-muted-foreground">
               {post.description}
             </p>
 
-            <div className="flex items-center gap-5 border-t border-foreground/10 pt-5 text-muted-foreground">
+            <div className="flex items-center gap-4 border-t border-foreground/10 pt-4 text-muted-foreground">
               <span className="flex items-center gap-1.5">
                 <Calendar className="size-3.5 opacity-60" strokeWidth={2} />
                 {new Date(post.date).toLocaleDateString("en-AU", {
@@ -97,16 +97,16 @@ export function BlogPostView({ post }: BlogPostViewProps) {
       </section>
 
       {/* Article body */}
-      <Section tone="default">
+      <Section tone="default" density="compact">
         <div className="mx-auto w-full max-w-prose">
           <article className="blog-prose">
             <MDXRemote source={post.content} components={mdxComponents} />
           </article>
 
-          <Separator className="my-10" />
+          <Separator className="my-8" />
 
           {/* Footer actions */}
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <Button
               asChild
               variant="outline"

@@ -30,7 +30,7 @@ interface BlogListViewProps {
 export function BlogListView({ posts }: BlogListViewProps) {
   if (posts.length === 0) {
     return (
-      <div className="flex flex-col items-center justify-center py-24 text-center">
+      <div className="flex flex-col items-center justify-center py-20 text-center">
         <p className="text-muted-foreground">No articles found.</p>
         <p className="mt-1 text-muted-foreground">
           Try a different search term or browse all posts.
@@ -40,7 +40,7 @@ export function BlogListView({ posts }: BlogListViewProps) {
   }
 
   return (
-    <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+    <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
       {posts.map((post, index) => {
         const cat = categoryConfig[post.category]
 
@@ -61,7 +61,7 @@ export function BlogListView({ posts }: BlogListViewProps) {
                 isFeatured && "bg-card"
               )}
             >
-              <CardHeader className="flex flex-col gap-3 pb-3">
+              <CardHeader className="flex flex-col gap-2.5 pb-2.5">
                 {/* Category + reading time row */}
                 <div className="flex items-center justify-between gap-2">
                   <Badge

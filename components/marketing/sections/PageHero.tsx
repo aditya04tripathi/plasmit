@@ -30,8 +30,8 @@ export function PageHero({
 }) {
   return (
     <Section>
-      <div className="space-y-5 sm:space-y-6">
-        <div className="space-y-5 sm:space-y-6">
+      <div className="space-y-3 sm:space-y-4">
+        <div className="space-y-3 sm:space-y-4">
           <Badge
             variant="outline"
             className="w-fit border-border bg-muted/40 font-normal tracking-normal text-muted-foreground normal-case"
@@ -43,12 +43,12 @@ export function PageHero({
             {title}
           </h1>
 
-          <p className="max-w-prose leading-8 text-pretty text-muted-foreground">
+          <p className="max-w-prose leading-7 text-pretty text-muted-foreground">
             {intro}
           </p>
 
           {primary || secondary ? (
-            <div className="flex flex-col gap-3 border-t border-foreground/10 pt-6 sm:flex-row sm:flex-wrap sm:pt-8">
+            <div className="flex flex-col gap-2 border-t border-foreground/10 pt-3 sm:flex-row sm:flex-wrap sm:pt-4">
               {primary ? (
                 <Button
                   asChild
@@ -77,13 +77,13 @@ export function PageHero({
       </div>
 
       {metrics?.length ? (
-        <div className="mt-8 grid gap-px border border-border bg-border sm:mt-10 md:grid-cols-3">
+        <div className="mt-5 grid gap-px border border-border bg-border sm:mt-6 md:grid-cols-3">
           {metrics.map((metric) => (
             <Card
               key={`${metric.value}-${metric.label}`}
               className="border-0 bg-card/95 text-foreground transition-colors duration-200 hover:bg-card dark:bg-card/90"
             >
-              <CardHeader className="flex flex-col justify-center gap-2">
+              <CardHeader className="flex flex-col justify-center gap-1.5">
                 <CardTitle className="metric-value leading-none font-medium tracking-[-0.04em] text-foreground">
                   {metric.value}
                 </CardTitle>

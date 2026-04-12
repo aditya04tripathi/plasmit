@@ -62,13 +62,13 @@ export function InvestorCornerPageView() {
       />
 
       <Section tone="muted" density="compact">
-        <div className="rounded-none border border-primary/30 bg-primary/4 p-6 shadow-sm sm:p-8">
+        <div className="rounded-none border border-primary/30 bg-primary/4 p-5 shadow-sm sm:p-6">
           <SectionHeading
             badge="Fund ask"
             title={`${investorFundAsk.round} terms (summary).`}
             description="Indicative only; confirm with the company. Not an offer to sell securities."
           />
-          <div className="mt-6 grid gap-px border border-border bg-border md:grid-cols-2">
+          <div className="mt-5 grid gap-px border border-border bg-border md:grid-cols-2">
             <Card className="border-0 bg-card text-foreground">
               <CardHeader>
                 <CardTitle className="metric-value font-medium tracking-[-0.04em]">
@@ -96,7 +96,7 @@ export function InvestorCornerPageView() {
           <p className="font-medium tracking-wide text-muted-foreground uppercase">
             At a glance
           </p>
-          <dl className="mt-6 grid gap-6 sm:grid-cols-3 sm:gap-8">
+          <dl className="mt-5 grid gap-5 sm:grid-cols-3 sm:gap-6">
             {investorAtGlance.map((row) => (
               <div key={row.label} className="min-w-0">
                 <dt className="font-medium tracking-wide text-muted-foreground uppercase">
@@ -116,12 +116,12 @@ export function InvestorCornerPageView() {
             description="Open a section for full figures. Same data as the investor pack extraction."
           />
         </div>
-        <Card className="mt-6 border border-border bg-card/90 text-card-foreground shadow-sm">
-          <CardContent className="px-4 pt-2 pb-4 sm:px-6">
+        <Card className="mt-5 border border-border bg-card/90 text-card-foreground shadow-sm">
+          <CardContent className="px-4 pt-2 pb-4 sm:px-5">
             <InvestorDueDiligenceAccordion />
           </CardContent>
         </Card>
-        <p className="mt-4 max-w-[65ch] leading-5 text-muted-foreground">
+        <p className="mt-3 max-w-[65ch] leading-5 text-muted-foreground">
           {investorDisclaimer}
         </p>
       </Section>

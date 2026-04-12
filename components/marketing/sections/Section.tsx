@@ -4,9 +4,9 @@ import { sectionClassName } from "@/components/marketing/sections/section-class-
 import { cn } from "@/lib/utils"
 
 const densityPadding = {
-  compact: "py-8 sm:py-10 lg:py-12",
-  default: "py-10 sm:py-12 lg:py-16",
-  airy: "py-12 sm:py-16 lg:py-20",
+  compact: "py-5 sm:py-7 lg:py-8",
+  default: "py-6 sm:py-8 lg:py-10",
+  airy: "py-8 sm:py-10 lg:py-12",
 } as const
 
 export function Section({
@@ -22,7 +22,7 @@ export function Section({
     <section className={sectionClassName(tone)}>
       <div
         className={cn(
-          "mx-auto max-w-7xl px-4 sm:px-6 lg:px-8",
+          "mx-auto max-w-7xl px-4 sm:px-5 lg:px-8",
           densityPadding[density]
         )}
       >

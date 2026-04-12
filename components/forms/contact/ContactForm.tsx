@@ -152,7 +152,7 @@ export function ContactForm({
           : "border border-border bg-card/90 text-card-foreground shadow-sm"
       }
     >
-      <CardHeader className="flex flex-col justify-center gap-2 pb-0">
+      <CardHeader className="flex flex-col justify-center gap-1.5 pb-0">
         <p
           className={`tracking-[0.26em] uppercase ${
             isLight ? "text-primary" : "text-muted-foreground"
@@ -161,7 +161,7 @@ export function ContactForm({
           Enquiry form
         </p>
         <CardTitle
-          className={`mt-3 leading-[1.1] font-normal tracking-[-0.04em] ${
+          className={`mt-2 leading-[1.1] font-normal tracking-[-0.04em] ${
             isLight ? "text-foreground" : "text-foreground"
           }`}
         >
@@ -171,7 +171,7 @@ export function ContactForm({
 
       <CardContent className="pt-0">
         <div
-          className={`mt-4 space-y-2 leading-6 ${
+          className={`mt-3 space-y-1.5 leading-6 ${
             isLight ? "text-muted-foreground" : "text-muted-foreground"
           }`}
         >
@@ -194,7 +194,7 @@ export function ContactForm({
         <form
           dir="auto"
           onSubmit={onSubmit}
-          className="mt-6 grid min-w-0 grid-cols-1 gap-4 sm:grid-cols-2"
+          className="mt-5 grid min-w-0 grid-cols-1 gap-3.5 sm:grid-cols-2"
         >
           <Field
             className="min-w-0"

@@ -23,11 +23,11 @@ export function HomePageView() {
     <SiteFrame revealNavAfterHero>
       <PrimaryHeroGallery />
 
-      <Section density="airy">
+      <Section>
         <blockquote className="max-w-[min(100%,42rem)] border-l-[3px] border-primary py-1 ps-6 font-heading leading-snug font-medium tracking-[-0.02em] text-pretty text-foreground">
           {companyVision}
         </blockquote>
-        <p className="mt-6 max-w-prose leading-8 text-pretty text-muted-foreground">
+        <p className="mt-5 max-w-prose leading-8 text-pretty text-muted-foreground">
           {companyMission}
         </p>
         <div className="mt-8">
@@ -45,7 +45,7 @@ export function HomePageView() {
         <h2 className="leading-snug! font-medium tracking-[-0.025em] text-foreground">
           Why mobile context matters
         </h2>
-        <div className="mt-4 max-w-[65ch] space-y-4 leading-7 text-muted-foreground">
+        <div className="mt-3 max-w-[65ch] space-y-3 leading-7 text-muted-foreground">
           {homePage.story.map((block) => (
             <p key={block.title}>
               <span className="font-medium text-foreground">

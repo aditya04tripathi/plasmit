@@ -19,7 +19,7 @@ import React from "react"
 export const mdxComponents = {
   h1: ({ children, ...props }: React.ComponentProps<"h1">) => (
     <h1
-      className="mt-12 mb-5 leading-[1.05] font-medium tracking-[-0.04em] text-balance text-foreground first:mt-0"
+      className="mt-10 mb-4 leading-[1.05] font-medium tracking-[-0.04em] text-balance text-foreground first:mt-0"
       {...props}
     >
       {children}
@@ -28,7 +28,7 @@ export const mdxComponents = {
 
   h2: ({ children, ...props }: React.ComponentProps<"h2">) => (
     <h2
-      className="mt-10 mb-4 border-b border-border pb-3 leading-[1.1] font-medium tracking-[-0.03em] text-foreground"
+      className="mt-8 mb-3 border-b border-border pb-2.5 leading-[1.1] font-medium tracking-[-0.03em] text-foreground"
       {...props}
     >
       {children}
@@ -37,7 +37,7 @@ export const mdxComponents = {
 
   h3: ({ children, ...props }: React.ComponentProps<"h3">) => (
     <h3
-      className="mt-8 mb-3 leading-snug font-medium tracking-[-0.025em] text-foreground"
+      className="mt-6 mb-2 leading-snug font-medium tracking-[-0.025em] text-foreground"
       {...props}
     >
       {children}
@@ -46,7 +46,7 @@ export const mdxComponents = {
 
   h4: ({ children, ...props }: React.ComponentProps<"h4">) => (
     <h4
-      className="mt-6 mb-2 leading-snug font-semibold tracking-[-0.015em] text-foreground"
+      className="mt-5 mb-2 leading-snug font-semibold tracking-[-0.015em] text-foreground"
       {...props}
     >
       {children}
@@ -54,14 +54,14 @@ export const mdxComponents = {
   ),
 
   p: ({ children, ...props }: React.ComponentProps<"p">) => (
-    <p className="mt-6 leading-8 text-muted-foreground first:mt-0" {...props}>
+    <p className="mt-5 leading-7 text-muted-foreground first:mt-0" {...props}>
       {children}
     </p>
   ),
 
   ul: ({ children, ...props }: React.ComponentProps<"ul">) => (
     <ul
-      className="my-6 space-y-2 pl-5 leading-8 text-muted-foreground [&>li::marker]:text-primary"
+      className="my-5 space-y-2 pl-5 leading-7 text-muted-foreground [&>li::marker]:text-primary"
       {...props}
     >
       {children}
@@ -70,7 +70,7 @@ export const mdxComponents = {
 
   ol: ({ children, ...props }: React.ComponentProps<"ol">) => (
     <ol
-      className="my-6 list-decimal space-y-2 pl-5 leading-8 text-muted-foreground [&>li::marker]:text-primary"
+      className="my-5 list-decimal space-y-2 pl-5 leading-7 text-muted-foreground [&>li::marker]:text-primary"
       {...props}
     >
       {children}
@@ -85,7 +85,7 @@ export const mdxComponents = {
 
   blockquote: ({ children, ...props }: React.ComponentProps<"blockquote">) => (
     <blockquote
-      className="my-8 border-l-[3px] border-primary bg-muted/30 py-4 pr-4 pl-6 leading-8 text-foreground/80 italic"
+      className="my-6 border-l-[3px] border-primary bg-muted/30 py-3 pr-4 pl-5 leading-7 text-foreground/80 italic"
       {...props}
     >
       {children}
@@ -113,7 +113,7 @@ export const mdxComponents = {
 
   pre: ({ children, ...props }: React.ComponentProps<"pre">) => (
     <pre
-      className="my-6 overflow-x-auto border border-border bg-muted/50 p-5 font-mono leading-7 text-foreground"
+      className="my-5 overflow-x-auto border border-border bg-muted/50 p-4 font-mono leading-7 text-foreground"
       {...props}
     >
       {children}
@@ -121,7 +121,7 @@ export const mdxComponents = {
   ),
 
   hr: ({ ...props }: React.ComponentProps<"hr">) => (
-    <hr className="my-10 border-border" {...props} />
+    <hr className="my-8 border-border" {...props} />
   ),
 
   strong: ({ children, ...props }: React.ComponentProps<"strong">) => (

@@ -28,9 +28,9 @@ export function ContactUsPageView() {
           title="The fastest way to connect."
           description="Please provide your details and the nature of your enquiry so we can route you to the right expert."
         />
-        <div className="mt-6 grid gap-5 lg:grid-cols-[1.1fr_0.9fr]">
+        <div className="mt-5 grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
           <ContactForm />
-          <div className="grid gap-6">
+          <div className="grid gap-5">
             <ContactDirectCard />
             <OfficeCards items={offices} />
           </div>
@@ -43,7 +43,7 @@ export function ContactUsPageView() {
           title="Find us in Melbourne."
           description="Map tiles and data from OpenStreetMap contributors. Open the marker for the full address."
         />
-        <div className="mt-6 overflow-hidden border border-border bg-card shadow-sm">
+        <div className="mt-5 overflow-hidden border border-border bg-card shadow-sm">
           <ContactOfficeMapSlot locations={officeMapLocations} />
         </div>
       </Section>

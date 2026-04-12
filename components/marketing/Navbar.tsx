@@ -57,8 +57,8 @@ export function Navbar({
           : "translate-y-0 opacity-100"
       )}
     >
-      <div className="mx-auto flex min-h-19 max-w-7xl items-center justify-between gap-6 px-4 py-4 sm:px-6 lg:px-8">
-        <Link href="/" className="flex items-center gap-3">
+      <div className="mx-auto flex min-h-19 max-w-7xl items-center justify-between gap-5 px-4 py-4 sm:px-5 lg:px-8">
+        <Link href="/" className="flex items-center gap-2.5">
           <Image src="/media/logo.svg" alt="PlasmIT" width={32} height={32} />
           <div>
             <p className="tracking-[0.32em] text-muted-foreground uppercase">
@@ -108,7 +108,7 @@ export function Navbar({
                 </SheetDescription>
               </SheetHeader>
               <Separator />
-              <div className="grid gap-1 p-4">
+              <div className="grid gap-1 p-3.5">
                 {navLinks.map((link) => (
                   <Button
                     key={link.href}
@@ -120,7 +120,7 @@ export function Navbar({
                   </Button>
                 ))}
                 <Separator className="my-2" />
-                <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-2.5">
                   <Button
                     asChild
                     className="h-auto min-h-11 border border-primary/60 bg-primary px-4 py-3 text-primary-foreground hover:bg-primary/85"

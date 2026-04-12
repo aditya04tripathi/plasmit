@@ -34,7 +34,7 @@ const HERO_IMAGES = [
 
 export function PrimaryHeroGallery() {
   return (
-    <HeroGalleryContainerScroll className="h-[150vh] sm:h-[185vh]">
+    <HeroGalleryContainerScroll className="h-[125vh] sm:h-[155vh]">
       <div className="sticky top-0 z-20 h-1 w-full bg-primary" aria-hidden />
       <BentoGrid className="sticky top-0 left-0 h-svh w-full p-2 pt-3 sm:p-4 md:p-6">
         {HERO_IMAGES.map((image, index) => (
@@ -59,21 +59,21 @@ export function PrimaryHeroGallery() {
         </BentoCell>
       </BentoGrid>
 
-      <ContainerScale className="z-10 w-[min(92vw,880px)] text-left sm:text-left">
-        <div className="shadow-marketing-xl min-w-0 border border-t-4 border-border border-t-primary bg-background p-4 ps-[max(1rem,env(safe-area-inset-left))] pe-[max(1rem,env(safe-area-inset-right))] pb-[max(1rem,env(safe-area-inset-bottom))] text-foreground backdrop-blur-none sm:p-7 sm:ps-8">
+      <ContainerScale className="z-10 w-[min(94vw,860px)] text-left sm:text-left">
+        <div className="shadow-marketing-xl min-w-0 border border-t-4 border-border border-t-primary bg-background p-3 ps-[max(0.9rem,env(safe-area-inset-left))] pe-[max(0.9rem,env(safe-area-inset-right))] pb-[max(0.9rem,env(safe-area-inset-bottom))] text-foreground backdrop-blur-none sm:p-5 sm:ps-6">
           <h1 className="max-w-4xl leading-[0.9] font-medium tracking-[-0.065em] text-balance sm:mt-2">
             {companyHero.headline}
           </h1>
-          <p className="mt-4 max-w-prose leading-6 text-muted-foreground sm:leading-7">
+          <p className="mt-3 max-w-prose leading-6 text-muted-foreground sm:leading-6">
             {companyHero.lead}
           </p>
-          <p className="mt-3 max-w-prose leading-6 text-muted-foreground sm:leading-7">
+          <p className="mt-2.5 max-w-prose leading-6 text-muted-foreground sm:leading-6">
             <span className="font-medium text-foreground">
               {companyHero.productLine}
             </span>
           </p>
 
-          <div className="mt-5 flex w-full max-w-md flex-col items-stretch gap-3 sm:mt-6 sm:max-w-none">
+          <div className="mt-4 flex w-full max-w-md flex-col items-stretch gap-2.5 sm:mt-5 sm:max-w-none">
             <Button
               asChild
               size="lg"
