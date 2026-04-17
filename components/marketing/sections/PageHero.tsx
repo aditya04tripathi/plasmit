@@ -4,13 +4,6 @@ import { ArrowRight } from "lucide-react"
 import type { MetricCard } from "@/lib/site-content"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
 import { Section } from "@/components/marketing/sections/Section"
 
 export function PageHero({
@@ -77,28 +70,24 @@ export function PageHero({
       </div>
 
       {metrics?.length ? (
-        <div className="mt-5 grid gap-px border border-border bg-border sm:mt-6 md:grid-cols-3">
+        <dl className="mt-5 grid gap-2.5 sm:mt-6 md:grid-cols-3">
           {metrics.map((metric) => (
-            <Card
+            <div
               key={`${metric.value}-${metric.label}`}
-              className="border-0 bg-card/95 text-foreground transition-colors duration-200 hover:bg-card dark:bg-card/90"
+              className="border-l-2 border-border/70 bg-muted/20 p-4 transition-colors duration-200 hover:border-primary hover:bg-muted/35"
             >
-              <CardHeader className="flex flex-col justify-center gap-1.5">
-                <CardTitle className="metric-value leading-none font-medium tracking-[-0.04em] text-foreground">
-                  {metric.value}
-                </CardTitle>
-                <CardDescription className="leading-6 text-muted-foreground">
-                  {metric.label}
-                </CardDescription>
-              </CardHeader>
+              <dt className="metric-value leading-none font-medium tracking-[-0.04em] text-foreground">
+                {metric.value}
+              </dt>
+              <dd className="mt-1.5 leading-6 text-muted-foreground">
+                {metric.label}
+              </dd>
               {metric.note ? (
-                <CardContent className="pt-0 text-muted-foreground">
-                  {metric.note}
-                </CardContent>
+                <p className="mt-2 text-muted-foreground">{metric.note}</p>
               ) : null}
-            </Card>
+            </div>
           ))}
-        </div>
+        </dl>
       ) : null}
     </Section>
   )

@@ -3,13 +3,6 @@ import { ArrowRight, Clock, Calendar } from "lucide-react"
 
 import type { BlogPost } from "@/lib/blog"
 import { Badge } from "@/components/ui/badge"
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-} from "@/components/ui/card"
 import { cn } from "@/lib/utils"
 
 const categoryConfig = {
@@ -40,63 +33,42 @@ export function BlogListView({ posts }: BlogListViewProps) {
   }
 
   return (
-    <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-      {posts.map((post, index) => {
+    <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+      {posts.map((post) => {
         const cat = categoryConfig[post.category]
-
-        const isFeatured = index === 0 || index === 3
 
         return (
           <Link
             key={post.slug}
             href={`/blog/${post.slug}`}
-            className={cn(
-              "group min-w-0",
-              isFeatured ? "md:col-span-2 xl:col-span-2" : "xl:col-span-1"
-            )}
+            className="group min-w-0 border-l-2 border-border/70 bg-background/55 p-4 transition-colors duration-200 hover:border-primary hover:bg-background/70"
           >
-            <Card
-              className={cn(
-                "flex h-full flex-col border border-border bg-card/80 text-card-foreground shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/25 hover:bg-card active:translate-y-0",
-                isFeatured && "bg-card"
-              )}
-            >
-              <CardHeader className="flex flex-col gap-2.5 pb-2.5">
-                {/* Category + reading time row */}
-                <div className="flex items-center justify-between gap-2">
-                  <Badge
-                    variant="outline"
-                    className={cn(
-                      "w-fit font-medium tracking-wide uppercase",
-                      cat.className
-                    )}
-                  >
-                    {cat.label}
-                  </Badge>
-                  <span className="flex items-center gap-1 text-muted-foreground">
-                    <Clock className="size-3 opacity-60" strokeWidth={2} />
-                    {post.readingTime}
-                  </span>
-                </div>
-
-                {/* Title */}
-                <CardTitle
+            <div className="flex h-full flex-col gap-2.5">
+              <div className="flex items-center justify-between gap-2">
+                <Badge
+                  variant="outline"
                   className={cn(
-                    "line-clamp-2 leading-snug font-medium tracking-[-0.02em] text-foreground transition-colors duration-150 group-hover:text-primary",
-                    isFeatured && "line-clamp-3"
+                    "w-fit font-medium tracking-wide uppercase",
+                    cat.className
                   )}
                 >
-                  {post.title}
-                </CardTitle>
+                  {cat.label}
+                </Badge>
+                <span className="flex items-center gap-1 text-muted-foreground">
+                  <Clock className="size-3 opacity-60" strokeWidth={2} />
+                  {post.readingTime}
+                </span>
+              </div>
 
-                {/* Description */}
-                <CardDescription className="line-clamp-3 leading-6 text-muted-foreground">
-                  {post.description}
-                </CardDescription>
-              </CardHeader>
+              <h3 className="line-clamp-2 leading-snug font-medium tracking-[-0.02em] text-foreground transition-colors duration-150 group-hover:text-primary">
+                {post.title}
+              </h3>
 
-              <CardContent className="mt-auto flex items-center justify-between pt-0">
-                {/* Date */}
+              <p className="line-clamp-3 leading-6 text-muted-foreground">
+                {post.description}
+              </p>
+
+              <div className="mt-auto flex items-center justify-between pt-1">
                 <span className="flex items-center gap-1.5 text-muted-foreground">
                   <Calendar className="size-3 opacity-60" strokeWidth={2} />
                   {new Date(post.date).toLocaleDateString("en-AU", {
@@ -106,13 +78,12 @@ export function BlogListView({ posts }: BlogListViewProps) {
                   })}
                 </span>
 
-                {/* Read more indicator */}
                 <span className="flex items-center gap-1 font-medium text-primary transition-transform duration-150 group-hover:translate-x-0.5">
                   Read
                   <ArrowRight className="size-3" strokeWidth={2} />
                 </span>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           </Link>
         )
       })}

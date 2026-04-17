@@ -1,5 +1,4 @@
 import type { TimelineStep } from "@/lib/site-content"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Section } from "@/components/marketing/sections/Section"
 import { SectionHeading } from "@/components/marketing/sections/SectionHeading"
 
@@ -19,26 +18,26 @@ export function TimelineSection({
   return (
     <Section tone="muted" density={density}>
       <SectionHeading badge={badge} title={title} description={description} />
-      <div className="mt-5 grid gap-2.5">
+      <ol className="mt-5 grid gap-2.5">
         {steps.map((step, index) => (
-          <Card
+          <li
             key={step.title}
-            className="border border-border bg-card/80 text-card-foreground shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/20 hover:bg-card active:translate-y-0"
+            className="grid grid-cols-[auto,1fr] gap-3 border-l-2 border-border/70 bg-background/55 p-4 transition-colors duration-200 hover:border-primary hover:bg-background/70"
           >
-            <CardHeader className="flex flex-col justify-center gap-1.5">
-              <div className="mb-2 tracking-[0.28em] text-muted-foreground uppercase">
-                Step {index + 1}
-              </div>
-              <CardTitle className="leading-snug font-medium tracking-[-0.03em] text-foreground">
+            <div className="inline-flex h-7 w-7 items-center justify-center border border-foreground/20 text-xs font-medium text-foreground">
+              {index + 1}
+            </div>
+            <div>
+              <h3 className="leading-snug font-medium tracking-[-0.03em] text-foreground">
                 {step.title}
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="leading-6 text-muted-foreground">
-              {step.body}
-            </CardContent>
-          </Card>
+              </h3>
+              <p className="mt-1.5 leading-6 text-muted-foreground">
+                {step.body}
+              </p>
+            </div>
+          </li>
         ))}
-      </div>
+      </ol>
     </Section>
   )
 }

@@ -1,5 +1,4 @@
 import { Badge } from "@/components/ui/badge"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 export function OfficeCards({
   items,
@@ -9,25 +8,23 @@ export function OfficeCards({
   return (
     <div className="flex flex-col gap-4">
       {items.map((item) => (
-        <Card
+        <article
           key={item.label}
-          className="border border-border bg-card/80 text-card-foreground shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/25 hover:bg-card active:translate-y-0"
+          className="border-l-2 border-border/70 bg-background/55 p-4 transition-colors duration-200 hover:border-primary hover:bg-background/70"
         >
-          <CardHeader className="flex flex-col justify-center gap-2">
+          <div className="flex flex-col justify-center gap-2">
             <Badge
               variant="outline"
               className="w-fit border-border bg-muted/40 font-normal tracking-normal text-muted-foreground normal-case"
             >
               {item.label}
             </Badge>
-            <CardTitle className="leading-tight font-medium tracking-[-0.03em] text-foreground">
+            <h3 className="leading-tight font-medium tracking-[-0.03em] text-foreground">
               {item.address}
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="leading-7 text-muted-foreground">
-            {item.note}
-          </CardContent>
-        </Card>
+            </h3>
+          </div>
+          <p className="leading-7 text-muted-foreground">{item.note}</p>
+        </article>
       ))}
     </div>
   )

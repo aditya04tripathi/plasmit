@@ -98,8 +98,8 @@ export function BlogPostView({ post }: BlogPostViewProps) {
 
       {/* Article body */}
       <Section tone="default" density="compact">
-        <div className="mx-auto w-full max-w-prose">
-          <article className="blog-prose">
+        <div className="mx-auto w-full max-w-7xl">
+          <article className="blog-prose max-w-4xl">
             <MDXRemote source={post.content} components={mdxComponents} />
           </article>
 

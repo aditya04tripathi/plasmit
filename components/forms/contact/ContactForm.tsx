@@ -165,7 +165,7 @@ export function ContactForm({
             isLight ? "text-foreground" : "text-foreground"
           }`}
         >
-          Send a note. We will reply with the fastest next step.
+          Submit your enquiry and our team will get back to you.
         </CardTitle>
       </CardHeader>
 

@@ -17,7 +17,18 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet"
 import { Separator } from "@/components/ui/separator"
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card"
 import Image from "next/image"
+
+const aboutLinks = [
+  { label: "Vision & Values", href: "/vision-and-values" },
+  { label: "Leadership", href: "/leadership" },
+  { label: "Contact Us", href: "/contact-us" },
+] as const
 
 export function Navbar({
   revealAfterHero = false,
@@ -26,6 +37,9 @@ export function Navbar({
 }) {
   const [scrollRevealed, setScrollRevealed] = useState(false)
   const revealed = !revealAfterHero || scrollRevealed
+  const primaryLinks = navLinks.filter(
+    (link) => link.href !== "/leadership" && link.href !== "/contact-us"
+  )
 
   useEffect(() => {
     if (!revealAfterHero) return
@@ -74,7 +88,7 @@ export function Navbar({
           className="hidden items-center gap-0.5 lg:flex"
           aria-label="Primary"
         >
-          {navLinks.map((link) => (
+          {primaryLinks.map((link) => (
             <Button
               key={link.href}
               variant="ghost"
@@ -84,6 +98,32 @@ export function Navbar({
               <Link href={link.href}>{link.label}</Link>
             </Button>
           ))}
+
+          <HoverCard openDelay={80} closeDelay={100}>
+            <HoverCardTrigger asChild>
+              <button
+                type="button"
+                className="flex min-h-11 items-center px-3 py-2 text-muted-foreground transition-colors hover:bg-foreground/8 hover:text-foreground"
+              >
+                About Us
+              </button>
+            </HoverCardTrigger>
+            <HoverCardContent
+              align="end"
+              className="z-50 mt-1 w-56 border border-border bg-background/96 p-1 shadow-md backdrop-blur-xl"
+            >
+              {aboutLinks.map((link) => (
+                <Button
+                  key={link.href}
+                  variant="ghost"
+                  asChild
+                  className="h-auto min-h-10 w-full justify-start px-3 py-2 text-muted-foreground hover:bg-foreground/8 hover:text-foreground"
+                >
+                  <Link href={link.href}>{link.label}</Link>
+                </Button>
+              ))}
+            </HoverCardContent>
+          </HoverCard>
         </nav>
 
         <div className="lg:hidden">
@@ -109,7 +149,21 @@ export function Navbar({
               </SheetHeader>
               <Separator />
               <div className="grid gap-1 p-3.5">
-                {navLinks.map((link) => (
+                {primaryLinks.map((link) => (
+                  <Button
+                    key={link.href}
+                    variant="ghost"
+                    asChild
+                    className="h-auto min-h-11 justify-start px-3 py-3 text-muted-foreground hover:bg-foreground/8 hover:text-foreground"
+                  >
+                    <Link href={link.href}>{link.label}</Link>
+                  </Button>
+                ))}
+                <Separator className="my-2" />
+                <p className="px-3 text-xs tracking-[0.2em] text-muted-foreground uppercase">
+                  About Us
+                </p>
+                {aboutLinks.map((link) => (
                   <Button
                     key={link.href}
                     variant="ghost"

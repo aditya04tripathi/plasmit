@@ -1,14 +1,7 @@
-import {
-  contactDetails,
-  contactFaqs,
-  officeMapLocations,
-  offices,
-} from "@/lib/site-content"
+import { contactDetails, offices } from "@/lib/site-content"
 import { ContactForm } from "@/components/forms/contact/ContactForm"
-import { ContactOfficeMapSlot } from "@/components/forms/contact/ContactOfficeMapSlot"
 import { SiteFrame } from "@/components/marketing/SiteFrame"
 import {
-  FAQSection,
   OfficeCards,
   PageHero,
   Section,
@@ -21,8 +14,8 @@ export function ContactUsPageView() {
     <SiteFrame>
       <PageHero
         badge="Contact Us"
-        title="Start a conversation with PlasmIT."
-        intro="Whether you are representing a hospital, an investment group, or a strategic partner, we are ready to connect."
+        title="Contact Us"
+        intro="Connect with PlasmIT for hospital, investor, and strategic enquiries."
         primary={{
           label: "Email PlasmIT",
           href: `mailto:${contactDetails.email}`,
@@ -33,8 +26,8 @@ export function ContactUsPageView() {
       <Section tone="muted">
         <SectionHeading
           badge="Enquiry form"
-          title="The fastest way to connect."
-          description="Please provide your details and the nature of your enquiry so we can route you to the right expert."
+          title="Share your enquiry"
+          description="Provide your details and enquiry type so we can route you to the right team."
         />
         <div className="mt-5 grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
           <ContactForm />
@@ -44,24 +37,6 @@ export function ContactUsPageView() {
           </div>
         </div>
       </Section>
-
-      <Section>
-        <SectionHeading
-          badge="Location"
-          title="Find us in Melbourne."
-          description="Map tiles and data from OpenStreetMap contributors. Open the marker for the full address."
-        />
-        <div className="mt-5 overflow-hidden border border-border bg-card shadow-sm">
-          <ContactOfficeMapSlot locations={officeMapLocations} />
-        </div>
-      </Section>
-
-      <FAQSection
-        badge="Support"
-        title="Common enquiries."
-        description="Quick answers to help you get started with PlasmIT."
-        items={contactFaqs}
-      />
     </SiteFrame>
   )
 }
