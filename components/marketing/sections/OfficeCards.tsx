@@ -23,7 +23,9 @@ export function OfficeCards({
               {item.address}
             </h3>
           </div>
-          <p className="leading-7 text-muted-foreground">{item.note}</p>
+          <p className="max-w-[65ch] leading-body text-muted-foreground">
+            {item.note}
+          </p>
         </article>
       ))}
     </div>

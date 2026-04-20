@@ -116,7 +116,7 @@ export function ScrollDrivenFeatureRail({ items }: { items: FeatureCard[] }) {
             <h3 className="leading-snug font-medium tracking-[-0.025em] text-foreground">
               {item.title}
             </h3>
-            <p className="leading-6 text-muted-foreground">{item.body}</p>
+            <p className="leading-body text-muted-foreground">{item.body}</p>
           </div>
         </div>
       </li>

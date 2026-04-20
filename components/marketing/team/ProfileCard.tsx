@@ -15,7 +15,7 @@ export function ProfileCard({ profile }: { profile: LeadershipProfile }) {
           {profile.name}
         </h3>
       </div>
-      <div className="leading-7 text-muted-foreground">
+      <div className="max-w-[65ch] leading-body text-muted-foreground">
         <p>{profile.summary}</p>
         {profile.credentials ? (
           <p className="mt-2 text-foreground/80">{profile.credentials}</p>

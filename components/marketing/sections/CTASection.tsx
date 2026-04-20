@@ -10,6 +10,7 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { Section } from "@/components/marketing/sections/Section"
+import { Pressable } from "@/components/motion/Pressable"
 
 export function CTASection({
   badge,
@@ -39,27 +40,31 @@ export function CTASection({
           <CardTitle className="max-w-3xl leading-[1.04] font-medium tracking-[-0.04em] text-balance text-foreground">
             {title}
           </CardTitle>
-          <CardDescription className="max-w-2xl leading-6 text-muted-foreground">
+          <CardDescription className="max-w-[65ch] leading-body text-muted-foreground">
             {description}
           </CardDescription>
         </CardHeader>
         <CardContent className="flex flex-wrap gap-2.5">
-          <Button
-            asChild
-            size="lg"
-            className="min-h-11 border border-primary/60 bg-primary px-4 text-primary-foreground hover:bg-primary/85 active:bg-primary/90"
-          >
-            <Link href={primary.href}>{primary.label}</Link>
-          </Button>
-          {secondary ? (
+          <Pressable className="inline-flex">
             <Button
               asChild
               size="lg"
-              variant="outline"
-              className="min-h-11 border-border bg-muted/30 px-4 text-foreground hover:bg-muted/50 hover:text-foreground active:bg-muted/40"
+              className="min-h-11 border border-primary/60 bg-primary px-4 text-primary-foreground hover:bg-primary/85 active:bg-primary/90"
             >
-              <Link href={secondary.href}>{secondary.label}</Link>
+              <Link href={primary.href}>{primary.label}</Link>
             </Button>
+          </Pressable>
+          {secondary ? (
+            <Pressable className="inline-flex">
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="min-h-11 border-border bg-muted/30 px-4 text-foreground hover:bg-muted/50 hover:text-foreground active:bg-muted/40"
+              >
+                <Link href={secondary.href}>{secondary.label}</Link>
+              </Button>
+            </Pressable>
           ) : null}
         </CardContent>
       </Card>

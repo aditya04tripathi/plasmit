@@ -13,13 +13,15 @@ export function Section({
   children,
   tone = "default",
   density = "default",
+  className,
 }: {
   children: ReactNode
   tone?: "default" | "muted"
   density?: keyof typeof densityPadding
+  className?: string
 }) {
   return (
-    <section className={sectionClassName(tone)}>
+    <section className={cn(sectionClassName(tone), className)}>
       <div
         className={cn(
           "mx-auto max-w-7xl px-4 sm:px-5 lg:px-8",

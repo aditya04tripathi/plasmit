@@ -51,11 +51,15 @@ export default async function HealthcareBlogPage({
         intro="Perspectives on ICU delivery, interoperability, and the real-world challenges facing hospitals building connected care infrastructure."
       />
 
-      <Section tone="muted" density="compact">
+      <Section
+        tone="muted"
+        density="compact"
+        className="marketing-index-drift"
+      >
         <BlogFilters activeCategory="healthcare" defaultSearch={q} />
       </Section>
 
-      <Section>
+      <Section className="marketing-index-list">
         <BlogListView posts={paginatedPosts} />
         {totalPages > 1 && (
           <div className="mt-10 border-t border-border pt-8">

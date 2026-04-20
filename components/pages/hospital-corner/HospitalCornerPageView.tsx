@@ -5,7 +5,7 @@ import {
 } from "@/lib/site-content"
 import { SiteFrame } from "@/components/marketing/SiteFrame"
 import {
-  FeatureGrid,
+  FeatureBento,
   PageHero,
   SplitShowcase,
   TimelineSection,
@@ -23,7 +23,7 @@ export function HospitalCornerPageView() {
         metrics={hospitalMetrics}
       />
 
-      <FeatureGrid
+      <FeatureBento
         badge="Value to hospital"
         title="Operational and financial value drivers"
         description="Care quality, efficiency, and growth-oriented value outcomes for hospitals."

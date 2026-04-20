@@ -64,7 +64,7 @@ export function BlogListView({ posts }: BlogListViewProps) {
                 {post.title}
               </h3>
 
-              <p className="line-clamp-3 leading-6 text-muted-foreground">
+              <p className="line-clamp-3 leading-body text-muted-foreground">
                 {post.description}
               </p>
 

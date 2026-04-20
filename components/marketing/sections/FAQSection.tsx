@@ -30,7 +30,7 @@ export function FAQSection({
                 <AccordionTrigger className="font-medium text-foreground">
                   {item.question}
                 </AccordionTrigger>
-                <AccordionContent className="leading-7 text-muted-foreground">
+                <AccordionContent className="max-w-[65ch] leading-body text-muted-foreground">
                   {item.answer}
                 </AccordionContent>
               </AccordionItem>

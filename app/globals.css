@@ -48,6 +48,8 @@
 :root {
   --text-base: 1rem;
   --text-body-leading: 1.68;
+  --text-mdx-h1: clamp(1.65rem, 2.8vw, 2.15rem);
+  --text-mdx-h2: clamp(1.35rem, 2.2vw, 1.8rem);
   --text-h1: clamp(2.25rem, 6vw, 3.8rem);
   --text-h2: clamp(1.9rem, 4vw, 2.8rem);
   --text-h3: clamp(1.5rem, 2.8vw, 2rem);
@@ -98,6 +100,7 @@
 }
 
 .dark {
+  --text-body-leading: 1.74;
   --background: #0e121b;
   --foreground: #f3f5f7;
   --bg-gradient-top-dark: #a9ead917;
@@ -142,6 +145,10 @@
 }
 
 @layer utilities {
+  .leading-body {
+    line-height: var(--text-body-leading);
+  }
+
   .badge-healthcare {
     border-color: var(--badge-healthcare-border);
     background-color: var(--badge-healthcare-bg);
@@ -172,6 +179,114 @@
       color-mix(in srgb, var(--background) 72%, transparent) 100%
     );
   }
+
+  @keyframes marketing-hero-drift {
+    from {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      opacity: 0.92;
+      transform: translate3d(0, -0.45rem, 0);
+    }
+  }
+
+  @keyframes marketing-hero-drift-media {
+    from {
+      opacity: 1;
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+    to {
+      opacity: 0.9;
+      transform: translate3d(0, -0.7rem, 0) scale(1.015);
+    }
+  }
+
+  @keyframes marketing-view-nudge {
+    from {
+      transform: translate3d(0, 0.5rem, 0);
+    }
+    to {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    @supports (animation-timeline: scroll(root)) {
+      .marketing-hero-drift-1 {
+        animation: marketing-hero-drift cubic-bezier(0.16, 1, 0.3, 1) both;
+        animation-timeline: scroll(root block);
+        animation-range: 0% 12%;
+      }
+
+      .marketing-hero-drift-2 {
+        animation: marketing-hero-drift cubic-bezier(0.16, 1, 0.3, 1) both;
+        animation-timeline: scroll(root block);
+        animation-range: 0.7% 12.8%;
+      }
+
+      .marketing-hero-drift-3 {
+        animation: marketing-hero-drift cubic-bezier(0.16, 1, 0.3, 1) both;
+        animation-timeline: scroll(root block);
+        animation-range: 1.4% 13.6%;
+      }
+
+      .marketing-hero-drift-4 {
+        animation: marketing-hero-drift cubic-bezier(0.16, 1, 0.3, 1) both;
+        animation-timeline: scroll(root block);
+        animation-range: 2.1% 14.4%;
+      }
+
+      .marketing-hero-drift-5 {
+        animation: marketing-hero-drift cubic-bezier(0.16, 1, 0.3, 1) both;
+        animation-timeline: scroll(root block);
+        animation-range: 2.8% 15.2%;
+      }
+
+      .marketing-hero-drift-media {
+        animation: marketing-hero-drift-media cubic-bezier(0.16, 1, 0.3, 1)
+          both;
+        animation-timeline: scroll(root block);
+        animation-range: 0% 17%;
+      }
+
+      .marketing-index-drift {
+        animation: marketing-hero-drift cubic-bezier(0.16, 1, 0.3, 1) both;
+        animation-timeline: scroll(root block);
+        animation-range: 4% 20%;
+      }
+
+      .marketing-index-list {
+        animation: marketing-hero-drift cubic-bezier(0.16, 1, 0.3, 1) both;
+        animation-timeline: scroll(root block);
+        animation-range: 8% 26%;
+      }
+    }
+
+    @supports (animation-timeline: view()) {
+      .marketing-view-nudge {
+        animation: marketing-view-nudge cubic-bezier(0.16, 1, 0.3, 1) both;
+        animation-timeline: view(block);
+        animation-range: entry 8% entry 62%;
+      }
+
+      .marketing-view-nudge-delay-1 {
+        animation-range: entry 14% entry 68%;
+      }
+
+      .marketing-view-nudge-delay-2 {
+        animation-range: entry 20% entry 74%;
+      }
+
+      .marketing-view-nudge-delay-3 {
+        animation-range: entry 26% entry 78%;
+      }
+
+      .marketing-view-nudge-delay-4 {
+        animation-range: entry 32% entry 82%;
+      }
+    }
+  }
 }
 
 @layer base {
@@ -194,6 +309,7 @@
     font-family: var(--font-sans);
     font-size: var(--text-base);
     line-height: var(--text-body-leading);
+    text-rendering: optimizeLegibility;
     background-image:
       radial-gradient(circle at top, var(--bg-gradient-top), transparent 26%),
       radial-gradient(

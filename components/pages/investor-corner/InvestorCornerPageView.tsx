@@ -7,7 +7,7 @@ import {
 } from "@/lib/site-content"
 import { SiteFrame } from "@/components/marketing/SiteFrame"
 import {
-  FeatureGrid,
+  FeatureBento,
   PageHero,
   Section,
   SplitShowcase,
@@ -26,12 +26,12 @@ export function InvestorCornerPageView() {
       />
 
       <Section tone="muted" density="compact">
-        <p className="max-w-[65ch] leading-7 text-muted-foreground">
+        <p className="max-w-[65ch] leading-body text-muted-foreground">
           {investorSnapshotProse}
         </p>
       </Section>
 
-      <FeatureGrid
+      <FeatureBento
         badge="Where are we"
         title="Product status and market traction"
         description="Current readiness, validation, and traction signals from hospitals."

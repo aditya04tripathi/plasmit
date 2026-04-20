@@ -16,7 +16,7 @@ export function ContactDirectCard() {
           Reach our team directly.
         </CardTitle>
       </CardHeader>
-      <CardContent className="space-y-4 leading-7 text-muted-foreground">
+      <CardContent className="max-w-[65ch] space-y-4 leading-body text-muted-foreground">
         <p>
           <span className="font-medium text-foreground">General: </span>
           <a

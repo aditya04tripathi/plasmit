@@ -1,7 +1,7 @@
 import { platformFeatures, productTimeline } from "@/lib/site-content"
 import { SiteFrame } from "@/components/marketing/SiteFrame"
 import {
-  FeatureGrid,
+  FeatureBento,
   PageHero,
   TimelineSection,
 } from "@/components/marketing/sections"
@@ -15,12 +15,11 @@ export function PiMedPageView() {
         intro="PiMed is a next-generation connected, intelligent, integrated, immersive, secured and compliant digital care platform for hospitals."
       />
 
-      <FeatureGrid
+      <FeatureBento
         badge="PiMed"
         title="PiMed key features"
         description="Integrated capabilities designed for continuous, collaborative, and compliant care delivery."
         items={platformFeatures}
-        layout="scroll-driven-horizontal"
       />
 
       <TimelineSection

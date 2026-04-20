@@ -32,7 +32,7 @@ export function SplitShowcase({
           {leftTitle}
         </CardTitle>
       </CardHeader>
-      <CardContent className="leading-7 text-muted-foreground">
+      <CardContent className="max-w-[65ch] leading-body text-muted-foreground">
         {leftBody}
       </CardContent>
     </Card>
@@ -45,7 +45,7 @@ export function SplitShowcase({
           {rightTitle}
         </CardTitle>
       </CardHeader>
-      <CardContent className="leading-7 text-muted-foreground">
+      <CardContent className="max-w-[65ch] leading-body text-muted-foreground">
         {rightBody}
       </CardContent>
     </Card>

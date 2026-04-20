@@ -51,11 +51,15 @@ export default async function BlogPage({
         intro="Technical deep-dives, healthcare perspectives, and clinical insight from the PlasmIT team — written for clinicians, engineers, and anyone curious about the future of the ICU."
       />
 
-      <Section tone="muted" density="compact">
+      <Section
+        tone="muted"
+        density="compact"
+        className="marketing-index-drift"
+      >
         <BlogFilters activeCategory="all" defaultSearch={q} />
       </Section>
 
-      <Section>
+      <Section className="marketing-index-list">
         <BlogListView posts={paginatedPosts} />
         {totalPages > 1 && (
           <div className="mt-10 border-t border-border pt-8">

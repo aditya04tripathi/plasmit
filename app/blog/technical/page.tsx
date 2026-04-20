@@ -51,11 +51,15 @@ export default async function TechnicalBlogPage({
         intro="Deep-dives into the architecture, algorithms, and trade-offs behind PiMed — written for engineers and technically curious clinicians."
       />
 
-      <Section tone="muted" density="compact">
+      <Section
+        tone="muted"
+        density="compact"
+        className="marketing-index-drift"
+      >
         <BlogFilters activeCategory="technical" defaultSearch={q} />
       </Section>
 
-      <Section>
+      <Section className="marketing-index-list">
         <BlogListView posts={paginatedPosts} />
         {totalPages > 1 && (
           <div className="mt-10 border-t border-border pt-8">

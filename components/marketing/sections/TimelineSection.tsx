@@ -31,7 +31,7 @@ export function TimelineSection({
               <h3 className="leading-snug font-medium tracking-[-0.03em] text-foreground">
                 {step.title}
               </h3>
-              <p className="mt-1.5 leading-6 text-muted-foreground">
+              <p className="mt-1.5 max-w-[65ch] leading-body text-muted-foreground">
                 {step.body}
               </p>
             </div>

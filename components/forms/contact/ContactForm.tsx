@@ -171,7 +171,7 @@ export function ContactForm({
 
       <CardContent className="pt-0">
         <div
-          className={`mt-3 space-y-1.5 leading-6 ${
+          className={`mt-3 space-y-1.5 leading-body ${
             isLight ? "text-muted-foreground" : "text-muted-foreground"
           }`}
         >

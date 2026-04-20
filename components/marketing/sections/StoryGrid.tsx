@@ -25,7 +25,9 @@ export function StoryGrid({
             <h3 className="leading-snug font-medium tracking-[-0.03em] text-foreground">
               {item.title}
             </h3>
-            <p className="mt-2 leading-7 text-muted-foreground">{item.body}</p>
+            <p className="mt-2 max-w-[65ch] leading-body text-muted-foreground">
+              {item.body}
+            </p>
           </article>
         ))}
       </div>

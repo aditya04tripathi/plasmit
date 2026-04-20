@@ -74,7 +74,7 @@ export function BlogPostView({ post }: BlogPostViewProps) {
               {post.title}
             </h1>
 
-            <p className="max-w-prose leading-7 text-pretty text-muted-foreground">
+            <p className="max-w-[65ch] text-pretty leading-body text-muted-foreground">
               {post.description}
             </p>
 

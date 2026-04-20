@@ -20,7 +20,9 @@ export function PairList({
           <div key={item.title}>
             {index > 0 ? <Separator className="mb-4" /> : null}
             <p className="font-medium text-foreground">{item.title}</p>
-            <p className="mt-2 leading-7 text-muted-foreground">{item.body}</p>
+            <p className="mt-2 max-w-[65ch] leading-body text-muted-foreground">
+              {item.body}
+            </p>
           </div>
         ))}
       </CardContent>

@@ -1,5 +1,6 @@
 export { CTASection } from "@/components/marketing/sections/CTASection"
 export { FAQSection } from "@/components/marketing/sections/FAQSection"
+export { FeatureBento } from "@/components/marketing/sections/FeatureBento"
 export { FeatureGrid } from "@/components/marketing/sections/FeatureGrid"
 export { OfficeCards } from "@/components/marketing/sections/OfficeCards"
 export { PageHero } from "@/components/marketing/sections/PageHero"

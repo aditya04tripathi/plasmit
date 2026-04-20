@@ -1,25 +1,13 @@
 import React from "react"
 
 /**
- * MDX component overrides — PlasmIT type scale.
- *
- * Hierarchy inside an article body (the article title sits above this in
- * blog-post-view.tsx at Tier 1 size):
- *
- *   H1  clamp(1.65rem → 2.2rem)   — rare in-article heading, same role as page H2
- *   H2  clamp(1.35rem → 1.75rem)  — major section breaks
- *   H3  semantic h3 sizing        — sub-sections
- *   H4  semantic h4 sizing        — minor callouts, bold
- *   p   semantic body sizing      — readable longform copy
- *
- * No border-radius (site uses --radius: 0).
- * Primary colour for accents and links.
- * All heading font-family inherited from globals (h1-h6 → var(--font-display)).
+ * MDX overrides: in-article H1/H2 use --text-mdx-h1 / --text-mdx-h2 (globals.css);
+ * H3–H4 follow base heading scale; body copy uses leading-body and 65ch measure.
  */
 export const mdxComponents = {
   h1: ({ children, ...props }: React.ComponentProps<"h1">) => (
     <h1
-      className="mt-10 mb-4 leading-[1.05] font-medium tracking-[-0.04em] text-balance text-foreground first:mt-0"
+      className="mt-10 mb-4 text-(length:--text-mdx-h1) leading-[1.08] font-medium tracking-[-0.035em] text-balance text-foreground first:mt-0"
       {...props}
     >
       {children}
@@ -28,7 +16,7 @@ export const mdxComponents = {
 
   h2: ({ children, ...props }: React.ComponentProps<"h2">) => (
     <h2
-      className="mt-8 mb-3 border-b border-border pb-2.5 leading-[1.1] font-medium tracking-[-0.03em] text-foreground"
+      className="mt-8 mb-3 border-b border-border pb-2.5 text-(length:--text-mdx-h2) leading-[1.12] font-medium tracking-[-0.03em] text-foreground"
       {...props}
     >
       {children}
@@ -46,7 +34,7 @@ export const mdxComponents = {
 
   h4: ({ children, ...props }: React.ComponentProps<"h4">) => (
     <h4
-      className="mt-5 mb-2 leading-snug font-semibold tracking-[-0.015em] text-foreground"
+      className="mt-5 mb-2 leading-snug font-medium tracking-[-0.015em] text-foreground"
       {...props}
     >
       {children}
@@ -54,14 +42,17 @@ export const mdxComponents = {
   ),
 
   p: ({ children, ...props }: React.ComponentProps<"p">) => (
-    <p className="mt-5 leading-7 text-muted-foreground first:mt-0" {...props}>
+    <p
+      className="mt-5 max-w-[65ch] leading-body text-muted-foreground first:mt-0"
+      {...props}
+    >
       {children}
     </p>
   ),
 
   ul: ({ children, ...props }: React.ComponentProps<"ul">) => (
     <ul
-      className="my-5 space-y-2 pl-5 leading-7 text-muted-foreground [&>li::marker]:text-primary"
+      className="my-5 max-w-[65ch] space-y-2 pl-5 leading-body text-muted-foreground [&>li::marker]:text-primary"
       {...props}
     >
       {children}
@@ -70,7 +61,7 @@ export const mdxComponents = {
 
   ol: ({ children, ...props }: React.ComponentProps<"ol">) => (
     <ol
-      className="my-5 list-decimal space-y-2 pl-5 leading-7 text-muted-foreground [&>li::marker]:text-primary"
+      className="my-5 max-w-[65ch] list-decimal space-y-2 pl-5 leading-body text-muted-foreground [&>li::marker]:text-primary"
       {...props}
     >
       {children}
@@ -85,7 +76,7 @@ export const mdxComponents = {
 
   blockquote: ({ children, ...props }: React.ComponentProps<"blockquote">) => (
     <blockquote
-      className="my-6 border-l-[3px] border-primary bg-muted/30 py-3 pr-4 pl-5 leading-7 text-foreground/80 italic"
+      className="my-6 max-w-[65ch] border-l-[3px] border-primary bg-muted/30 py-3 pr-4 pl-5 leading-body text-foreground/80 italic"
       {...props}
     >
       {children}
@@ -113,7 +104,7 @@ export const mdxComponents = {
 
   pre: ({ children, ...props }: React.ComponentProps<"pre">) => (
     <pre
-      className="my-5 overflow-x-auto border border-border bg-muted/50 p-4 font-mono leading-7 text-foreground"
+      className="my-5 overflow-x-auto border border-border bg-muted/50 p-4 font-mono leading-body text-foreground"
       {...props}
     >
       {children}

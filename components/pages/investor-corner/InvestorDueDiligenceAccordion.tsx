@@ -69,7 +69,7 @@ export function InvestorDueDiligenceAccordion() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <ul className="max-w-[65ch] list-disc space-y-1.5 ps-5 leading-6 text-muted-foreground">
+              <ul className="max-w-[65ch] list-disc space-y-1.5 ps-5 leading-body text-muted-foreground">
                 {investorFundAsk.y1Milestones.map((m) => (
                   <li key={m}>{m}</li>
                 ))}
@@ -95,7 +95,7 @@ export function InvestorDueDiligenceAccordion() {
           Product phases (Life → Nirvana)
         </AccordionTrigger>
         <AccordionContent>
-          <ul className="max-w-[65ch] space-y-3 leading-6 text-muted-foreground">
+          <ul className="max-w-[65ch] space-y-3 leading-body text-muted-foreground">
             {productRoadmapPhases.map((p) => (
               <li key={p.title}>
                 <span className="font-medium text-foreground">{p.title}.</span>{" "}
