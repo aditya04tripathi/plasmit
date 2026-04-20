@@ -1,10 +1,11 @@
 "use client"
 
 import Link from "next/link"
-import { useEffect, useState } from "react"
+import { startTransition, useEffect, useState } from "react"
 import { Menu } from "lucide-react"
-import { ThemeToggle } from "./ThemeToggle"
+import Image from "next/image"
 
+import { ThemeToggle } from "./ThemeToggle"
 import { navLinks, siteMeta } from "@/lib/site-content"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
@@ -17,29 +18,21 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet"
 import { Separator } from "@/components/ui/separator"
-import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-} from "@/components/ui/hover-card"
-import Image from "next/image"
-
-const aboutLinks = [
-  { label: "Vision & Values", href: "/vision-and-values" },
-  { label: "Leadership", href: "/leadership" },
-  { label: "Contact Us", href: "/contact-us" },
-] as const
 
 export function Navbar({
   revealAfterHero = false,
 }: {
   revealAfterHero?: boolean
 }) {
+  const [mounted, setMounted] = useState(false)
   const [scrollRevealed, setScrollRevealed] = useState(false)
   const revealed = !revealAfterHero || scrollRevealed
-  const primaryLinks = navLinks.filter(
-    (link) => link.href !== "/leadership" && link.href !== "/contact-us"
-  )
+
+  useEffect(() => {
+    startTransition(() => {
+      setMounted(true)
+    })
+  }, [])
 
   useEffect(() => {
     if (!revealAfterHero) return
@@ -84,11 +77,8 @@ export function Navbar({
           </div>
         </Link>
 
-        <nav
-          className="hidden items-center gap-0.5 lg:flex"
-          aria-label="Primary"
-        >
-          {primaryLinks.map((link) => (
+        <nav className="hidden items-center gap-0.5 lg:flex" aria-label="Primary">
+          {navLinks.map((link) => (
             <Button
               key={link.href}
               variant="ghost"
@@ -98,100 +88,71 @@ export function Navbar({
               <Link href={link.href}>{link.label}</Link>
             </Button>
           ))}
-
-          <HoverCard openDelay={80} closeDelay={100}>
-            <HoverCardTrigger asChild>
-              <button
-                type="button"
-                className="flex min-h-11 items-center px-3 py-2 text-muted-foreground transition-colors hover:bg-foreground/8 hover:text-foreground"
-              >
-                About Us
-              </button>
-            </HoverCardTrigger>
-            <HoverCardContent
-              align="end"
-              className="z-50 mt-1 w-56 border border-border bg-background/96 p-1 shadow-md backdrop-blur-xl"
-            >
-              {aboutLinks.map((link) => (
-                <Button
-                  key={link.href}
-                  variant="ghost"
-                  asChild
-                  className="h-auto min-h-10 w-full justify-start px-3 py-2 text-muted-foreground hover:bg-foreground/8 hover:text-foreground"
-                >
-                  <Link href={link.href}>{link.label}</Link>
-                </Button>
-              ))}
-            </HoverCardContent>
-          </HoverCard>
         </nav>
 
         <div className="lg:hidden">
-          <Sheet>
-            <SheetTrigger asChild>
-              <Button
-                variant="outline"
-                aria-label="Open menu"
-                className="size-11 shrink-0 border-foreground/14 bg-foreground/5 text-foreground hover:bg-foreground/10"
+          {mounted ? (
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button
+                  variant="outline"
+                  aria-label="Open menu"
+                  className="size-11 shrink-0 border-foreground/14 bg-foreground/5 text-foreground hover:bg-foreground/10"
+                >
+                  <Menu className="size-5" aria-hidden />
+                </Button>
+              </SheetTrigger>
+              <SheetContent
+                side="right"
+                className="border-l border-border bg-background pb-[max(1rem,env(safe-area-inset-bottom))] text-foreground"
               >
-                <Menu className="size-5" aria-hidden />
-              </Button>
-            </SheetTrigger>
-            <SheetContent
-              side="right"
-              className="border-l border-border bg-background pb-[max(1rem,env(safe-area-inset-bottom))] text-foreground"
-            >
-              <SheetHeader>
-                <SheetTitle>Navigate</SheetTitle>
-                <SheetDescription className="text-muted-foreground">
-                  Explore product, commercial, and company pages.
-                </SheetDescription>
-              </SheetHeader>
-              <Separator />
-              <div className="grid gap-1 p-3.5">
-                {primaryLinks.map((link) => (
-                  <Button
-                    key={link.href}
-                    variant="ghost"
-                    asChild
-                    className="h-auto min-h-11 justify-start px-3 py-3 text-muted-foreground hover:bg-foreground/8 hover:text-foreground"
-                  >
-                    <Link href={link.href}>{link.label}</Link>
-                  </Button>
-                ))}
-                <Separator className="my-2" />
-                <p className="px-3 text-xs tracking-[0.2em] text-muted-foreground uppercase">
-                  About Us
-                </p>
-                {aboutLinks.map((link) => (
-                  <Button
-                    key={link.href}
-                    variant="ghost"
-                    asChild
-                    className="h-auto min-h-11 justify-start px-3 py-3 text-muted-foreground hover:bg-foreground/8 hover:text-foreground"
-                  >
-                    <Link href={link.href}>{link.label}</Link>
-                  </Button>
-                ))}
-                <Separator className="my-2" />
-                <div className="flex flex-col gap-2.5">
-                  <Button
-                    asChild
-                    className="h-auto min-h-11 border border-primary/60 bg-primary px-4 py-3 text-primary-foreground hover:bg-primary/85"
-                  >
-                    <Link href="/contact-us">Start a conversation</Link>
-                  </Button>
+                <SheetHeader>
+                  <SheetTitle>Navigate</SheetTitle>
+                  <SheetDescription className="text-muted-foreground">
+                    Explore product, commercial, and company pages.
+                  </SheetDescription>
+                </SheetHeader>
+                <Separator />
+                <div className="grid gap-1 p-3.5">
+                  {navLinks.map((link) => (
+                    <Button
+                      key={link.href}
+                      variant="ghost"
+                      asChild
+                      className="h-auto min-h-11 justify-start px-3 py-3 text-muted-foreground hover:bg-foreground/8 hover:text-foreground"
+                    >
+                      <Link href={link.href}>{link.label}</Link>
+                    </Button>
+                  ))}
+                  <Separator className="my-2" />
+                  <div className="flex flex-col gap-2.5">
+                    <Button
+                      asChild
+                      className="h-auto min-h-11 border border-primary/60 bg-primary px-4 py-3 text-primary-foreground hover:bg-primary/85"
+                    >
+                      <Link href="/contact-us">Start a conversation</Link>
+                    </Button>
 
-                  <div className="flex min-h-11 items-center justify-between border border-border bg-muted/25 px-3 py-2 text-muted-foreground">
-                    <span className="font-medium tracking-[0.18em] uppercase">
-                      Theme
-                    </span>
-                    <ThemeToggle />
+                    <div className="flex min-h-11 items-center justify-between border border-border bg-muted/25 px-3 py-2 text-muted-foreground">
+                      <span className="font-medium tracking-[0.18em] uppercase">
+                        Theme
+                      </span>
+                      <ThemeToggle />
+                    </div>
                   </div>
                 </div>
-              </div>
-            </SheetContent>
-          </Sheet>
+              </SheetContent>
+            </Sheet>
+          ) : (
+            <Button
+              variant="outline"
+              aria-label="Open menu"
+              className="size-11 shrink-0 border-foreground/14 bg-foreground/5 text-foreground"
+              disabled
+            >
+              <Menu className="size-5" aria-hidden />
+            </Button>
+          )}
         </div>
       </div>
     </header>
