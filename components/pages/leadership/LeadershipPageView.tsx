@@ -9,7 +9,7 @@ export function LeadershipPageView() {
       <PageHero
         badge="Leadership"
         title="Leadership team shaping next-generation care delivery."
-        intro="Our passionate team aspires to transform care delivery by enabling last-mile world class care through PiMed."
+        intro="Our passionate team aspires to radically transform the care delivery ecosystem by delivering last-mile world-class care through a next-generation care platform."
       />
 
       <TeamSection
@@ -17,6 +17,7 @@ export function LeadershipPageView() {
         title="Leadership driving Smart ICU on Mobile."
         description="Technology, clinical, interoperability, data, and delivery leaders from healthcare and digital transformation backgrounds."
         sections={leadershipProfileSections}
+        showImage
       />
     </SiteFrame>
   )

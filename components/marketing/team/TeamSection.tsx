@@ -8,11 +8,13 @@ export function TeamSection({
   title,
   description,
   sections,
+  showImage = false,
 }: {
   badge?: string
   title: string
   description?: string
   sections: LeadershipProfileSection[]
+  showImage?: boolean
 }) {
   return (
     <Section>
@@ -25,7 +27,11 @@ export function TeamSection({
             </h3>
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
               {section.profiles.map((profile) => (
-                <ProfileCard key={profile.name} profile={profile} />
+                <ProfileCard
+                  key={profile.name}
+                  profile={profile}
+                  showImage={showImage}
+                />
               ))}
             </div>
           </div>
