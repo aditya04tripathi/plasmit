@@ -661,7 +661,7 @@ export const leadershipProfileSections = [
         summary:
           "Ramesh Subramaniam is an outcome-focused technology leader with 20+ years of experience in enterprise architecture, program delivery, and digital transformation across industries including energy, banking, manufacturing, government, and telecom. He is known for aligning executive, business, and IT stakeholders to deliver mission-critical platforms, omni-channel solutions, and practical, high-impact technology strategies.",
         linkedin: "https://www.linkedin.com/in/ramesh-subramaniam-b4782a1/",
-        image: "https://placehold.co/500x500.png",
+        image: "/media/leadership/ramesh-subramaniam.jpeg",
       },
       {
         name: "Sushil Kumar",
