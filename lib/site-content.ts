@@ -146,6 +146,7 @@ export type LeadershipProfile = {
   summary: string
   credentials?: string
   linkedin?: string
+  image?: string
 }
 
 export type LeadershipProfileSection = {
@@ -600,64 +601,107 @@ export const leadershipProfileSections = [
         name: "Awadhesh Kumar",
         role: "Chief Technology Officer",
         summary:
-          "20+ years in digital products and transformation. Led digital strategy across geographies and is recognised for helping business leaders achieve outcomes through digital transformation and emerging technology.",
+          "Awadhesh Kumar brings 20+ years of experience in digital products and transformation, has led digital strategy across global markets, and is recognized for helping business leaders achieve outcomes through digital transformation and emerging technologies.",
         linkedin: "https://www.linkedin.com/in/awadhesh-kumar-info/",
+        image: "/media/leadership/awadesh-kumar.JPG",
       },
       {
         name: "Dr. Kamaljit Parmar",
         role: "Chief Product Officer",
         summary:
-          "20+ years of critical care experience across Australia, UK, and India. ICU Intensivist in Australia for the last 12 years.",
-        credentials:
-          "MBBS, DNB Anesthesiology, EDIC, FCICM Australia, Associate Fellowship in Medical Administration (Australia)",
+          "Dr. Kamaljit Parmar has 20+ years of critical care experience across Australia, the UK, and India, has served as an ICU intensivist in Australia for the last 12 years, and holds MBBS, DNB Anesthesiology, EDIC, FCICM (Australia), and an Associate Fellowship in Medical Administration (Australia).",
         linkedin: "https://www.linkedin.com/in/dr-kamaljit-parmar-b6464299/",
-      },
-      {
-        name: "Dr. Subrata Panda",
-        role: "Chief Medical Officer",
-        summary:
-          "40+ years of experience at AIIMS, New Delhi. Former Professor and Head of Department, AIIMS, New Delhi. Recipient of the Shanti Swarup Bhatnagar Award.",
-        linkedin: "https://www.linkedin.com/in/subrat-panda-6902671a",
+        image: "/media/leadership/kamaljeet-parmar.jpg",
       },
       {
         name: "Dr. Supten Sarbadhikari",
         role: "Chief Interoperability Officer",
         summary:
-          "30+ years of expertise in healthcare digitisation. Founding member of HL7/FHIR and advisor to WHO for Digital Health in India.",
-        credentials:
-          "Project Director, India National Health Portal initiative",
+          "Dr. Supten Sarbadhikari brings 30+ years of expertise in healthcare digitization, is a founding member associated with HL7/FHIR initiatives, has advised WHO on digital health in India, and served as Project Director for the India National Health Portal initiative.",
         linkedin:
           "https://www.linkedin.com/in/prof-supten-sarbadhikari-phd-fiahsi-ba99233/",
+        image: "/media/leadership/supten-sarbadhikari.jpg",
       },
       {
         name: "Dr. Kamal Sharma",
-        role: "Scientific and Research Lead",
+        role: "Scientific & Research Lead",
         summary:
-          "17+ years as an interventional cardiologist with 22 academic gold medals, 188 publications, and 7000+ citations.",
-        linkedin:
-          "https://www.linkedin.com/in/dr-kamal-sharma-md-dnb-dm-mnams-facc-fesc-fscai-803ab219/",
+          "Dr. Kamal Sharma is an interventional cardiologist with 17+ years of experience, has received 22 academic gold medals across clinical trials and research, and has authored 188 publications with 7000+ citations.",
+        linkedin: "https://www.linkedin.com/in/dr-kamal-sharma-803ab219/",
+        image: "/media/leadership/kamal-sharma.jpg",
       },
       {
         name: "Dr. Steven Schilders (PhD)",
         role: "Chief Data Officer",
         summary:
-          "Architect specialising in data-first solutions focused on data security, digital twins, and AI, with experience leading billion-dollar data programmes.",
+          "Dr. Steven Schilders is a data-first architect focused on data security, digital twins, and AI, with deep expertise in building platforms that serve high-volume and high-velocity data and experience leading approximately $1 billion data programs for top healthcare companies.",
         linkedin: "https://www.linkedin.com/in/dr-steven-schilders-816970/",
+        image: "/media/leadership/steven-schilders.png",
       },
       {
         name: "Kartik Thakkar",
         role: "Product Development Lead",
         summary:
-          "Senior business and technology leader specialised in delivery enablement, assurance functions, capability uplift programmes, and large portfolio execution.",
+          "Kartik Thakkar is a senior business and technology leader with specialization in delivery enablement, assurance functions, and capability uplift programs, and has managed portfolios of up to $500M with strong execution and operational expertise.",
         linkedin: "https://www.linkedin.com/in/kartik-thakkar-a603b05/",
+        image: "/media/leadership/kartik-thakkar.webp",
       },
       {
         name: "Dr. Chandrakant Pandav",
         role: "Product SME",
         summary:
-          "Padma Shri awardee with 40+ years of experience. Advisor to NITI Aayog nutrition programmes and former Professor at AIIMS, New Delhi.",
+          "Dr. Chandrakant Pandav is a Padma Shri awardee with 40+ years of experience, advisor to NITI Aayog on the Indian Government Nutrition Program, and former Professor at AIIMS, New Delhi.",
         linkedin:
           "https://www.linkedin.com/in/dr-chandrakant-s-pandav-7b00476a/",
+        image: "/media/leadership/chandrakant-pandav.jpg",
+      },
+      {
+        name: "Ramesh Subramaniam",
+        role: "Leadership role (TBD)",
+        summary: "N/A (to be added)",
+        linkedin: "https://www.linkedin.com/in/adityatripathi0404",
+        image: "https://placehold.co/500x500.png",
+      },
+      {
+        name: "Sushil Kumar",
+        role: "Leadership role (TBD)",
+        summary: "N/A (to be added)",
+        linkedin: "https://www.linkedin.com/in/adityatripathi0404",
+        image: "https://placehold.co/500x500.png",
+      },
+      {
+        name: "Dr. Chetan Mehndiratta",
+        role: "Leadership role (TBD)",
+        summary: "N/A (to be added)",
+        linkedin: "https://www.linkedin.com/in/adityatripathi0404",
+        image: "/media/leadership/dr-chetan.JPG",
+      },
+      {
+        name: "Sanjit Anand",
+        role: "Leadership role (TBD)",
+        summary: "N/A (to be added)",
+        linkedin: "https://www.linkedin.com/in/adityatripathi0404",
+        image: "https://placehold.co/500x500.png",
+      },
+      {
+        name: "Aishwarya Dwivedi",
+        role: "Leadership role (TBD)",
+        summary: "N/A (to be added)",
+        linkedin: "https://www.linkedin.com/in/adityatripathi0404",
+        image: "https://placehold.co/500x500.png",
+      },
+    ],
+  },
+  {
+    title: "Advisors",
+    profiles: [
+      {
+        name: "Dr. Subrata Panda",
+        role: "Chief Medical Officer",
+        summary:
+          "Dr. Subrata Panda has 40+ years of experience at AIIMS, New Delhi, served as former Professor and Head of Department there, and is a recipient of the Shanti Swarup Bhatnagar Award, one of India’s top scientific honours.",
+        linkedin: "https://www.linkedin.com/in/subrat-panda-6902671a",
+        image: "/media/leadership/adv_subrata-panda.jpg",
       },
     ],
   },
