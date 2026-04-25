@@ -22,7 +22,7 @@ export function HomePageView() {
         <blockquote className="max-w-[min(100%,42rem)] border-l-[3px] border-primary py-1 ps-6 font-heading leading-snug font-medium tracking-[-0.02em] text-pretty text-foreground">
           {companyVision}
         </blockquote>
-        <p className="mt-5 max-w-[65ch] text-pretty leading-body text-muted-foreground">
+        <p className="leading-body mt-5 max-w-[65ch] text-pretty text-muted-foreground">
           {companyMission}
         </p>
       </Section>
@@ -31,7 +31,7 @@ export function HomePageView() {
         <h2 className="leading-snug font-medium tracking-[-0.025em] text-foreground">
           What is PiMed
         </h2>
-        <div className="mt-3 max-w-[65ch] space-y-3 leading-body text-muted-foreground">
+        <div className="leading-body mt-3 max-w-[65ch] space-y-3 text-muted-foreground">
           {homePage.story.map((block) => (
             <p key={block.title}>
               <span className="font-medium text-foreground">

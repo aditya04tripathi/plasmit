@@ -8,7 +8,11 @@ export const metadata: Metadata = buildPageMetadata({
   description:
     "PlasmIT vision, mission, and values: innovation, integrity, compassion, and six operating principles for connected critical care delivery.",
   path: "/vision-and-values",
-  keywords: ["healthcare values", "connected care principles", "patient-centric care"],
+  keywords: [
+    "healthcare values",
+    "connected care principles",
+    "patient-centric care",
+  ],
 })
 
 export default function VisionAndValuesPage() {

@@ -26,7 +26,7 @@ export function InvestorCornerPageView() {
       />
 
       <Section tone="muted" density="compact">
-        <p className="max-w-[65ch] leading-body text-muted-foreground">
+        <p className="leading-body max-w-[65ch] text-muted-foreground">
           {investorSnapshotProse}
         </p>
       </Section>
