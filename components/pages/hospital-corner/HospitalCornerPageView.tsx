@@ -16,23 +16,23 @@ export function HospitalCornerPageView() {
     <SiteFrame>
       <PageHero
         badge="Hospital Corner"
-        title="PiMed Next-Gen Connected ICU for better intervention."
-        intro="SmartICU on Mobile transforms care delivery from physical rounds to continuous connected rounds for timely intervention and better outcomes."
-        primary={{ label: "Speak with PlasmIT", href: "/contact-us" }}
+        title="PiMed SmartICU on Mobile for measurable hospital outcomes"
+        intro="PiMed redefines care delivery from physical rounds to continuous connected rounds, enabling timely intervention, stronger resource utilisation, and sustainable growth."
+        primary={{ label: "Schedule a meeting", href: "/contact-us" }}
         secondary={{ label: "Explore PiMed", href: "/pimed" }}
         metrics={hospitalMetrics}
       />
 
       <FeatureBento
         badge="Value to hospital"
-        title="Operational and financial value drivers"
-        description="Care quality, efficiency, and growth-oriented value outcomes for hospitals."
+        title="Operational, clinical, and financial value drivers"
+        description="One-touch care experience, integrated pathways, resource optimisation, and revenue multipliers for hospitals."
         items={hospitalFeatures}
       />
 
       <SplitShowcase
         badge="Value to medical staff"
-        title="Point-in-time care with lower cognitive burden"
+        title="Point-in-time care with reduced cognitive burden"
         leftTitle="Clinical execution"
         leftBody="Seamless data availability beyond current care setups supports quick action to abnormalities and continuous care."
         rightTitle="Care-worker quality of life"

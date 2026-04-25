@@ -6,9 +6,9 @@ import { InvestorCornerPageView } from "@/components/pages/investor-corner/Inves
 export const metadata: Metadata = buildPageMetadata({
   title: "Investor Corner",
   description:
-    "PlasmIT Pty Ltd seed narrative: thesis, market snapshot, fund summary, and expandable diligence tables (financials, GTM, roadmap).",
+    "PlasmIT investor narrative: critical-care opportunity, market momentum, platform scalability, and early validation from hospital partners.",
   path: "/investor-corner",
-  keywords: ["healthcare investment", "seed stage healthtech", "medical device market"],
+  keywords: ["healthcare investment", "critical care market", "AI healthtech"],
 })
 
 export default function InvestorCornerPage() {

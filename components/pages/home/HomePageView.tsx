@@ -46,7 +46,7 @@ export function HomePageView() {
       <FeatureBento
         badge="PiMed"
         title="PiMed key features"
-        description="Integrated care delivery capabilities that enable real-time, collaborative, and compliant care."
+        description="AI-first integrated care capabilities that enable real-time, collaborative, and compliant intervention."
         items={platformFeatures}
       />
 

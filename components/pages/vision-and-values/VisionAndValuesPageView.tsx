@@ -7,8 +7,8 @@ export function VisionAndValuesPageView() {
     <SiteFrame>
       <PageHero
         badge="Vision & Values"
-        title="Vision and values"
-        intro="PlasmIT is an Australia based health-tech founded by healthcare visionaries and technology leaders, with contributions to interoperability standards including FHIR."
+        title="About PlasmIT: vision, mission, and values"
+        intro="PlasmIT is an Australia-based health-tech company founded by healthcare visionaries and technology leaders, with a strategic presence in India and deep interoperability expertise including FHIR."
       />
 
       <StoryGrid
@@ -21,7 +21,7 @@ export function VisionAndValuesPageView() {
       <StoryGrid
         badge="Our values"
         title="Values in practice"
-        description="6C-inspired principles that guide how we build and deliver PiMed."
+        description="Innovation, integrity, compassion, and 6C-inspired principles that guide how we build and deliver PiMed."
         items={values}
       />
     </SiteFrame>

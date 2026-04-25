@@ -18,10 +18,10 @@ export function InvestorCornerPageView() {
     <SiteFrame>
       <PageHero
         badge="Investors"
-        title="PlasmIT invites visionary and growth investors."
+        title="Invest in the future of critical care"
         intro={investorPageIntro}
-        primary={{ label: "Investor enquiry", href: "/contact-us" }}
-        secondary={{ label: "Leadership", href: "/leadership" }}
+        primary={{ label: "Schedule a meeting", href: "/contact-us" }}
+        secondary={{ label: "View our vision", href: "/vision-and-values" }}
         metrics={investorMetrics}
       />
 
@@ -32,15 +32,15 @@ export function InvestorCornerPageView() {
       </Section>
 
       <FeatureBento
-        badge="Where are we"
-        title="Product status and market traction"
-        description="Current readiness, validation, and traction signals from hospitals."
+        badge="The opportunity"
+        title="Problem, momentum, and platform edge"
+        description="From ICU fragmentation to AI-first mobile intervention, with early validation and partner traction."
         items={investorHighlights}
       />
 
       <SplitShowcase
         badge="Investment thesis"
-        title="What your investments can do"
+        title="Why now and how this scales"
         leftTitle={investorProblemSolution.problemTitle}
         leftBody={investorProblemSolution.problemBody}
         rightTitle={investorProblemSolution.solutionTitle}

@@ -6,9 +6,9 @@ import { VisionAndValuesPageView } from "@/components/pages/vision-and-values/Vi
 export const metadata: Metadata = buildPageMetadata({
   title: "Vision and Values",
   description:
-    "Official vision and mission from the investor pack, plus six operating principles for connected, contextual, compliant care delivery.",
+    "PlasmIT vision, mission, and values: innovation, integrity, compassion, and six operating principles for connected critical care delivery.",
   path: "/vision-and-values",
-  keywords: ["healthcare ethics", "connected care principles", "patient-centric care"],
+  keywords: ["healthcare values", "connected care principles", "patient-centric care"],
 })
 
 export default function VisionAndValuesPage() {

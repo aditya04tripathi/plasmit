@@ -1,7 +1,7 @@
 export const siteMeta = {
   name: "PlasmIT",
   legalName: "PlasmIT Pty Ltd",
-  companyTagline: "Health technology for critical care",
+  companyTagline: "AI-first health technology for critical care",
   product: "PiMed (QLMed)",
   productTagline: "Smart ICU on Mobile™",
   title: "PlasmIT: health technology for critical care.",
@@ -12,17 +12,18 @@ export const siteMeta = {
 } as const
 
 export const companyHero = {
-  headline: "PlasmIT builds connected critical care\u00a0infrastructure.",
-  lead: "PlasmIT Pty Ltd is an Australia-headquartered health-tech company focused on critical care. The team blends national healthcare strategy experience with interoperability depth, including FHIR and large-scale digital health programmes.",
+  headline:
+    "PlasmIT is transforming critical care with AI-first connected infrastructure.",
+  lead: "PlasmIT brings together seasoned technology innovators and healthcare professionals, with leadership experience shaping future-care strategy across Australia and India.",
   productLine:
-    "Flagship platform: PiMed (QLMed), Smart ICU on Mobile™: point-in-time ICU care on mobile, 24×7, with vendor-agnostic edge-to-cloud delivery.",
+    "Flagship platform PiMed (QLMed), Smart ICU on Mobile™, enables continuous connected rounds, real-time intervention, and device-agnostic ICU intelligence.",
 } as const
 
 export const companyVision =
-  "Reimagine Healthcare services by revolutionizing stakeholders experience through technology and innovation."
+  "Reimagine healthcare by revolutionising critical-care delivery experience through technology and innovation."
 
 export const companyMission =
-  "Save Human Life by Empowering Care provider and Care receiver with next generation Smart technology-based innovative healthcare eco-system."
+  "Transform care delivery to be more accessible, affordable, and life-saving through connected healthcare ecosystems."
 
 export const foundingTeamBackground =
   "Healthcare visionaries and technology leaders who contributed to national healthcare strategies for Australian and Indian governments. Active contributors to global healthcare interoperability standards including FHIR (Fast Healthcare Interoperability Resources), enabling seamless data exchange across healthcare value chains."
@@ -160,21 +161,21 @@ export type SimpleTableRow = string[]
 
 export const homePage = {
   eyebrow: "PlasmIT: company overview",
-  title: "A health-tech company for critical care, anchored by PiMed.",
+  title: "An AI-first critical-care company anchored by PiMed.",
   intro:
-    "PlasmIT Pty Ltd invests in connected critical care infrastructure. PiMed (QLMed) is how we deliver that vision today: intelligent integrated care on mobile, 24×7.",
+    "PlasmIT Pty Ltd delivers connected critical-care infrastructure through PiMed (QLMed): an intelligent SmartICU platform that supports continuous, point-in-time care on mobile, 24×7.",
   ctaPrimary: { label: "Vision & Values", href: "/vision-and-values" },
   ctaSecondary: { label: "PiMed", href: "/pimed" },
   callout:
-    "Australia-headquartered PlasmIT Pty Ltd, with India-first GTM signals: paid pilot, hospital MOUs, and a lowest-barrier path to scaled adoption.",
+    "Australia-headquartered with a strategic India presence, PlasmIT is open to growth partnerships that scale life-saving care delivery.",
   story: [
     {
       title: "What is PiMed",
-      body: "SmartICU on Mobile PiMed is a connected, intelligent, integrated, immersive, secured and compliant digital care platform for hospitals. It transforms care from physical rounds to continuous connected rounds for better intervention.",
+      body: "SmartICU on Mobile, PiMed is an AI-first care platform that transforms delivery from periodic physical rounds to continuous connected rounds for timely intervention.",
     },
     {
-      title: "Why it matters",
-      body: "Real-time Smart ICU care on mobile helps hospitals improve efficiency, optimise resource utilisation, reduce litigation, improve brand value, and open new revenue streams while improving care-worker quality of life.",
+      title: "Business and care impact",
+      body: "Real-time Smart ICU care on mobile improves operational efficiency, optimises resource use, reduces revenue leakage, enables new revenue streams, and supports better quality of life for care teams.",
     },
   ] satisfies StoryCard[],
   metrics: [
@@ -184,14 +185,14 @@ export const homePage = {
         "Continuous monitoring, intelligent alerts, and connected care on mobile.",
     },
     {
-      value: "AI/ML",
+      value: "AI-first",
       label:
-        "Edge-led streaming, anomaly highlights, clinical pathways, and Gen AI-enabled triage.",
+        "Intelligent triage, anomaly insights, and clinical pathways powered by AI/ML.",
     },
     {
-      value: "FHIR",
+      value: "AUS + IND",
       label:
-        "Interoperability posture aligned with global healthcare data exchange standards.",
+        "Leadership credibility shaped across Australian and Indian healthcare ecosystems.",
     },
   ] satisfies MetricCard[],
   sections: [
@@ -286,13 +287,13 @@ export const productRoadmapPhases = [
 export const hospitalMetrics = [
   {
     value: "50%",
-    label: "Reduce ICU mortality (source-site claim).",
-    note: "Claim from provided source content.",
+    label: "Potential reduction in ICU mortality.",
+    note: "Stated 2026 target from provided source material.",
   },
   {
     value: "25%",
-    label: "Save on ICU OPEX (source-site claim).",
-    note: "Claim from provided source content.",
+    label: "Potential ICU OPEX savings.",
+    note: "Stated 2026 target from provided source material.",
   },
   {
     value: "24×7",
@@ -335,39 +336,38 @@ export const hospitalFeatures = [
 
 export const investorMetrics = [
   {
-    value: "USD $6B",
-    label: "India market addressed in the source content.",
+    value: "$6B+",
+    label: "India critical-care opportunity highlighted in 2026 positioning.",
   },
   {
     value: "~9,000",
-    label: "Hospitals in scope (source content).",
+    label: "Hospitals in scope in India market narrative.",
   },
   {
-    value: "3 yrs",
-    label: "Targeted viable break-even horizon.",
-    note: "Forward-looking statement from source content.",
+    value: "Early traction",
+    label: "Hospital validation, signed MOUs, and growing global interest.",
   },
 ] satisfies MetricCard[]
 
 export const investorHighlights = [
   {
-    title: "Where are we",
-    body: "Product MVP is 75% ready and aimed for commercialization.",
+    title: "The opportunity",
+    body: "ICU delivery remains fragmented and reactive, creating demand for connected intelligent critical-care infrastructure.",
     icon: "globe",
   },
   {
-    title: "Validation",
-    body: "Viability accepted by leading hospitals in India, with multiple signed MOUs.",
+    title: "Underserved market",
+    body: "India has ~9,000 hospitals and ~110,000 ICU beds, with no single unified intelligent monitoring layer across settings.",
     icon: "cpu",
   },
   {
-    title: "Traction",
-    body: "Traction from various hospitals across the globe.",
+    title: "Mobile-first connected care",
+    body: "PiMed enables real-time ICU vitals, intelligent alerts, and coordinated intervention from any device, anywhere.",
     icon: "activity",
   },
   {
-    title: "What we can achieve together",
-    body: "Viable break-even in 3 years, 200M$ in 5 years from India market, and expansion to other geographies.",
+    title: "Traction and validation",
+    body: "Concept has moved into validation with signed partnerships, hospital engagement, and clear momentum toward commercial scale.",
     icon: "badge-check",
   },
 ] satisfies FeatureCard[]
@@ -384,12 +384,12 @@ export const investorEssentials = [
 ] satisfies StoryCard[]
 
 export const investorProblemSolution = {
-  problemTitle: "What your investments can do",
+  problemTitle: "Why now",
   problemBody:
-    "Save millions of lives and address a USD $6 billion market within India, including ICU and general bed segments.",
-  solutionTitle: "What we can achieve together",
+    "Ageing populations, rising chronic disease burden, and ICU pressure are accelerating demand for scalable critical-care platforms.",
+  solutionTitle: "Scalability thesis",
   solutionBody:
-    "Build a high-margin, scalable health-tech business with global expansion potential.",
+    "PiMed combines device-agnostic integration, AI/ML intelligence, and mobile-first operations to scale from India to global care networks.",
 } as const
 
 export const investorCompetitiveRows: SimpleTableRow[] = [
@@ -524,10 +524,10 @@ export const investorDisclaimer =
   "From internal investor materials; forward-looking; not an offer or solicitation. Past or projected performance is not a guide to future results."
 
 export const investorPageIntro =
-  "PlasmIT invites visionary and growth investors to join us in scaling PiMed and connected critical care."
+  "PlasmIT is building an intelligent ICU care platform and invites visionary growth investors to scale critical-care transformation."
 
 export const investorSnapshotProse =
-  "Potentially serve ~6 million ICU patients and ~400 million general bed patients in India. Product MVP is 75% ready, viability is validated by leading hospitals, and multiple MOUs are already in place."
+  "The 2026 strategy focuses on closing the ICU intelligence gap through AI-first, mobile-first connected care, supported by hospital validation and partnership-led market entry."
 
 export const investorAtGlance = [
   {
@@ -549,34 +549,34 @@ export const investorAtGlance = [
 export const aboutHighlights = [
   {
     title: "Entity and focus",
-    body: "PlasmIT Pty Ltd is an Australia-headquartered health-tech company in critical care, building PiMed (QLMed), Smart ICU on Mobile™.",
+    body: "PlasmIT Pty Ltd is an Australia-headquartered health-tech company reimagining critical care through PiMed (QLMed), Smart ICU on Mobile™.",
   },
   {
     title: "Founding credibility",
     body: foundingTeamBackground,
   },
   {
-    title: "Mission alignment",
-    body: `${companyMission} ${companyVision}`,
+    title: "Global operating footprint",
+    body: "With Australia headquarters and strategic operations in India, PlasmIT is positioned to scale impact-focused innovation across diverse healthcare ecosystems.",
   },
 ] satisfies StoryCard[]
 
 export const values = [
   {
-    title: "Our values",
-    body: "PlasmIT values are based on a 6C maturity framework that drives our principles for saving millions of lives through PiMed.",
+    title: "Innovation",
+    body: "We apply practical, high-impact innovation to redesign critical-care workflows for faster and safer intervention.",
+  },
+  {
+    title: "Integrity",
+    body: "We build trusted systems with clinical responsibility, interoperability discipline, and transparent outcomes.",
+  },
+  {
+    title: "Compassion",
+    body: "Every product decision is grounded in patient wellbeing and improved quality of life for care workers and families.",
   },
   {
     title: "Contextual care",
-    body: "We aim to revolutionize stakeholder experience through digital technology and innovations to deliver contextual care.",
-  },
-  {
-    title: "Innovation",
-    body: "Technology and innovation are used to redesign care delivery in practical, high-impact workflows.",
-  },
-  {
-    title: "Empowerment",
-    body: "Empower care providers and care receivers with next-generation smart healthcare tools.",
+    body: "Our 6C maturity framework guides contextual, connected, and collaborative care experiences.",
   },
   {
     title: "Interoperability",
@@ -684,7 +684,7 @@ export const leadershipProfileSections = [
         summary:
           "Sanjit Anand is an accomplished IT and product leader with deep expertise in enterprise transformation across ERP, cloud, data, and digital platforms. He currently leads end-to-end product delivery for Smart ICU at PlasmIT, combining strategic portfolio leadership with strong execution across complex global programs.",
         linkedin: "https://www.linkedin.com/in/sanjit/",
-        image: "https://placehold.co/500x500.png",
+        image: "/media/leadership/sanjit-anand.jpeg",
       },
       {
         name: "Aishwarya Dwivedi",
