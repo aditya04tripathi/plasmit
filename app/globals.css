@@ -100,7 +100,16 @@
 }
 
 .dark {
-  --text-body-leading: 1.74;
+  --text-base: 1rem;
+  --text-body-leading: 1.68;
+  --text-mdx-h1: clamp(1.65rem, 2.8vw, 2.15rem);
+  --text-mdx-h2: clamp(1.35rem, 2.2vw, 1.8rem);
+  --text-h1: clamp(2.25rem, 6vw, 3.8rem);
+  --text-h2: clamp(1.9rem, 4vw, 2.8rem);
+  --text-h3: clamp(1.5rem, 2.8vw, 2rem);
+  --text-h4: clamp(1.25rem, 2.2vw, 1.5rem);
+  --text-h5: 1.125rem;
+  --text-h6: 1rem;
   --background: #0e121b;
   --foreground: #f3f5f7;
   --bg-gradient-top-dark: #a9ead917;
@@ -244,8 +253,7 @@
       }
 
       .marketing-hero-drift-media {
-        animation: marketing-hero-drift-media cubic-bezier(0.16, 1, 0.3, 1)
-          both;
+        animation: marketing-hero-drift-media cubic-bezier(0.16, 1, 0.3, 1) both;
         animation-timeline: scroll(root block);
         animation-range: 0% 17%;
       }

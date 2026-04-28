@@ -65,19 +65,22 @@ export function Navbar({
       )}
     >
       <div className="mx-auto flex min-h-19 max-w-7xl items-center justify-between gap-5 px-4 py-4 sm:px-5 lg:px-8">
-        <Link href="/" className="flex items-center gap-2.5">
-          <Image src="/media/logo.svg" alt="PlasmIT" width={32} height={32} />
-          <div>
-            <p className="tracking-[0.32em] text-muted-foreground uppercase">
-              PlasmIT
-            </p>
-            <p className="font-medium text-foreground">
-              {siteMeta.companyTagline}
-            </p>
-          </div>
+        <Link
+          href="/"
+          className="flex items-center rounded px-5 dark:bg-foreground"
+        >
+          <Image
+            src="/media/logo-expanded.svg"
+            alt="PlasmIT"
+            width={96}
+            height={64}
+          />
         </Link>
 
-        <nav className="hidden items-center gap-0.5 lg:flex" aria-label="Primary">
+        <nav
+          className="hidden items-center gap-0.5 lg:flex"
+          aria-label="Primary"
+        >
           {navLinks.map((link) => (
             <Button
               key={link.href}

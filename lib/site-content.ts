@@ -690,7 +690,7 @@ export const leadershipProfileSections = [
         name: "Aishwarya Dwivedi",
         role: "AI Product Manager",
         summary:
-          "Aishwarya Dwivedi leads AI product strategy at the intersection of NLP, GenAI, and governance, translating product, technology, clinical, and UX priorities into scalable, responsible outcomes. She has built award-winning AI features from zero to market impact, established model integrity and human-escalation frameworks for regulated healthcare environments, and helps organizations move from AI experimentation to accountable execution.",
+          "Aishwarya Dwivedi leads AI product strategy at the intersection of NLP, GenAI, and governance, translating product, technology, clinical, and UX priorities into scalable, responsible outcomes. He has built award-winning AI features from zero to market impact, established model integrity and human-escalation frameworks for regulated healthcare environments, and helps organizations move from AI experimentation to accountable execution.",
         linkedin: "https://www.linkedin.com/in/aish-dwivedi/",
         image: "/media/leadership/aishwarya-dwivedi.jpeg",
       },
